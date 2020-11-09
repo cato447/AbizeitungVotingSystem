@@ -1,0 +1,7 @@
+td.voted {
+    background-color: #f05048;
+}
+
+td.notVoted {
+    background-color: #76ed6b;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Abizeitung 2020/2021 Voting</title>
+    <link th:href="@{/styles/start.css}" rel="stylesheet" />
+</head>
+
+<body>
+    <h2>Gebe deine Adolfinum E-Mail Adresse ein</h2>
+    <form action="#" th:action="@{/vote}" method="post">
+        <input type="text" name="name" />
+        <input type="submit" value="submit" />
+    </form>
+
+    <h2>Admin-Console Passwort</h2>
+    <form action="#" th:action="@{/dashboard}" method="post">
+        <input type="text" name="name" />
+        <input type="password" name="password" />
+        <input type="submit" value="login" />
+    </form>
+</body>
+
+</html>

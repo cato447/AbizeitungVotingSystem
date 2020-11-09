@@ -1,0 +1,882 @@
+2020-11-03 20:03:10,968 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 12875 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 20:03:10,977 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 20:03:11,540 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 20:03:11,602 INFO [main] Finished Spring Data repository scanning in 53ms. Found 2 JPA repository interfaces.
+2020-11-03 20:03:12,326 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 20:03:12,337 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 20:03:12,338 INFO [main] Starting service [Tomcat]
+2020-11-03 20:03:12,338 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 20:03:12,429 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 20:03:12,429 INFO [main] Root WebApplicationContext: initialization completed in 1393 ms
+2020-11-03 20:03:12,654 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 20:03:12,709 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 20:03:12,837 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 20:03:12,929 INFO [main] HikariPool-1 - Starting...
+2020-11-03 20:03:13,390 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 20:03:13,422 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 20:03:13,995 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 20:03:14,005 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 20:03:14,577 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-03 20:03:14,706 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 20:03:14,945 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 20:03:14,977 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 20:03:14,988 INFO [main] Started AbizeitungVotingSystemApplication in 4.386 seconds (JVM running for 5.046)
+2020-11-03 20:03:22,427 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-03 20:03:22,428 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-03 20:03:22,438 INFO [http-nio-8080-exec-1] Completed initialization in 10 ms
+2020-11-03 20:03:22,594 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-03 20:03:37,866 WARN [http-nio-8080-exec-3] simon.bussmann@adolfinum.de has already voted
+2020-11-03 20:03:40,015 INFO [http-nio-8080-exec-4] User IP: 127.0.0.1
+2020-11-03 20:10:43,978 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 20:10:43,980 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 20:10:43,981 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-03 20:10:43,991 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-03 20:10:46,923 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 13276 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 20:10:46,925 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 20:10:47,459 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 20:10:47,504 INFO [main] Finished Spring Data repository scanning in 35ms. Found 2 JPA repository interfaces.
+2020-11-03 20:10:48,246 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 20:10:48,256 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 20:10:48,257 INFO [main] Starting service [Tomcat]
+2020-11-03 20:10:48,258 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 20:10:48,345 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 20:10:48,346 INFO [main] Root WebApplicationContext: initialization completed in 1368 ms
+2020-11-03 20:10:48,566 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 20:10:48,609 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 20:10:48,710 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 20:10:48,781 INFO [main] HikariPool-1 - Starting...
+2020-11-03 20:10:49,168 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 20:10:49,190 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 20:10:49,696 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 20:10:49,703 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 20:10:50,051 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-03 20:10:50,181 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 20:10:50,380 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 20:10:50,406 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 20:10:50,416 INFO [main] Started AbizeitungVotingSystemApplication in 3.803 seconds (JVM running for 4.313)
+2020-11-03 20:10:55,255 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-03 20:10:55,256 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-03 20:10:55,266 INFO [http-nio-8080-exec-1] Completed initialization in 10 ms
+2020-11-03 20:10:55,393 WARN [http-nio-8080-exec-1] simon.bussmann@adolfinum.de has already voted
+2020-11-03 20:11:06,079 INFO [http-nio-8080-exec-2] User IP: 127.0.0.1
+2020-11-03 20:11:13,576 WARN [http-nio-8080-exec-3] simon.bussmann@adolfinum.de has already voted
+2020-11-03 20:11:29,526 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 20:11:29,528 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 20:11:29,531 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-03 20:11:29,542 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-03 20:11:31,509 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 13387 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 20:11:31,513 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 20:11:32,067 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 20:11:32,126 INFO [main] Finished Spring Data repository scanning in 49ms. Found 2 JPA repository interfaces.
+2020-11-03 20:11:32,843 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 20:11:32,853 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 20:11:32,854 INFO [main] Starting service [Tomcat]
+2020-11-03 20:11:32,854 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 20:11:32,935 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 20:11:32,935 INFO [main] Root WebApplicationContext: initialization completed in 1355 ms
+2020-11-03 20:11:33,127 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 20:11:33,161 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 20:11:33,257 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 20:11:33,353 INFO [main] HikariPool-1 - Starting...
+2020-11-03 20:11:33,709 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 20:11:33,730 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 20:11:34,286 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 20:11:34,292 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 20:11:34,595 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-03 20:11:34,717 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 20:11:34,911 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 20:11:34,931 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 20:11:34,943 INFO [main] Started AbizeitungVotingSystemApplication in 3.755 seconds (JVM running for 4.23)
+2020-11-03 20:11:49,396 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 20:11:49,398 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 20:11:49,400 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-03 20:11:49,407 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-03 20:11:52,312 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 13491 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 20:11:52,315 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 20:11:52,834 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 20:11:52,878 INFO [main] Finished Spring Data repository scanning in 37ms. Found 2 JPA repository interfaces.
+2020-11-03 20:11:53,570 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 20:11:53,580 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 20:11:53,580 INFO [main] Starting service [Tomcat]
+2020-11-03 20:11:53,581 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 20:11:53,666 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 20:11:53,667 INFO [main] Root WebApplicationContext: initialization completed in 1295 ms
+2020-11-03 20:11:53,885 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 20:11:53,920 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 20:11:54,004 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 20:11:54,063 INFO [main] HikariPool-1 - Starting...
+2020-11-03 20:11:54,402 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 20:11:54,421 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 20:11:54,951 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 20:11:54,960 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 20:11:55,290 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-03 20:11:55,408 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 20:11:55,631 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 20:11:55,655 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 20:11:55,668 INFO [main] Started AbizeitungVotingSystemApplication in 3.674 seconds (JVM running for 4.177)
+2020-11-03 20:11:57,064 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-03 20:11:57,064 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-03 20:11:57,069 INFO [http-nio-8080-exec-1] Completed initialization in 5 ms
+2020-11-03 20:11:57,216 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-03 20:12:00,921 WARN [http-nio-8080-exec-2] simon.bussmann@adolfinum.de has already voted
+2020-11-03 20:12:04,168 INFO [http-nio-8080-exec-3] Visited again
+2020-11-03 20:12:06,459 WARN [http-nio-8080-exec-4] simon.bussmann@adolfinum.de has already voted
+2020-11-03 20:12:53,771 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 20:12:53,772 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 20:12:53,774 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-03 20:12:53,782 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-03 20:12:56,738 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 13607 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 20:12:56,740 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 20:12:57,295 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 20:12:57,345 INFO [main] Finished Spring Data repository scanning in 42ms. Found 2 JPA repository interfaces.
+2020-11-03 20:12:58,015 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 20:12:58,024 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 20:12:58,025 INFO [main] Starting service [Tomcat]
+2020-11-03 20:12:58,025 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 20:12:58,114 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 20:12:58,114 INFO [main] Root WebApplicationContext: initialization completed in 1314 ms
+2020-11-03 20:12:58,309 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 20:12:58,344 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 20:12:58,433 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 20:12:58,504 INFO [main] HikariPool-1 - Starting...
+2020-11-03 20:12:58,858 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 20:12:58,881 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 20:12:59,373 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 20:12:59,379 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 20:12:59,762 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-03 20:12:59,901 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 20:13:00,107 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 20:13:00,124 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 20:13:00,137 INFO [main] Started AbizeitungVotingSystemApplication in 3.689 seconds (JVM running for 4.178)
+2020-11-03 20:13:32,234 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-03 20:13:32,236 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-03 20:13:32,242 INFO [http-nio-8080-exec-1] Completed initialization in 6 ms
+2020-11-03 20:13:32,374 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-03 20:13:37,074 WARN [http-nio-8080-exec-2] simon.bussmann@adolfinum.de has already voted
+2020-11-03 20:13:38,423 INFO [http-nio-8080-exec-3] [127.0.0.1]
+2020-11-03 20:13:41,163 WARN [http-nio-8080-exec-4] simon.bussmann@adolfinum.de has already voted
+2020-11-03 20:13:53,670 INFO [http-nio-8080-exec-5] [127.0.0.1]
+2020-11-03 20:59:10,085 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 20:59:10,086 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 20:59:10,089 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-03 20:59:10,097 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-03 20:59:13,185 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 14916 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 20:59:13,191 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 20:59:13,752 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 20:59:13,805 INFO [main] Finished Spring Data repository scanning in 44ms. Found 2 JPA repository interfaces.
+2020-11-03 20:59:14,560 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 20:59:14,569 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 20:59:14,570 INFO [main] Starting service [Tomcat]
+2020-11-03 20:59:14,570 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 20:59:14,664 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 20:59:14,665 INFO [main] Root WebApplicationContext: initialization completed in 1407 ms
+2020-11-03 20:59:14,885 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 20:59:14,924 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 20:59:15,021 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 20:59:15,087 INFO [main] HikariPool-1 - Starting...
+2020-11-03 20:59:15,432 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 20:59:15,452 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 20:59:16,000 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 20:59:16,006 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 20:59:16,339 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-03 20:59:16,465 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 20:59:16,666 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 20:59:16,683 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 20:59:16,695 INFO [main] Started AbizeitungVotingSystemApplication in 3.879 seconds (JVM running for 4.329)
+2020-11-03 20:59:20,818 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-03 20:59:20,819 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-03 20:59:20,825 INFO [http-nio-8080-exec-1] Completed initialization in 6 ms
+2020-11-03 20:59:20,938 INFO [http-nio-8080-exec-1] Voters: 3
+2020-11-03 20:59:20,966 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-03 20:59:22,453 INFO [http-nio-8080-exec-2] Voters: 3
+2020-11-03 20:59:24,775 INFO [http-nio-8080-exec-3] Voters: 3
+2020-11-03 20:59:25,883 INFO [http-nio-8080-exec-4] Voters: 3
+2020-11-03 20:59:26,781 INFO [http-nio-8080-exec-5] Voters: 3
+2020-11-03 20:59:27,699 INFO [http-nio-8080-exec-6] Voters: 3
+2020-11-03 21:03:49,130 INFO [http-nio-8080-exec-8] Voters: 4
+2020-11-03 21:04:21,483 INFO [http-nio-8080-exec-9] Voters: 5
+2020-11-03 21:04:32,173 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 21:04:32,174 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 21:04:32,178 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-03 21:04:32,183 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-03 22:39:48,232 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 17370 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 22:39:48,236 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 22:39:48,800 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 22:39:48,851 INFO [main] Finished Spring Data repository scanning in 45ms. Found 3 JPA repository interfaces.
+2020-11-03 22:39:49,587 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 22:39:49,600 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 22:39:49,601 INFO [main] Starting service [Tomcat]
+2020-11-03 22:39:49,601 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 22:39:49,695 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 22:39:49,695 INFO [main] Root WebApplicationContext: initialization completed in 1376 ms
+2020-11-03 22:39:49,884 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 22:39:49,918 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 22:39:50,004 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 22:39:50,079 INFO [main] HikariPool-1 - Starting...
+2020-11-03 22:39:50,466 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 22:39:50,486 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 22:39:51,173 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 22:39:51,182 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 22:39:51,547 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-03 22:39:51,653 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 22:39:51,832 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 22:39:51,851 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 22:39:51,865 INFO [main] Started AbizeitungVotingSystemApplication in 3.962 seconds (JVM running for 4.434)
+2020-11-03 22:55:00,455 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 22:55:00,456 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 22:55:00,458 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-03 22:55:00,467 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-03 22:55:03,261 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 17947 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 22:55:03,265 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 22:55:03,753 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 22:55:03,800 INFO [main] Finished Spring Data repository scanning in 41ms. Found 3 JPA repository interfaces.
+2020-11-03 22:55:04,398 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 22:55:04,406 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 22:55:04,406 INFO [main] Starting service [Tomcat]
+2020-11-03 22:55:04,407 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 22:55:04,486 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 22:55:04,486 INFO [main] Root WebApplicationContext: initialization completed in 1163 ms
+2020-11-03 22:55:04,673 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 22:55:04,707 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 22:55:04,820 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 22:55:04,889 INFO [main] HikariPool-1 - Starting...
+2020-11-03 22:55:05,245 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 22:55:05,266 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 22:55:05,848 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 22:55:05,853 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 22:55:06,178 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-03 22:55:06,277 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 22:55:06,456 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 22:55:06,471 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 22:55:06,481 INFO [main] Started AbizeitungVotingSystemApplication in 3.499 seconds (JVM running for 3.936)
+2020-11-03 22:55:09,243 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-03 22:55:09,243 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-03 22:55:09,248 INFO [http-nio-8080-exec-1] Completed initialization in 4 ms
+2020-11-03 22:55:09,372 INFO [http-nio-8080-exec-1] Beste/r Schüler/in: [com.github.cato447.AbizeitungVotingSystem.entities.Candidate@5af13156, com.github.cato447.AbizeitungVotingSystem.entities.Candidate@432a20f7, com.github.cato447.AbizeitungVotingSystem.entities.Candidate@64328a8f, com.github.cato447.AbizeitungVotingSystem.entities.Candidate@5edb4fcf]
+2020-11-03 22:55:09,374 INFO [http-nio-8080-exec-1] Beste/r Lehrer/in: [com.github.cato447.AbizeitungVotingSystem.entities.Candidate@6127816, com.github.cato447.AbizeitungVotingSystem.entities.Candidate@57a68e55, com.github.cato447.AbizeitungVotingSystem.entities.Candidate@28084c1f, com.github.cato447.AbizeitungVotingSystem.entities.Candidate@62b57eb1, com.github.cato447.AbizeitungVotingSystem.entities.Candidate@77726839]
+2020-11-03 22:55:09,387 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-03 22:58:58,744 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 22:58:58,746 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 22:58:58,747 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-03 22:58:58,757 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-03 22:59:01,522 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 18170 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 22:59:01,525 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 22:59:01,987 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 22:59:02,035 INFO [main] Finished Spring Data repository scanning in 42ms. Found 3 JPA repository interfaces.
+2020-11-03 22:59:02,607 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 22:59:02,617 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 22:59:02,618 INFO [main] Starting service [Tomcat]
+2020-11-03 22:59:02,618 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 22:59:02,702 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 22:59:02,703 INFO [main] Root WebApplicationContext: initialization completed in 1115 ms
+2020-11-03 22:59:02,874 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 22:59:02,904 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 22:59:02,988 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 22:59:03,050 INFO [main] HikariPool-1 - Starting...
+2020-11-03 22:59:03,402 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 22:59:03,423 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 22:59:03,940 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 22:59:03,945 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 22:59:04,275 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-03 22:59:04,379 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 22:59:04,563 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 22:59:04,575 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 22:59:04,584 INFO [main] Started AbizeitungVotingSystemApplication in 3.346 seconds (JVM running for 3.787)
+2020-11-03 22:59:07,297 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-03 22:59:07,298 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-03 22:59:07,304 INFO [http-nio-8080-exec-1] Completed initialization in 6 ms
+2020-11-03 22:59:07,453 INFO [http-nio-8080-exec-1] Beste/r Schüler/in: Greta Bentgens,Laura König,Aaron Glos,Lukas Boy,
+2020-11-03 22:59:07,455 INFO [http-nio-8080-exec-1] Beste/r Lehrer/in: Frau Meyering,Frau Adams,Herr Petering,Frau Milde,Frau Meyer,
+2020-11-03 22:59:07,469 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-03 23:28:13,441 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 23:28:13,444 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 23:28:13,447 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-03 23:28:13,455 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-03 23:28:16,450 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 18743 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 23:28:16,453 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 23:28:17,045 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 23:28:17,096 INFO [main] Finished Spring Data repository scanning in 42ms. Found 3 JPA repository interfaces.
+2020-11-03 23:28:17,754 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 23:28:17,763 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 23:28:17,764 INFO [main] Starting service [Tomcat]
+2020-11-03 23:28:17,764 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 23:28:17,868 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 23:28:17,869 INFO [main] Root WebApplicationContext: initialization completed in 1359 ms
+2020-11-03 23:28:18,083 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 23:28:18,127 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 23:28:18,241 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 23:28:18,308 INFO [main] HikariPool-1 - Starting...
+2020-11-03 23:28:18,704 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 23:28:18,721 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 23:28:19,301 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 23:28:19,306 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 23:28:19,559 WARN [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'votingController': Unsatisfied dependency expressed through field 'voterRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'voterRepository' defined in com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository defined in @EnableJpaRepositories declared on AbizeitungVotingSystemApplication: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.github.cato447.AbizeitungVotingSystem.entities.Voter com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository.findByName(java.lang.String)! No property name found for type Voter!
+2020-11-03 23:28:19,560 INFO [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 23:28:19,563 INFO [main] HikariPool-1 - Shutdown initiated...
+2020-11-03 23:28:19,574 INFO [main] HikariPool-1 - Shutdown completed.
+2020-11-03 23:28:19,577 INFO [main] Stopping service [Tomcat]
+2020-11-03 23:28:19,590 INFO [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-03 23:28:19,592 ERROR [main] Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'votingController': Unsatisfied dependency expressed through field 'voterRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'voterRepository' defined in com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository defined in @EnableJpaRepositories declared on AbizeitungVotingSystemApplication: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.github.cato447.AbizeitungVotingSystem.entities.Voter com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository.findByName(java.lang.String)! No property name found for type Voter!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplication.main(AbizeitungVotingSystemApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'voterRepository' defined in com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository defined in @EnableJpaRepositories declared on AbizeitungVotingSystemApplication: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.github.cato447.AbizeitungVotingSystem.entities.Voter com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository.findByName(java.lang.String)! No property name found for type Voter!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 20 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract com.github.cato447.AbizeitungVotingSystem.entities.Voter com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository.findByName(java.lang.String)! No property name found for type Voter!
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:96)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:107)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:218)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:81)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:99)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:92)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1056)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:94)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:84)
+	at java.base/java.util.Optional.map(Optional.java:258)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:84)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:331)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:297)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:212)
+	at org.springframework.data.util.Lazy.get(Lazy.java:94)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:300)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	... 30 common frames omitted
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property name found for type Voter!
+	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:94)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:382)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:358)
+	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:311)
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:293)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:276)
+	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:82)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:251)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:252)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:381)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:382)
+	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:97)
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:89)
+	... 56 common frames omitted
+2020-11-03 23:30:35,875 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 18922 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 23:30:35,877 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 23:30:36,375 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 23:30:36,429 INFO [main] Finished Spring Data repository scanning in 46ms. Found 3 JPA repository interfaces.
+2020-11-03 23:30:37,085 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 23:30:37,095 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 23:30:37,095 INFO [main] Starting service [Tomcat]
+2020-11-03 23:30:37,096 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 23:30:37,172 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 23:30:37,172 INFO [main] Root WebApplicationContext: initialization completed in 1231 ms
+2020-11-03 23:30:37,364 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 23:30:37,394 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 23:30:37,478 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 23:30:37,543 INFO [main] HikariPool-1 - Starting...
+2020-11-03 23:30:37,919 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 23:30:37,940 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 23:30:38,537 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 23:30:38,543 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 23:30:38,778 WARN [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'votingController': Unsatisfied dependency expressed through field 'voterRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'voterRepository' defined in com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository defined in @EnableJpaRepositories declared on AbizeitungVotingSystemApplication: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.github.cato447.AbizeitungVotingSystem.entities.Voter com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository.findByName(java.lang.String)! No property name found for type Voter!
+2020-11-03 23:30:38,778 INFO [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 23:30:38,780 INFO [main] HikariPool-1 - Shutdown initiated...
+2020-11-03 23:30:38,790 INFO [main] HikariPool-1 - Shutdown completed.
+2020-11-03 23:30:38,792 INFO [main] Stopping service [Tomcat]
+2020-11-03 23:30:38,806 INFO [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-03 23:30:38,809 ERROR [main] Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'votingController': Unsatisfied dependency expressed through field 'voterRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'voterRepository' defined in com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository defined in @EnableJpaRepositories declared on AbizeitungVotingSystemApplication: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.github.cato447.AbizeitungVotingSystem.entities.Voter com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository.findByName(java.lang.String)! No property name found for type Voter!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplication.main(AbizeitungVotingSystemApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'voterRepository' defined in com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository defined in @EnableJpaRepositories declared on AbizeitungVotingSystemApplication: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.github.cato447.AbizeitungVotingSystem.entities.Voter com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository.findByName(java.lang.String)! No property name found for type Voter!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 20 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract com.github.cato447.AbizeitungVotingSystem.entities.Voter com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository.findByName(java.lang.String)! No property name found for type Voter!
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:96)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:107)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:218)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:81)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:99)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:92)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1056)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:94)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:84)
+	at java.base/java.util.Optional.map(Optional.java:258)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:84)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:331)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:297)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:212)
+	at org.springframework.data.util.Lazy.get(Lazy.java:94)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:300)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	... 30 common frames omitted
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property name found for type Voter!
+	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:94)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:382)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:358)
+	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:311)
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:293)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:276)
+	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:82)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:251)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:252)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:381)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:382)
+	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:97)
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:89)
+	... 56 common frames omitted
+2020-11-03 23:31:31,254 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 19014 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 23:31:31,257 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 23:31:31,748 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 23:31:31,796 INFO [main] Finished Spring Data repository scanning in 40ms. Found 3 JPA repository interfaces.
+2020-11-03 23:31:32,545 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 23:31:32,558 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 23:31:32,559 INFO [main] Starting service [Tomcat]
+2020-11-03 23:31:32,559 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 23:31:32,659 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 23:31:32,659 INFO [main] Root WebApplicationContext: initialization completed in 1335 ms
+2020-11-03 23:31:32,828 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 23:31:32,869 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 23:31:32,954 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 23:31:33,018 INFO [main] HikariPool-1 - Starting...
+2020-11-03 23:31:33,387 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 23:31:33,411 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 23:31:33,967 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 23:31:33,973 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 23:31:34,231 WARN [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'votingController': Unsatisfied dependency expressed through field 'voterRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'voterRepository' defined in com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository defined in @EnableJpaRepositories declared on AbizeitungVotingSystemApplication: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.github.cato447.AbizeitungVotingSystem.entities.Voter com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository.findByName(java.lang.String)! No property name found for type Voter!
+2020-11-03 23:31:34,231 INFO [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 23:31:34,233 INFO [main] HikariPool-1 - Shutdown initiated...
+2020-11-03 23:31:34,241 INFO [main] HikariPool-1 - Shutdown completed.
+2020-11-03 23:31:34,243 INFO [main] Stopping service [Tomcat]
+2020-11-03 23:31:34,253 INFO [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-03 23:31:34,256 ERROR [main] Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'votingController': Unsatisfied dependency expressed through field 'voterRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'voterRepository' defined in com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository defined in @EnableJpaRepositories declared on AbizeitungVotingSystemApplication: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.github.cato447.AbizeitungVotingSystem.entities.Voter com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository.findByName(java.lang.String)! No property name found for type Voter!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplication.main(AbizeitungVotingSystemApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'voterRepository' defined in com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository defined in @EnableJpaRepositories declared on AbizeitungVotingSystemApplication: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.github.cato447.AbizeitungVotingSystem.entities.Voter com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository.findByName(java.lang.String)! No property name found for type Voter!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 20 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract com.github.cato447.AbizeitungVotingSystem.entities.Voter com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository.findByName(java.lang.String)! No property name found for type Voter!
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:96)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:107)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:218)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:81)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:99)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:92)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1056)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:94)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:84)
+	at java.base/java.util.Optional.map(Optional.java:258)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:84)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:331)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:297)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:212)
+	at org.springframework.data.util.Lazy.get(Lazy.java:94)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:300)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	... 30 common frames omitted
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property name found for type Voter!
+	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:94)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:382)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:358)
+	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:311)
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:293)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:276)
+	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:82)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:251)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:252)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:381)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:382)
+	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:97)
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:89)
+	... 56 common frames omitted
+2020-11-03 23:32:11,134 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 19100 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 23:32:11,137 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 23:32:11,636 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 23:32:11,689 INFO [main] Finished Spring Data repository scanning in 47ms. Found 3 JPA repository interfaces.
+2020-11-03 23:32:12,387 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 23:32:12,396 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 23:32:12,397 INFO [main] Starting service [Tomcat]
+2020-11-03 23:32:12,397 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 23:32:12,485 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 23:32:12,486 INFO [main] Root WebApplicationContext: initialization completed in 1300 ms
+2020-11-03 23:32:12,689 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 23:32:12,728 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 23:32:12,823 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 23:32:12,894 INFO [main] HikariPool-1 - Starting...
+2020-11-03 23:32:13,251 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 23:32:13,272 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 23:32:13,831 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 23:32:13,836 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 23:32:14,195 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-03 23:32:14,317 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 23:32:14,503 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 23:32:14,529 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 23:32:14,541 INFO [main] Started AbizeitungVotingSystemApplication in 3.706 seconds (JVM running for 4.166)
+2020-11-03 23:32:22,130 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-03 23:32:22,131 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-03 23:32:22,137 INFO [http-nio-8080-exec-1] Completed initialization in 6 ms
+2020-11-03 23:32:22,340 INFO [http-nio-8080-exec-1] Beste/r Schüler/in: Greta Bentgens,Laura König,Aaron Glos,Lukas Boy,
+2020-11-03 23:32:22,344 INFO [http-nio-8080-exec-1] Beste/r Lehrer/in: Frau Meyering,Frau Adams,Herr Petering,Frau Milde,Frau Meyer,
+2020-11-03 23:32:22,605 INFO [http-nio-8080-exec-1] Voters successfully set up
+2020-11-03 23:32:22,611 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-03 23:34:52,944 INFO [http-nio-8080-exec-3] lisa.baumeister@adolfinum.de is voting now
+2020-11-03 23:52:23,421 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-03 23:52:23,422 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 23:52:23,424 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-03 23:52:23,430 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-03 23:52:26,254 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 19492 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-03 23:52:26,257 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-03 23:52:26,788 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-03 23:52:26,838 INFO [main] Finished Spring Data repository scanning in 40ms. Found 3 JPA repository interfaces.
+2020-11-03 23:52:27,492 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-03 23:52:27,503 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 23:52:27,504 INFO [main] Starting service [Tomcat]
+2020-11-03 23:52:27,504 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-03 23:52:27,595 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-03 23:52:27,596 INFO [main] Root WebApplicationContext: initialization completed in 1268 ms
+2020-11-03 23:52:27,818 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-03 23:52:27,860 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-03 23:52:27,953 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-03 23:52:28,021 INFO [main] HikariPool-1 - Starting...
+2020-11-03 23:52:28,379 INFO [main] HikariPool-1 - Start completed.
+2020-11-03 23:52:28,402 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-03 23:52:28,988 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-03 23:52:28,998 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-03 23:52:29,379 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-03 23:52:29,504 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-03 23:52:29,719 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-03 23:52:29,743 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-03 23:52:29,753 INFO [main] Started AbizeitungVotingSystemApplication in 3.807 seconds (JVM running for 4.247)
+2020-11-03 23:52:39,535 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-03 23:52:39,536 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-03 23:52:39,541 INFO [http-nio-8080-exec-1] Completed initialization in 5 ms
+2020-11-03 23:52:39,559 INFO [http-nio-8080-exec-1] -ID--+----------------------email----------------------+--vote_status__+
+2020-11-03 23:52:39,698 INFO [http-nio-8080-exec-1] | 1 | negar.barzegar@adolfinum.de | false |
+2020-11-03 23:52:39,699 INFO [http-nio-8080-exec-1] | 2 | simon.berger@adolfinum.de | false |
+2020-11-03 23:52:39,699 INFO [http-nio-8080-exec-1] | 3 | nicolas.cunha@adolfinum.de | false |
+2020-11-03 23:52:39,699 INFO [http-nio-8080-exec-1] | 4 | joline.hackstein@adolfinum.de | false |
+2020-11-03 23:52:39,699 INFO [http-nio-8080-exec-1] | 5 | philip.heckhoff@adolfinum.de | false |
+2020-11-03 23:52:39,699 INFO [http-nio-8080-exec-1] | 6 | simon.hormes@adolfinum.de | false |
+2020-11-03 23:52:39,699 INFO [http-nio-8080-exec-1] | 7 | benjamin.vogt@adolfinum.de | false |
+2020-11-03 23:52:39,699 INFO [http-nio-8080-exec-1] | 8 | taycan.arslan@adolfinum.de | false |
+2020-11-03 23:52:39,700 INFO [http-nio-8080-exec-1] | 9 | luca.boom@adolfinum.de | false |
+2020-11-03 23:52:39,700 INFO [http-nio-8080-exec-1] | 10 | leon.borgerding@adolfinum.de | false |
+2020-11-03 23:52:39,700 INFO [http-nio-8080-exec-1] | 11 | lukas.boy@adolfinum.de | false |
+2020-11-03 23:52:39,700 INFO [http-nio-8080-exec-1] | 12 | lukas.corell@adolfinum.de | false |
+2020-11-03 23:52:39,700 INFO [http-nio-8080-exec-1] | 13 | cedric.damerow@adolfinum.de | false |
+2020-11-03 23:52:39,700 INFO [http-nio-8080-exec-1] | 14 | amelie.david@adolfinum.de | false |
+2020-11-03 23:52:39,700 INFO [http-nio-8080-exec-1] | 15 | zeynep.efe@adolfinum.de | false |
+2020-11-03 23:52:39,700 INFO [http-nio-8080-exec-1] | 16 | melinda.hirschelmann@adolfinum.de | false |
+2020-11-03 23:52:39,700 INFO [http-nio-8080-exec-1] | 17 | lars.hogardt@adolfinum.de | false |
+2020-11-03 23:52:39,701 INFO [http-nio-8080-exec-1] | 18 | malin.kalnins@adolfinum.de | false |
+2020-11-03 23:52:39,701 INFO [http-nio-8080-exec-1] | 19 | victor.kocksnchez@adolfinum.de | false |
+2020-11-03 23:52:39,701 INFO [http-nio-8080-exec-1] | 20 | kamil.kowalczyk@adolfinum.de | false |
+2020-11-03 23:52:39,701 INFO [http-nio-8080-exec-1] | 21 | romyna.gurny@adolfinum.de | false |
+2020-11-03 23:52:39,701 INFO [http-nio-8080-exec-1] | 22 | noelia.kocksnchez@adolfinum.de | false |
+2020-11-03 23:52:39,701 INFO [http-nio-8080-exec-1] | 23 | lili.schweitzer@adolfinum.de | false |
+2020-11-03 23:52:39,701 INFO [http-nio-8080-exec-1] | 24 | jerome.laukamp@adolfinum.de | false |
+2020-11-03 23:52:39,701 INFO [http-nio-8080-exec-1] | 25 | elisa.bahl@adolfinum.de | false |
+2020-11-03 23:52:39,702 INFO [http-nio-8080-exec-1] | 26 | lisa.baumeister@adolfinum.de | false |
+2020-11-03 23:52:39,702 INFO [http-nio-8080-exec-1] | 27 | johanna.boeckmann@adolfinum.de | false |
+2020-11-03 23:52:39,702 INFO [http-nio-8080-exec-1] | 28 | svenja.fischer@adolfinum.de | false |
+2020-11-03 23:52:39,702 INFO [http-nio-8080-exec-1] | 29 | lena.goehlich@adolfinum.de | false |
+2020-11-03 23:52:39,702 INFO [http-nio-8080-exec-1] | 30 | paula.haub@adolfinum.de | false |
+2020-11-03 23:52:39,702 INFO [http-nio-8080-exec-1] | 31 | daria.horstmann@adolfinum.de | false |
+2020-11-03 23:52:39,702 INFO [http-nio-8080-exec-1] | 32 | melina.kascha@adolfinum.de | false |
+2020-11-03 23:52:39,702 INFO [http-nio-8080-exec-1] | 33 | pia.kleinwegen@adolfinum.de | false |
+2020-11-03 23:52:39,702 INFO [http-nio-8080-exec-1] | 34 | lauramarie.koenig@adolfinum.de | false |
+2020-11-03 23:52:39,703 INFO [http-nio-8080-exec-1] | 35 | yarkin.kulaksiz@adolfinum.de | false |
+2020-11-03 23:52:39,703 INFO [http-nio-8080-exec-1] | 36 | amelie.laake@adolfinum.de | false |
+2020-11-03 23:52:39,703 INFO [http-nio-8080-exec-1] | 37 | noemi.malaponti@adolfinum.de | false |
+2020-11-03 23:52:39,703 INFO [http-nio-8080-exec-1] | 38 | yara.mueser@adolfinum.de | false |
+2020-11-03 23:52:39,703 INFO [http-nio-8080-exec-1] | 39 | paul.nowack@adolfinum.de | false |
+2020-11-03 23:52:39,703 INFO [http-nio-8080-exec-1] | 40 | luca.ofiera@adolfinum.de | false |
+2020-11-03 23:52:39,703 INFO [http-nio-8080-exec-1] | 41 | timo.otto@adolfinum.de | false |
+2020-11-03 23:52:39,703 INFO [http-nio-8080-exec-1] | 42 | linnea.paulukuhn@adolfinum.de | false |
+2020-11-03 23:52:39,704 INFO [http-nio-8080-exec-1] | 43 | isabelle.schneider@adolfinum.de | false |
+2020-11-03 23:52:39,704 INFO [http-nio-8080-exec-1] | 44 | nico.scholzen@adolfinum.de | false |
+2020-11-03 23:52:39,704 INFO [http-nio-8080-exec-1] | 45 | manon.schroff@adolfinum.de | false |
+2020-11-03 23:52:39,704 INFO [http-nio-8080-exec-1] | 46 | carlotta.tueckmantel@adolfinum.de | false |
+2020-11-03 23:52:39,704 INFO [http-nio-8080-exec-1] | 47 | simon.bussmann@adolfinum.de | false |
+2020-11-03 23:52:39,704 INFO [http-nio-8080-exec-1] | 48 | luis.erpenbach@adolfinum.de | false |
+2020-11-03 23:52:39,704 INFO [http-nio-8080-exec-1] | 49 | meret.fass@adolfinum.de | false |
+2020-11-03 23:52:39,704 INFO [http-nio-8080-exec-1] | 50 | anna.feldmann@adolfinum.de | false |
+2020-11-03 23:52:39,705 INFO [http-nio-8080-exec-1] | 51 | alina.fuenderich@adolfinum.de | false |
+2020-11-03 23:52:39,705 INFO [http-nio-8080-exec-1] | 52 | joline.gilles@adolfinum.de | false |
+2020-11-03 23:52:39,705 INFO [http-nio-8080-exec-1] | 53 | karolina.hein@adolfinum.de | false |
+2020-11-03 23:52:39,705 INFO [http-nio-8080-exec-1] | 54 | robin.heldt@adolfinum.de | false |
+2020-11-03 23:52:39,705 INFO [http-nio-8080-exec-1] | 55 | annika.koch@adolfinum.de | false |
+2020-11-03 23:52:39,705 INFO [http-nio-8080-exec-1] | 56 | dusanka.djukanovic@adolfinum.de | false |
+2020-11-03 23:52:39,706 INFO [http-nio-8080-exec-1] | 57 | aaron.glos@adolfinum.de | false |
+2020-11-03 23:52:39,706 INFO [http-nio-8080-exec-1] | 58 | ayseguel.guelten@adolfinum.de | false |
+2020-11-03 23:52:39,706 INFO [http-nio-8080-exec-1] | 59 | hamza.hasoumi@adolfinum.de | false |
+2020-11-03 23:52:39,706 INFO [http-nio-8080-exec-1] | 60 | evelyn.hofmann@adolfinum.de | false |
+2020-11-03 23:52:39,706 INFO [http-nio-8080-exec-1] | 61 | burakmustafa.kulac@adolfinum.de | false |
+2020-11-03 23:52:39,706 INFO [http-nio-8080-exec-1] | 62 | dominik.kwitowski@adolfinum.de | false |
+2020-11-03 23:52:39,707 INFO [http-nio-8080-exec-1] | 63 | julia.lener@adolfinum.de | false |
+2020-11-03 23:52:39,707 INFO [http-nio-8080-exec-1] | 64 | paula.may@adolfinum.de | false |
+2020-11-03 23:52:39,707 INFO [http-nio-8080-exec-1] | 65 | luca.mueller@adolfinum.de | false |
+2020-11-03 23:52:39,707 INFO [http-nio-8080-exec-1] | 66 | mathieu.mueller@adolfinum.de | false |
+2020-11-03 23:52:39,707 INFO [http-nio-8080-exec-1] | 67 | marie.puetter@adolfinum.de | false |
+2020-11-03 23:52:39,707 INFO [http-nio-8080-exec-1] | 68 | hendrik.herffs@adolfinum.de | false |
+2020-11-03 23:52:39,708 INFO [http-nio-8080-exec-1] | 69 | greta.bentgens@adolfinum.de | false |
+2020-11-03 23:52:39,708 INFO [http-nio-8080-exec-1] | 70 | sven.mittmann@adolfinum.de | false |
+2020-11-03 23:52:39,708 INFO [http-nio-8080-exec-1] | 71 | jan.hoevel@adolfinum.de | false |
+2020-11-03 23:52:39,708 INFO [http-nio-8080-exec-1] | 72 | tim.krichel@adolfinum.de | false |
+2020-11-03 23:52:39,708 INFO [http-nio-8080-exec-1] | 73 | milo.lehnen@adolfinum.de | false |
+2020-11-03 23:52:39,708 INFO [http-nio-8080-exec-1] | 74 | lewis.lehner@adolfinum.de | false |
+2020-11-03 23:52:39,709 INFO [http-nio-8080-exec-1] | 75 | nico.lipinski@adolfinum.de | false |
+2020-11-03 23:52:39,709 INFO [http-nio-8080-exec-1] | 76 | luise.lu@adolfinum.de | false |
+2020-11-03 23:52:39,709 INFO [http-nio-8080-exec-1] | 77 | maike.nawarotzky@adolfinum.de | false |
+2020-11-03 23:52:39,709 INFO [http-nio-8080-exec-1] | 78 | rabea.peters@adolfinum.de | false |
+2020-11-03 23:52:39,709 INFO [http-nio-8080-exec-1] | 79 | patrick.preuss@adolfinum.de | false |
+2020-11-03 23:52:39,710 INFO [http-nio-8080-exec-1] | 80 | julius.preusser@adolfinum.de | false |
+2020-11-03 23:52:39,710 INFO [http-nio-8080-exec-1] | 81 | marie.scheidung@adolfinum.de | false |
+2020-11-03 23:52:39,710 INFO [http-nio-8080-exec-1] | 82 | lena.schlayer@adolfinum.de | false |
+2020-11-03 23:52:39,710 INFO [http-nio-8080-exec-1] | 83 | emma.sprenger@adolfinum.de | false |
+2020-11-03 23:52:39,710 INFO [http-nio-8080-exec-1] | 84 | klaudia.kapala@adolfinum.de | false |
+2020-11-03 23:52:39,710 INFO [http-nio-8080-exec-1] | 85 | gabriel.schacht@adolfinum.de | false |
+2020-11-03 23:52:39,710 INFO [http-nio-8080-exec-1] | 86 | delia.schmitz@adolfinum.de | false |
+2020-11-03 23:52:39,711 INFO [http-nio-8080-exec-1] | 87 | katharina.schmitz@adolfinum.de | false |
+2020-11-03 23:52:39,711 INFO [http-nio-8080-exec-1] | 88 | laurin.severith@adolfinum.de | false |
+2020-11-03 23:52:39,711 INFO [http-nio-8080-exec-1] | 89 | julian.sievers@adolfinum.de | false |
+2020-11-03 23:52:39,711 INFO [http-nio-8080-exec-1] | 90 | anna.siewert@adolfinum.de | false |
+2020-11-03 23:52:39,711 INFO [http-nio-8080-exec-1] | 91 | chiara.welter@adolfinum.de | false |
+2020-11-03 23:52:39,712 INFO [http-nio-8080-exec-1] | 92 | kira.winzen@adolfinum.de | false |
+2020-11-03 23:52:39,712 INFO [http-nio-8080-exec-1] | 93 | tim.zentzis@adolfinum.de | false |
+2020-11-03 23:52:39,712 INFO [http-nio-8080-exec-1] | 94 | justus.boesken@adolfinum.de | false |
+2020-11-03 23:52:39,712 INFO [http-nio-8080-exec-1] | 95 | finia.brinkmann@adolfinum.de | false |
+2020-11-03 23:52:39,712 INFO [http-nio-8080-exec-1] | 96 | anesa.cavcic@adolfinum.de | false |
+2020-11-03 23:52:39,712 INFO [http-nio-8080-exec-1] | 97 | antonia.eigemann@adolfinum.de | false |
+2020-11-03 23:52:39,713 INFO [http-nio-8080-exec-1] | 98 | nico.hahn@adolfinum.de | false |
+2020-11-03 23:52:39,713 INFO [http-nio-8080-exec-1] | 99 | timo.kohlmann@adolfinum.de | false |
+2020-11-03 23:52:39,713 INFO [http-nio-8080-exec-1] | 100 | alexander.kupillas@adolfinum.de | false |
+2020-11-03 23:52:39,713 INFO [http-nio-8080-exec-1] | 101 | alexander.neumann@adolfinum.de | false |
+2020-11-03 23:52:39,713 INFO [http-nio-8080-exec-1] | 102 | sophie.osterloh@adolfinum.de | false |
+2020-11-03 23:52:39,713 INFO [http-nio-8080-exec-1] | 103 | clemens.palinsky@adolfinum.de | false |
+2020-11-03 23:52:39,714 INFO [http-nio-8080-exec-1] | 104 | oliver.palinsky@adolfinum.de | false |
+2020-11-03 23:52:39,714 INFO [http-nio-8080-exec-1] | 105 | hendrik.pierlo@adolfinum.de | false |
+2020-11-03 23:52:39,714 INFO [http-nio-8080-exec-1] | 106 | lilly.schmidtke@adolfinum.de | false |
+2020-11-03 23:52:39,714 INFO [http-nio-8080-exec-1] | 107 | mara.spicker@adolfinum.de | false |
+2020-11-03 23:52:39,714 INFO [http-nio-8080-exec-1] | 108 | anhtrung.vo@adolfinum.de | false |
+2020-11-03 23:52:39,714 INFO [http-nio-8080-exec-1] | 109 | ben.schwarz@adolfinum.de | false |
+2020-11-03 23:52:39,715 INFO [http-nio-8080-exec-1] | 110 | luca.urbanczyk@adolfinum.de | false |
+2020-11-03 23:52:39,715 INFO [http-nio-8080-exec-1] | 111 | helena.neukirch@adolfinum.de | false |
+2020-11-03 23:52:39,715 INFO [http-nio-8080-exec-1] | 112 | nikita.lauff@adolfinum.de | false |
+2020-11-03 23:52:39,715 INFO [http-nio-8080-exec-1] | 113 | jennifer.lengard@adolfinum.de | false |
+2020-11-03 23:52:39,715 INFO [http-nio-8080-exec-1] | 114 | julia.mueller@adolfinum.de | false |
+2020-11-03 23:52:39,715 INFO [http-nio-8080-exec-1] | 115 | philipp.nothers@adolfinum.de | false |
+2020-11-03 23:52:39,715 INFO [http-nio-8080-exec-1] | 116 | judith.oppenberg@adolfinum.de | false |
+2020-11-03 23:52:39,716 INFO [http-nio-8080-exec-1] | 117 | dilan.oeztuerk@adolfinum.de | false |
+2020-11-03 23:52:39,716 INFO [http-nio-8080-exec-1] | 118 | malo.soulier@adolfinum.de | false |
+2020-11-03 23:52:39,716 INFO [http-nio-8080-exec-1] | 119 | mery.stern@adolfinum.de | false |
+2020-11-03 23:52:39,716 INFO [http-nio-8080-exec-1] | 120 | nouel.verberkt@adolfinum.de | false |
+2020-11-03 23:52:39,716 INFO [http-nio-8080-exec-1] | 121 | leon.viktora@adolfinum.de | false |
+2020-11-03 23:52:39,716 INFO [http-nio-8080-exec-1] | 122 | pia.anthes@adolfinum.de | false |
+2020-11-03 23:52:39,717 INFO [http-nio-8080-exec-1] | 123 | eray.arici@adolfinum.de | false |
+2020-11-03 23:52:39,717 INFO [http-nio-8080-exec-1] | 124 | christian.beutel@adolfinum.de | false |
+2020-11-03 23:52:39,717 INFO [http-nio-8080-exec-1] | 125 | mara.blanke@adolfinum.de | false |
+2020-11-03 23:52:39,717 INFO [http-nio-8080-exec-1] | 126 | lilly.ventzke@adolfinum.de | false |
+2020-11-03 23:52:39,717 INFO [http-nio-8080-exec-1] | 127 | luzi.weichert@adolfinum.de | false |
+2020-11-03 23:52:39,717 INFO [http-nio-8080-exec-1] | 128 | moritz.weihnacht@adolfinum.de | false |
+2020-11-03 23:52:39,718 INFO [http-nio-8080-exec-1] | 129 | leony.wittmann@adolfinum.de | false |
+2020-11-03 23:52:39,718 INFO [http-nio-8080-exec-1] | 130 | annika.lieblang@adolfinum.de | false |
+2020-11-03 23:52:39,718 INFO [http-nio-8080-exec-1] | 131 | leonie.wallusch@adolfinum.de | false |
+2020-11-03 23:52:39,718 INFO [http-nio-8080-exec-1] | 132 | felix.kirsten@adolfinum.de | false |
+2020-11-03 23:52:39,718 INFO [http-nio-8080-exec-1] | 133 | moritz.liebisch@adolfinum.de | false |
+2020-11-03 23:52:39,718 INFO [http-nio-8080-exec-1] | 134 | christian.pickardt@adolfinum.de | false |
+2020-11-03 23:52:39,719 INFO [http-nio-8080-exec-1] | 135 | jan.schliekmann@adolfinum.de | false |
+2020-11-03 23:52:39,719 INFO [http-nio-8080-exec-1] | 136 | elsa.piplack@adolfinum.de | false |
+2020-11-03 23:52:39,719 INFO [http-nio-8080-exec-1] | 137 | jolan.gerritzen@adolfinum.de | false |
+2020-11-03 23:52:39,719 INFO [http-nio-8080-exec-1] | 138 | lorena.garau@adolfinum.de | false |
+2020-11-03 23:52:39,719 INFO [http-nio-8080-exec-1] | 139 | matthias.karl@adolfinum.de | false |
+2020-11-03 23:52:39,719 INFO [http-nio-8080-exec-1] | 140 | justin.kauschke@adolfinum.de | false |
+2020-11-03 23:52:39,719 INFO [http-nio-8080-exec-1] | 141 | leonie.kramer@adolfinum.de | false |
+2020-11-03 23:52:39,719 INFO [http-nio-8080-exec-1] | 142 | laura.kurreck@adolfinum.de | false |
+2020-11-03 23:52:39,719 INFO [http-nio-8080-exec-1] | 143 | maya.lueck@adolfinum.de | false |
+2020-11-03 23:52:39,719 INFO [http-nio-8080-exec-1] | 144 | sean.mccormick-silex@adolfinum.de | false |
+2020-11-03 23:52:39,719 INFO [http-nio-8080-exec-1] | 145 | tim.mueller@adolfinum.de | false |
+2020-11-03 23:52:39,719 INFO [http-nio-8080-exec-1] | 146 | lana.peric@adolfinum.de | false |
+2020-11-03 23:52:39,720 INFO [http-nio-8080-exec-1] | 147 | jan.pintostrohhaeusl@adolfinum.de | false |
+2020-11-03 23:52:39,720 INFO [http-nio-8080-exec-1] | 148 | laura.ruettershoff@adolfinum.de | false |
+2020-11-03 23:52:39,720 INFO [http-nio-8080-exec-1] | 149 | charlotte.schirmer@adolfinum.de | false |
+2020-11-03 23:52:39,720 INFO [http-nio-8080-exec-1] | 150 | lavinia.schmitz@adolfinum.de | false |
+2020-11-03 23:52:39,720 INFO [http-nio-8080-exec-1] | 151 | victor.schroers@adolfinum.de | false |
+2020-11-03 23:52:39,720 INFO [http-nio-8080-exec-1] | 152 | gerrit.schulz@adolfinum.de | false |
+2020-11-03 23:52:39,720 INFO [http-nio-8080-exec-1] | 153 | clemens.spoo@adolfinum.de | false |
+2020-11-03 23:52:39,720 INFO [http-nio-8080-exec-1] | 154 | simon.stavroulakis@adolfinum.de | false |
+2020-11-03 23:52:39,720 INFO [http-nio-8080-exec-1] | 155 | ioannis.boerner@adolfinum.de | false |
+2020-11-03 23:52:39,720 INFO [http-nio-8080-exec-1] | 156 | marwa.nafouti@adolfinum.de | false |
+2020-11-03 23:52:39,743 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1

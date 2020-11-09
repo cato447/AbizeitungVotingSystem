@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/styles/voting.css}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Wähle deine Kandidaten:</h1>
+
+    <div th:each="candidate: ${candidates}">
+        <p th:text="${candidate.id}"></p>
+        <p th:text="${candidate.name}"></p>
+        <p th:text="${candidate.votes}"></p>
+        <p th:text="${candidate.category}"></p>
+        <!-- <input type="checkbox" id="${candidate.id}" name="${candidate.name}" unchecked>
+        <label for="${candidate.id}" th:text="${candidate.name}"></label> -->
+    </div>
+</body>
+
+</html>

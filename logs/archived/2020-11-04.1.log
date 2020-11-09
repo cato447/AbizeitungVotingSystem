@@ -1,0 +1,1638 @@
+2020-11-04 00:24:42,878 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 21319 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-04 00:24:42,882 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-04 00:24:43,309 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-04 00:24:43,352 INFO [main] Finished Spring Data repository scanning in 36ms. Found 3 JPA repository interfaces.
+2020-11-04 00:24:43,897 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-04 00:24:43,905 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-04 00:24:43,905 INFO [main] Starting service [Tomcat]
+2020-11-04 00:24:43,906 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 00:24:43,976 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-04 00:24:43,976 INFO [main] Root WebApplicationContext: initialization completed in 1047 ms
+2020-11-04 00:24:44,121 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 00:24:44,153 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-04 00:24:44,232 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-04 00:24:44,291 INFO [main] HikariPool-1 - Starting...
+2020-11-04 00:24:44,594 INFO [main] HikariPool-1 - Start completed.
+2020-11-04 00:24:44,611 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-04 00:24:45,068 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 00:24:45,072 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 00:24:45,346 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 00:24:45,443 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 00:24:45,594 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-04 00:24:45,606 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-04 00:24:45,614 INFO [main] Started AbizeitungVotingSystemApplication in 2.99 seconds (JVM running for 3.415)
+2020-11-04 00:24:50,305 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-04 00:24:50,305 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-04 00:24:50,309 INFO [http-nio-8080-exec-1] Completed initialization in 4 ms
+2020-11-04 00:24:50,446 INFO [http-nio-8080-exec-1] 
+Id   E-Mail                             Vote_status  
+1    negar.barzegar@adolfinum.de        false        
+2    simon.berger@adolfinum.de          false        
+3    nicolas.cunha@adolfinum.de         false        
+4    joline.hackstein@adolfinum.de      false        
+5    philip.heckhoff@adolfinum.de       false        
+6    simon.hormes@adolfinum.de          false        
+7    benjamin.vogt@adolfinum.de         false        
+8    taycan.arslan@adolfinum.de         false        
+9    luca.boom@adolfinum.de             false        
+10   leon.borgerding@adolfinum.de       false        
+11   lukas.boy@adolfinum.de             false        
+12   lukas.corell@adolfinum.de          false        
+13   cedric.damerow@adolfinum.de        false        
+14   amelie.david@adolfinum.de          false        
+15   zeynep.efe@adolfinum.de            false        
+16   melinda.hirschelmann@adolfinum.de  false        
+17   lars.hogardt@adolfinum.de          false        
+18   malin.kalnins@adolfinum.de         false        
+19   victor.kocksnchez@adolfinum.de     false        
+20   kamil.kowalczyk@adolfinum.de       false        
+21   romyna.gurny@adolfinum.de          false        
+22   noelia.kocksnchez@adolfinum.de     false        
+23   lili.schweitzer@adolfinum.de       false        
+24   jerome.laukamp@adolfinum.de        false        
+25   elisa.bahl@adolfinum.de            false        
+26   lisa.baumeister@adolfinum.de       false        
+27   johanna.boeckmann@adolfinum.de     false        
+28   svenja.fischer@adolfinum.de        false        
+29   lena.goehlich@adolfinum.de         false        
+30   paula.haub@adolfinum.de            false        
+31   daria.horstmann@adolfinum.de       false        
+32   melina.kascha@adolfinum.de         false        
+33   pia.kleinwegen@adolfinum.de        false        
+34   lauramarie.koenig@adolfinum.de     false        
+35   yarkin.kulaksiz@adolfinum.de       false        
+36   amelie.laake@adolfinum.de          false        
+37   noemi.malaponti@adolfinum.de       false        
+38   yara.mueser@adolfinum.de           false        
+39   paul.nowack@adolfinum.de           false        
+40   luca.ofiera@adolfinum.de           false        
+41   timo.otto@adolfinum.de             false        
+42   linnea.paulukuhn@adolfinum.de      false        
+43   isabelle.schneider@adolfinum.de    false        
+44   nico.scholzen@adolfinum.de         false        
+45   manon.schroff@adolfinum.de         false        
+46   carlotta.tueckmantel@adolfinum.de  false        
+47   simon.bussmann@adolfinum.de        false        
+48   luis.erpenbach@adolfinum.de        false        
+49   meret.fass@adolfinum.de            false        
+50   anna.feldmann@adolfinum.de         false        
+51   alina.fuenderich@adolfinum.de      false        
+52   joline.gilles@adolfinum.de         false        
+53   karolina.hein@adolfinum.de         false        
+54   robin.heldt@adolfinum.de           false        
+55   annika.koch@adolfinum.de           false        
+56   dusanka.djukanovic@adolfinum.de    false        
+57   aaron.glos@adolfinum.de            false        
+58   ayseguel.guelten@adolfinum.de      false        
+59   hamza.hasoumi@adolfinum.de         false        
+60   evelyn.hofmann@adolfinum.de        false        
+61   burakmustafa.kulac@adolfinum.de    false        
+62   dominik.kwitowski@adolfinum.de     false        
+63   julia.lener@adolfinum.de           false        
+64   paula.may@adolfinum.de             false        
+65   luca.mueller@adolfinum.de          false        
+66   mathieu.mueller@adolfinum.de       false        
+67   marie.puetter@adolfinum.de         false        
+68   hendrik.herffs@adolfinum.de        false        
+69   greta.bentgens@adolfinum.de        false        
+70   sven.mittmann@adolfinum.de         false        
+71   jan.hoevel@adolfinum.de            false        
+72   tim.krichel@adolfinum.de           false        
+73   milo.lehnen@adolfinum.de           false        
+74   lewis.lehner@adolfinum.de          false        
+75   nico.lipinski@adolfinum.de         false        
+76   luise.lu@adolfinum.de              false        
+77   maike.nawarotzky@adolfinum.de      false        
+78   rabea.peters@adolfinum.de          false        
+79   patrick.preuss@adolfinum.de        false        
+80   julius.preusser@adolfinum.de       false        
+81   marie.scheidung@adolfinum.de       false        
+82   lena.schlayer@adolfinum.de         false        
+83   emma.sprenger@adolfinum.de         false        
+84   klaudia.kapala@adolfinum.de        false        
+85   gabriel.schacht@adolfinum.de       false        
+86   delia.schmitz@adolfinum.de         false        
+87   katharina.schmitz@adolfinum.de     false        
+88   laurin.severith@adolfinum.de       false        
+89   julian.sievers@adolfinum.de        false        
+90   anna.siewert@adolfinum.de          false        
+91   chiara.welter@adolfinum.de         false        
+92   kira.winzen@adolfinum.de           false        
+93   tim.zentzis@adolfinum.de           false        
+94   justus.boesken@adolfinum.de        false        
+95   finia.brinkmann@adolfinum.de       false        
+96   anesa.cavcic@adolfinum.de          false        
+97   antonia.eigemann@adolfinum.de      false        
+98   nico.hahn@adolfinum.de             false        
+99   timo.kohlmann@adolfinum.de         false        
+100  alexander.kupillas@adolfinum.de    false        
+101  alexander.neumann@adolfinum.de     false        
+102  sophie.osterloh@adolfinum.de       false        
+103  clemens.palinsky@adolfinum.de      false        
+104  oliver.palinsky@adolfinum.de       false        
+105  hendrik.pierlo@adolfinum.de        false        
+106  lilly.schmidtke@adolfinum.de       false        
+107  mara.spicker@adolfinum.de          false        
+108  anhtrung.vo@adolfinum.de           false        
+109  ben.schwarz@adolfinum.de           false        
+110  luca.urbanczyk@adolfinum.de        false        
+111  helena.neukirch@adolfinum.de       false        
+112  nikita.lauff@adolfinum.de          false        
+113  jennifer.lengard@adolfinum.de      false        
+114  julia.mueller@adolfinum.de         false        
+115  philipp.nothers@adolfinum.de       false        
+116  judith.oppenberg@adolfinum.de      false        
+117  dilan.oeztuerk@adolfinum.de        false        
+118  malo.soulier@adolfinum.de          false        
+119  mery.stern@adolfinum.de            false        
+120  nouel.verberkt@adolfinum.de        false        
+121  leon.viktora@adolfinum.de          false        
+122  pia.anthes@adolfinum.de            false        
+123  eray.arici@adolfinum.de            false        
+124  christian.beutel@adolfinum.de      false        
+125  mara.blanke@adolfinum.de           false        
+126  lilly.ventzke@adolfinum.de         false        
+127  luzi.weichert@adolfinum.de         false        
+128  moritz.weihnacht@adolfinum.de      false        
+129  leony.wittmann@adolfinum.de        false        
+130  annika.lieblang@adolfinum.de       false        
+131  leonie.wallusch@adolfinum.de       false        
+132  felix.kirsten@adolfinum.de         false        
+133  moritz.liebisch@adolfinum.de       false        
+134  christian.pickardt@adolfinum.de    false        
+135  jan.schliekmann@adolfinum.de       false        
+136  elsa.piplack@adolfinum.de          false        
+137  jolan.gerritzen@adolfinum.de       false        
+138  lorena.garau@adolfinum.de          false        
+139  matthias.karl@adolfinum.de         false        
+140  justin.kauschke@adolfinum.de       false        
+141  leonie.kramer@adolfinum.de         false        
+142  laura.kurreck@adolfinum.de         false        
+143  maya.lueck@adolfinum.de            false        
+144  sean.mccormick-silex@adolfinum.de  false        
+145  tim.mueller@adolfinum.de           false        
+146  lana.peric@adolfinum.de            false        
+147  jan.pintostrohhaeusl@adolfinum.de  false        
+148  laura.ruettershoff@adolfinum.de    false        
+149  charlotte.schirmer@adolfinum.de    false        
+150  lavinia.schmitz@adolfinum.de       false        
+151  victor.schroers@adolfinum.de       false        
+152  gerrit.schulz@adolfinum.de         false        
+153  clemens.spoo@adolfinum.de          false        
+154  simon.stavroulakis@adolfinum.de    false        
+155  ioannis.boerner@adolfinum.de       false        
+156  marwa.nafouti@adolfinum.de         false        
+
+2020-11-04 00:24:50,459 INFO [http-nio-8080-exec-1] 
+Id  Name            Votes  
+4   Greta Bentgens  0      
+5   Laura König     0      
+6   Aaron Glos      0      
+7   Lukas Boy       0      
+8   Frau Meyering   0      
+9   Frau Adams      0      
+10  Herr Petering   0      
+11  Frau Milde      0      
+12  Frau Meyer      0      
+
+2020-11-04 00:24:50,484 INFO [http-nio-8080-exec-1] 
+Id  Name                Candidates                                                          
+1   Beste/r Schüler/in  Greta Bentgens; Laura König; Aaron Glos; Lukas Boy;                 
+2   Beste/r Lehrer/in   Frau Meyering; Frau Adams; Herr Petering; Frau Milde; Frau Meyer;   
+
+2020-11-04 00:24:50,494 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-04 00:25:17,446 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 00:25:17,449 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 00:25:17,452 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-04 00:25:17,460 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-04 17:58:09,173 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 7401 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-04 17:58:09,176 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-04 17:58:09,642 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-04 17:58:09,689 INFO [main] Finished Spring Data repository scanning in 40ms. Found 3 JPA repository interfaces.
+2020-11-04 17:58:10,246 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-04 17:58:10,254 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-04 17:58:10,254 INFO [main] Starting service [Tomcat]
+2020-11-04 17:58:10,255 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 17:58:10,330 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-04 17:58:10,331 INFO [main] Root WebApplicationContext: initialization completed in 1105 ms
+2020-11-04 17:58:10,503 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 17:58:10,563 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-04 17:58:10,691 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-04 17:58:10,764 INFO [main] HikariPool-1 - Starting...
+2020-11-04 17:58:11,150 INFO [main] HikariPool-1 - Start completed.
+2020-11-04 17:58:11,172 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-04 17:58:11,676 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 17:58:11,681 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 17:58:11,979 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 17:58:12,075 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 17:58:12,263 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-04 17:58:12,276 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-04 17:58:12,284 INFO [main] Started AbizeitungVotingSystemApplication in 3.422 seconds (JVM running for 3.89)
+2020-11-04 17:58:22,073 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-04 17:58:22,073 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-04 17:58:22,078 INFO [http-nio-8080-exec-1] Completed initialization in 5 ms
+2020-11-04 17:58:22,209 INFO [http-nio-8080-exec-1] 
+Id   E-Mail                             Vote_status  
+1    negar.barzegar@adolfinum.de        false        
+2    simon.berger@adolfinum.de          false        
+3    nicolas.cunha@adolfinum.de         false        
+4    joline.hackstein@adolfinum.de      false        
+5    philip.heckhoff@adolfinum.de       false        
+6    simon.hormes@adolfinum.de          false        
+7    benjamin.vogt@adolfinum.de         false        
+8    taycan.arslan@adolfinum.de         false        
+9    luca.boom@adolfinum.de             false        
+10   leon.borgerding@adolfinum.de       false        
+11   lukas.boy@adolfinum.de             false        
+12   lukas.corell@adolfinum.de          false        
+13   cedric.damerow@adolfinum.de        false        
+14   amelie.david@adolfinum.de          false        
+15   zeynep.efe@adolfinum.de            false        
+16   melinda.hirschelmann@adolfinum.de  false        
+17   lars.hogardt@adolfinum.de          false        
+18   malin.kalnins@adolfinum.de         false        
+19   victor.kocksnchez@adolfinum.de     false        
+20   kamil.kowalczyk@adolfinum.de       false        
+21   romyna.gurny@adolfinum.de          false        
+22   noelia.kocksnchez@adolfinum.de     false        
+23   lili.schweitzer@adolfinum.de       false        
+24   jerome.laukamp@adolfinum.de        false        
+25   elisa.bahl@adolfinum.de            false        
+26   lisa.baumeister@adolfinum.de       false        
+27   johanna.boeckmann@adolfinum.de     false        
+28   svenja.fischer@adolfinum.de        false        
+29   lena.goehlich@adolfinum.de         false        
+30   paula.haub@adolfinum.de            false        
+31   daria.horstmann@adolfinum.de       false        
+32   melina.kascha@adolfinum.de         false        
+33   pia.kleinwegen@adolfinum.de        false        
+34   lauramarie.koenig@adolfinum.de     false        
+35   yarkin.kulaksiz@adolfinum.de       false        
+36   amelie.laake@adolfinum.de          false        
+37   noemi.malaponti@adolfinum.de       false        
+38   yara.mueser@adolfinum.de           false        
+39   paul.nowack@adolfinum.de           false        
+40   luca.ofiera@adolfinum.de           false        
+41   timo.otto@adolfinum.de             false        
+42   linnea.paulukuhn@adolfinum.de      false        
+43   isabelle.schneider@adolfinum.de    false        
+44   nico.scholzen@adolfinum.de         false        
+45   manon.schroff@adolfinum.de         false        
+46   carlotta.tueckmantel@adolfinum.de  false        
+47   simon.bussmann@adolfinum.de        false        
+48   luis.erpenbach@adolfinum.de        false        
+49   meret.fass@adolfinum.de            false        
+50   anna.feldmann@adolfinum.de         false        
+51   alina.fuenderich@adolfinum.de      false        
+52   joline.gilles@adolfinum.de         false        
+53   karolina.hein@adolfinum.de         false        
+54   robin.heldt@adolfinum.de           false        
+55   annika.koch@adolfinum.de           false        
+56   dusanka.djukanovic@adolfinum.de    false        
+57   aaron.glos@adolfinum.de            false        
+58   ayseguel.guelten@adolfinum.de      false        
+59   hamza.hasoumi@adolfinum.de         false        
+60   evelyn.hofmann@adolfinum.de        false        
+61   burakmustafa.kulac@adolfinum.de    false        
+62   dominik.kwitowski@adolfinum.de     false        
+63   julia.lener@adolfinum.de           false        
+64   paula.may@adolfinum.de             false        
+65   luca.mueller@adolfinum.de          false        
+66   mathieu.mueller@adolfinum.de       false        
+67   marie.puetter@adolfinum.de         false        
+68   hendrik.herffs@adolfinum.de        false        
+69   greta.bentgens@adolfinum.de        false        
+70   sven.mittmann@adolfinum.de         false        
+71   jan.hoevel@adolfinum.de            false        
+72   tim.krichel@adolfinum.de           false        
+73   milo.lehnen@adolfinum.de           false        
+74   lewis.lehner@adolfinum.de          false        
+75   nico.lipinski@adolfinum.de         false        
+76   luise.lu@adolfinum.de              false        
+77   maike.nawarotzky@adolfinum.de      false        
+78   rabea.peters@adolfinum.de          false        
+79   patrick.preuss@adolfinum.de        false        
+80   julius.preusser@adolfinum.de       false        
+81   marie.scheidung@adolfinum.de       false        
+82   lena.schlayer@adolfinum.de         false        
+83   emma.sprenger@adolfinum.de         false        
+84   klaudia.kapala@adolfinum.de        false        
+85   gabriel.schacht@adolfinum.de       false        
+86   delia.schmitz@adolfinum.de         false        
+87   katharina.schmitz@adolfinum.de     false        
+88   laurin.severith@adolfinum.de       false        
+89   julian.sievers@adolfinum.de        false        
+90   anna.siewert@adolfinum.de          false        
+91   chiara.welter@adolfinum.de         false        
+92   kira.winzen@adolfinum.de           false        
+93   tim.zentzis@adolfinum.de           false        
+94   justus.boesken@adolfinum.de        false        
+95   finia.brinkmann@adolfinum.de       false        
+96   anesa.cavcic@adolfinum.de          false        
+97   antonia.eigemann@adolfinum.de      false        
+98   nico.hahn@adolfinum.de             false        
+99   timo.kohlmann@adolfinum.de         false        
+100  alexander.kupillas@adolfinum.de    false        
+101  alexander.neumann@adolfinum.de     false        
+102  sophie.osterloh@adolfinum.de       false        
+103  clemens.palinsky@adolfinum.de      false        
+104  oliver.palinsky@adolfinum.de       false        
+105  hendrik.pierlo@adolfinum.de        false        
+106  lilly.schmidtke@adolfinum.de       false        
+107  mara.spicker@adolfinum.de          false        
+108  anhtrung.vo@adolfinum.de           false        
+109  ben.schwarz@adolfinum.de           false        
+110  luca.urbanczyk@adolfinum.de        false        
+111  helena.neukirch@adolfinum.de       false        
+112  nikita.lauff@adolfinum.de          false        
+113  jennifer.lengard@adolfinum.de      false        
+114  julia.mueller@adolfinum.de         false        
+115  philipp.nothers@adolfinum.de       false        
+116  judith.oppenberg@adolfinum.de      false        
+117  dilan.oeztuerk@adolfinum.de        false        
+118  malo.soulier@adolfinum.de          false        
+119  mery.stern@adolfinum.de            false        
+120  nouel.verberkt@adolfinum.de        false        
+121  leon.viktora@adolfinum.de          false        
+122  pia.anthes@adolfinum.de            false        
+123  eray.arici@adolfinum.de            false        
+124  christian.beutel@adolfinum.de      false        
+125  mara.blanke@adolfinum.de           false        
+126  lilly.ventzke@adolfinum.de         false        
+127  luzi.weichert@adolfinum.de         false        
+128  moritz.weihnacht@adolfinum.de      false        
+129  leony.wittmann@adolfinum.de        false        
+130  annika.lieblang@adolfinum.de       false        
+131  leonie.wallusch@adolfinum.de       false        
+132  felix.kirsten@adolfinum.de         false        
+133  moritz.liebisch@adolfinum.de       false        
+134  christian.pickardt@adolfinum.de    false        
+135  jan.schliekmann@adolfinum.de       false        
+136  elsa.piplack@adolfinum.de          false        
+137  jolan.gerritzen@adolfinum.de       false        
+138  lorena.garau@adolfinum.de          false        
+139  matthias.karl@adolfinum.de         false        
+140  justin.kauschke@adolfinum.de       false        
+141  leonie.kramer@adolfinum.de         false        
+142  laura.kurreck@adolfinum.de         false        
+143  maya.lueck@adolfinum.de            false        
+144  sean.mccormick-silex@adolfinum.de  false        
+145  tim.mueller@adolfinum.de           false        
+146  lana.peric@adolfinum.de            false        
+147  jan.pintostrohhaeusl@adolfinum.de  false        
+148  laura.ruettershoff@adolfinum.de    false        
+149  charlotte.schirmer@adolfinum.de    false        
+150  lavinia.schmitz@adolfinum.de       false        
+151  victor.schroers@adolfinum.de       false        
+152  gerrit.schulz@adolfinum.de         false        
+153  clemens.spoo@adolfinum.de          false        
+154  simon.stavroulakis@adolfinum.de    false        
+155  ioannis.boerner@adolfinum.de       false        
+156  marwa.nafouti@adolfinum.de         false        
+
+2020-11-04 17:58:22,221 INFO [http-nio-8080-exec-1] 
+Id  Name            Votes  
+4   Greta Bentgens  0      
+5   Laura König     0      
+6   Aaron Glos      0      
+7   Lukas Boy       0      
+8   Frau Meyering   0      
+9   Frau Adams      0      
+10  Herr Petering   0      
+11  Frau Milde      0      
+12  Frau Meyer      0      
+
+2020-11-04 17:58:22,241 INFO [http-nio-8080-exec-1] 
+Id  Name                Candidates                                                          
+1   Beste/r Schüler/in  Greta Bentgens; Laura König; Aaron Glos; Lukas Boy;                 
+2   Beste/r Lehrer/in   Frau Meyering; Frau Adams; Herr Petering; Frau Milde; Frau Meyer;   
+
+2020-11-04 17:58:22,249 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-04 17:58:33,536 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 17:58:33,538 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 17:58:33,540 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-04 17:58:33,550 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-04 17:58:35,354 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 7755 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-04 17:58:35,357 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-04 17:58:35,807 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-04 17:58:35,848 INFO [main] Finished Spring Data repository scanning in 36ms. Found 3 JPA repository interfaces.
+2020-11-04 17:58:36,424 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-04 17:58:36,433 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-04 17:58:36,433 INFO [main] Starting service [Tomcat]
+2020-11-04 17:58:36,434 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 17:58:36,508 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-04 17:58:36,509 INFO [main] Root WebApplicationContext: initialization completed in 1104 ms
+2020-11-04 17:58:36,682 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 17:58:36,711 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-04 17:58:36,789 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-04 17:58:36,851 INFO [main] HikariPool-1 - Starting...
+2020-11-04 17:58:37,146 INFO [main] HikariPool-1 - Start completed.
+2020-11-04 17:58:37,164 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-04 17:58:37,607 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 17:58:37,614 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 17:58:37,896 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 17:58:37,988 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 17:58:38,132 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-04 17:58:38,147 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-04 17:58:38,155 INFO [main] Started AbizeitungVotingSystemApplication in 3.058 seconds (JVM running for 3.467)
+2020-11-04 17:58:48,231 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-04 17:58:48,231 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-04 17:58:48,235 INFO [http-nio-8080-exec-1] Completed initialization in 4 ms
+2020-11-04 17:58:48,355 INFO [http-nio-8080-exec-1] 
+Id   E-Mail                             Vote_status  
+1    negar.barzegar@adolfinum.de        false        
+2    simon.berger@adolfinum.de          false        
+3    nicolas.cunha@adolfinum.de         false        
+4    joline.hackstein@adolfinum.de      false        
+5    philip.heckhoff@adolfinum.de       false        
+6    simon.hormes@adolfinum.de          false        
+7    benjamin.vogt@adolfinum.de         false        
+8    taycan.arslan@adolfinum.de         false        
+9    luca.boom@adolfinum.de             false        
+10   leon.borgerding@adolfinum.de       false        
+11   lukas.boy@adolfinum.de             false        
+12   lukas.corell@adolfinum.de          false        
+13   cedric.damerow@adolfinum.de        false        
+14   amelie.david@adolfinum.de          false        
+15   zeynep.efe@adolfinum.de            false        
+16   melinda.hirschelmann@adolfinum.de  false        
+17   lars.hogardt@adolfinum.de          false        
+18   malin.kalnins@adolfinum.de         false        
+19   victor.kocksnchez@adolfinum.de     false        
+20   kamil.kowalczyk@adolfinum.de       false        
+21   romyna.gurny@adolfinum.de          false        
+22   noelia.kocksnchez@adolfinum.de     false        
+23   lili.schweitzer@adolfinum.de       false        
+24   jerome.laukamp@adolfinum.de        false        
+25   elisa.bahl@adolfinum.de            false        
+26   lisa.baumeister@adolfinum.de       false        
+27   johanna.boeckmann@adolfinum.de     false        
+28   svenja.fischer@adolfinum.de        false        
+29   lena.goehlich@adolfinum.de         false        
+30   paula.haub@adolfinum.de            false        
+31   daria.horstmann@adolfinum.de       false        
+32   melina.kascha@adolfinum.de         false        
+33   pia.kleinwegen@adolfinum.de        false        
+34   lauramarie.koenig@adolfinum.de     false        
+35   yarkin.kulaksiz@adolfinum.de       false        
+36   amelie.laake@adolfinum.de          false        
+37   noemi.malaponti@adolfinum.de       false        
+38   yara.mueser@adolfinum.de           false        
+39   paul.nowack@adolfinum.de           false        
+40   luca.ofiera@adolfinum.de           false        
+41   timo.otto@adolfinum.de             false        
+42   linnea.paulukuhn@adolfinum.de      false        
+43   isabelle.schneider@adolfinum.de    false        
+44   nico.scholzen@adolfinum.de         false        
+45   manon.schroff@adolfinum.de         false        
+46   carlotta.tueckmantel@adolfinum.de  false        
+47   simon.bussmann@adolfinum.de        false        
+48   luis.erpenbach@adolfinum.de        false        
+49   meret.fass@adolfinum.de            false        
+50   anna.feldmann@adolfinum.de         false        
+51   alina.fuenderich@adolfinum.de      false        
+52   joline.gilles@adolfinum.de         false        
+53   karolina.hein@adolfinum.de         false        
+54   robin.heldt@adolfinum.de           false        
+55   annika.koch@adolfinum.de           false        
+56   dusanka.djukanovic@adolfinum.de    false        
+57   aaron.glos@adolfinum.de            false        
+58   ayseguel.guelten@adolfinum.de      false        
+59   hamza.hasoumi@adolfinum.de         false        
+60   evelyn.hofmann@adolfinum.de        false        
+61   burakmustafa.kulac@adolfinum.de    false        
+62   dominik.kwitowski@adolfinum.de     false        
+63   julia.lener@adolfinum.de           false        
+64   paula.may@adolfinum.de             false        
+65   luca.mueller@adolfinum.de          false        
+66   mathieu.mueller@adolfinum.de       false        
+67   marie.puetter@adolfinum.de         false        
+68   hendrik.herffs@adolfinum.de        false        
+69   greta.bentgens@adolfinum.de        false        
+70   sven.mittmann@adolfinum.de         false        
+71   jan.hoevel@adolfinum.de            false        
+72   tim.krichel@adolfinum.de           false        
+73   milo.lehnen@adolfinum.de           false        
+74   lewis.lehner@adolfinum.de          false        
+75   nico.lipinski@adolfinum.de         false        
+76   luise.lu@adolfinum.de              false        
+77   maike.nawarotzky@adolfinum.de      false        
+78   rabea.peters@adolfinum.de          false        
+79   patrick.preuss@adolfinum.de        false        
+80   julius.preusser@adolfinum.de       false        
+81   marie.scheidung@adolfinum.de       false        
+82   lena.schlayer@adolfinum.de         false        
+83   emma.sprenger@adolfinum.de         false        
+84   klaudia.kapala@adolfinum.de        false        
+85   gabriel.schacht@adolfinum.de       false        
+86   delia.schmitz@adolfinum.de         false        
+87   katharina.schmitz@adolfinum.de     false        
+88   laurin.severith@adolfinum.de       false        
+89   julian.sievers@adolfinum.de        false        
+90   anna.siewert@adolfinum.de          false        
+91   chiara.welter@adolfinum.de         false        
+92   kira.winzen@adolfinum.de           false        
+93   tim.zentzis@adolfinum.de           false        
+94   justus.boesken@adolfinum.de        false        
+95   finia.brinkmann@adolfinum.de       false        
+96   anesa.cavcic@adolfinum.de          false        
+97   antonia.eigemann@adolfinum.de      false        
+98   nico.hahn@adolfinum.de             false        
+99   timo.kohlmann@adolfinum.de         false        
+100  alexander.kupillas@adolfinum.de    false        
+101  alexander.neumann@adolfinum.de     false        
+102  sophie.osterloh@adolfinum.de       false        
+103  clemens.palinsky@adolfinum.de      false        
+104  oliver.palinsky@adolfinum.de       false        
+105  hendrik.pierlo@adolfinum.de        false        
+106  lilly.schmidtke@adolfinum.de       false        
+107  mara.spicker@adolfinum.de          false        
+108  anhtrung.vo@adolfinum.de           false        
+109  ben.schwarz@adolfinum.de           false        
+110  luca.urbanczyk@adolfinum.de        false        
+111  helena.neukirch@adolfinum.de       false        
+112  nikita.lauff@adolfinum.de          false        
+113  jennifer.lengard@adolfinum.de      false        
+114  julia.mueller@adolfinum.de         false        
+115  philipp.nothers@adolfinum.de       false        
+116  judith.oppenberg@adolfinum.de      false        
+117  dilan.oeztuerk@adolfinum.de        false        
+118  malo.soulier@adolfinum.de          false        
+119  mery.stern@adolfinum.de            false        
+120  nouel.verberkt@adolfinum.de        false        
+121  leon.viktora@adolfinum.de          false        
+122  pia.anthes@adolfinum.de            false        
+123  eray.arici@adolfinum.de            false        
+124  christian.beutel@adolfinum.de      false        
+125  mara.blanke@adolfinum.de           false        
+126  lilly.ventzke@adolfinum.de         false        
+127  luzi.weichert@adolfinum.de         false        
+128  moritz.weihnacht@adolfinum.de      false        
+129  leony.wittmann@adolfinum.de        false        
+130  annika.lieblang@adolfinum.de       false        
+131  leonie.wallusch@adolfinum.de       false        
+132  felix.kirsten@adolfinum.de         false        
+133  moritz.liebisch@adolfinum.de       false        
+134  christian.pickardt@adolfinum.de    false        
+135  jan.schliekmann@adolfinum.de       false        
+136  elsa.piplack@adolfinum.de          false        
+137  jolan.gerritzen@adolfinum.de       false        
+138  lorena.garau@adolfinum.de          false        
+139  matthias.karl@adolfinum.de         false        
+140  justin.kauschke@adolfinum.de       false        
+141  leonie.kramer@adolfinum.de         false        
+142  laura.kurreck@adolfinum.de         false        
+143  maya.lueck@adolfinum.de            false        
+144  sean.mccormick-silex@adolfinum.de  false        
+145  tim.mueller@adolfinum.de           false        
+146  lana.peric@adolfinum.de            false        
+147  jan.pintostrohhaeusl@adolfinum.de  false        
+148  laura.ruettershoff@adolfinum.de    false        
+149  charlotte.schirmer@adolfinum.de    false        
+150  lavinia.schmitz@adolfinum.de       false        
+151  victor.schroers@adolfinum.de       false        
+152  gerrit.schulz@adolfinum.de         false        
+153  clemens.spoo@adolfinum.de          false        
+154  simon.stavroulakis@adolfinum.de    false        
+155  ioannis.boerner@adolfinum.de       false        
+156  marwa.nafouti@adolfinum.de         false        
+
+2020-11-04 17:58:48,370 INFO [http-nio-8080-exec-1] 
+Id  Name            Votes  
+4   Greta Bentgens  0      
+5   Laura König     0      
+6   Aaron Glos      0      
+7   Lukas Boy       0      
+8   Frau Meyering   0      
+9   Frau Adams      0      
+10  Herr Petering   0      
+11  Frau Milde      0      
+12  Frau Meyer      0      
+
+2020-11-04 17:58:48,390 INFO [http-nio-8080-exec-1] 
+Id  Name                Candidates                                                          
+1   Beste/r Schüler/in  Greta Bentgens; Laura König; Aaron Glos; Lukas Boy;                 
+2   Beste/r Lehrer/in   Frau Meyering; Frau Adams; Herr Petering; Frau Milde; Frau Meyer;   
+
+2020-11-04 17:58:48,399 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-04 18:00:24,729 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 18:00:24,731 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 18:00:24,733 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-04 18:00:24,739 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-04 18:00:26,624 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 8515 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-04 18:00:26,627 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-04 18:00:27,119 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-04 18:00:27,179 INFO [main] Finished Spring Data repository scanning in 51ms. Found 3 JPA repository interfaces.
+2020-11-04 18:00:27,797 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-04 18:00:27,805 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-04 18:00:27,806 INFO [main] Starting service [Tomcat]
+2020-11-04 18:00:27,806 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 18:00:27,885 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-04 18:00:27,885 INFO [main] Root WebApplicationContext: initialization completed in 1205 ms
+2020-11-04 18:00:28,038 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 18:00:28,074 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-04 18:00:28,175 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-04 18:00:28,233 INFO [main] HikariPool-1 - Starting...
+2020-11-04 18:00:28,529 INFO [main] HikariPool-1 - Start completed.
+2020-11-04 18:00:28,547 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-04 18:00:29,055 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 18:00:29,060 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 18:00:29,428 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 18:00:29,521 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 18:00:29,690 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-04 18:00:29,712 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-04 18:00:29,721 INFO [main] Started AbizeitungVotingSystemApplication in 3.425 seconds (JVM running for 3.87)
+2020-11-04 18:00:53,858 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-04 18:00:53,858 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-04 18:00:53,863 INFO [http-nio-8080-exec-1] Completed initialization in 5 ms
+2020-11-04 18:00:53,978 INFO [http-nio-8080-exec-1] 
+Id   E-Mail                             Vote_status  
+1    negar.barzegar@adolfinum.de        false        
+2    simon.berger@adolfinum.de          false        
+3    nicolas.cunha@adolfinum.de         false        
+4    joline.hackstein@adolfinum.de      false        
+5    philip.heckhoff@adolfinum.de       false        
+6    simon.hormes@adolfinum.de          false        
+7    benjamin.vogt@adolfinum.de         false        
+8    taycan.arslan@adolfinum.de         false        
+9    luca.boom@adolfinum.de             false        
+10   leon.borgerding@adolfinum.de       false        
+11   lukas.boy@adolfinum.de             false        
+12   lukas.corell@adolfinum.de          false        
+13   cedric.damerow@adolfinum.de        false        
+14   amelie.david@adolfinum.de          false        
+15   zeynep.efe@adolfinum.de            false        
+16   melinda.hirschelmann@adolfinum.de  false        
+17   lars.hogardt@adolfinum.de          false        
+18   malin.kalnins@adolfinum.de         false        
+19   victor.kocksnchez@adolfinum.de     false        
+20   kamil.kowalczyk@adolfinum.de       false        
+21   romyna.gurny@adolfinum.de          false        
+22   noelia.kocksnchez@adolfinum.de     false        
+23   lili.schweitzer@adolfinum.de       false        
+24   jerome.laukamp@adolfinum.de        false        
+25   elisa.bahl@adolfinum.de            false        
+26   lisa.baumeister@adolfinum.de       false        
+27   johanna.boeckmann@adolfinum.de     false        
+28   svenja.fischer@adolfinum.de        false        
+29   lena.goehlich@adolfinum.de         false        
+30   paula.haub@adolfinum.de            false        
+31   daria.horstmann@adolfinum.de       false        
+32   melina.kascha@adolfinum.de         false        
+33   pia.kleinwegen@adolfinum.de        false        
+34   lauramarie.koenig@adolfinum.de     false        
+35   yarkin.kulaksiz@adolfinum.de       false        
+36   amelie.laake@adolfinum.de          false        
+37   noemi.malaponti@adolfinum.de       false        
+38   yara.mueser@adolfinum.de           false        
+39   paul.nowack@adolfinum.de           false        
+40   luca.ofiera@adolfinum.de           false        
+41   timo.otto@adolfinum.de             false        
+42   linnea.paulukuhn@adolfinum.de      false        
+43   isabelle.schneider@adolfinum.de    false        
+44   nico.scholzen@adolfinum.de         false        
+45   manon.schroff@adolfinum.de         false        
+46   carlotta.tueckmantel@adolfinum.de  false        
+47   simon.bussmann@adolfinum.de        false        
+48   luis.erpenbach@adolfinum.de        false        
+49   meret.fass@adolfinum.de            false        
+50   anna.feldmann@adolfinum.de         false        
+51   alina.fuenderich@adolfinum.de      false        
+52   joline.gilles@adolfinum.de         false        
+53   karolina.hein@adolfinum.de         false        
+54   robin.heldt@adolfinum.de           false        
+55   annika.koch@adolfinum.de           false        
+56   dusanka.djukanovic@adolfinum.de    false        
+57   aaron.glos@adolfinum.de            false        
+58   ayseguel.guelten@adolfinum.de      false        
+59   hamza.hasoumi@adolfinum.de         false        
+60   evelyn.hofmann@adolfinum.de        false        
+61   burakmustafa.kulac@adolfinum.de    false        
+62   dominik.kwitowski@adolfinum.de     false        
+63   julia.lener@adolfinum.de           false        
+64   paula.may@adolfinum.de             false        
+65   luca.mueller@adolfinum.de          false        
+66   mathieu.mueller@adolfinum.de       false        
+67   marie.puetter@adolfinum.de         false        
+68   hendrik.herffs@adolfinum.de        false        
+69   greta.bentgens@adolfinum.de        false        
+70   sven.mittmann@adolfinum.de         false        
+71   jan.hoevel@adolfinum.de            false        
+72   tim.krichel@adolfinum.de           false        
+73   milo.lehnen@adolfinum.de           false        
+74   lewis.lehner@adolfinum.de          false        
+75   nico.lipinski@adolfinum.de         false        
+76   luise.lu@adolfinum.de              false        
+77   maike.nawarotzky@adolfinum.de      false        
+78   rabea.peters@adolfinum.de          false        
+79   patrick.preuss@adolfinum.de        false        
+80   julius.preusser@adolfinum.de       false        
+81   marie.scheidung@adolfinum.de       false        
+82   lena.schlayer@adolfinum.de         false        
+83   emma.sprenger@adolfinum.de         false        
+84   klaudia.kapala@adolfinum.de        false        
+85   gabriel.schacht@adolfinum.de       false        
+86   delia.schmitz@adolfinum.de         false        
+87   katharina.schmitz@adolfinum.de     false        
+88   laurin.severith@adolfinum.de       false        
+89   julian.sievers@adolfinum.de        false        
+90   anna.siewert@adolfinum.de          false        
+91   chiara.welter@adolfinum.de         false        
+92   kira.winzen@adolfinum.de           false        
+93   tim.zentzis@adolfinum.de           false        
+94   justus.boesken@adolfinum.de        false        
+95   finia.brinkmann@adolfinum.de       false        
+96   anesa.cavcic@adolfinum.de          false        
+97   antonia.eigemann@adolfinum.de      false        
+98   nico.hahn@adolfinum.de             false        
+99   timo.kohlmann@adolfinum.de         false        
+100  alexander.kupillas@adolfinum.de    false        
+101  alexander.neumann@adolfinum.de     false        
+102  sophie.osterloh@adolfinum.de       false        
+103  clemens.palinsky@adolfinum.de      false        
+104  oliver.palinsky@adolfinum.de       false        
+105  hendrik.pierlo@adolfinum.de        false        
+106  lilly.schmidtke@adolfinum.de       false        
+107  mara.spicker@adolfinum.de          false        
+108  anhtrung.vo@adolfinum.de           false        
+109  ben.schwarz@adolfinum.de           false        
+110  luca.urbanczyk@adolfinum.de        false        
+111  helena.neukirch@adolfinum.de       false        
+112  nikita.lauff@adolfinum.de          false        
+113  jennifer.lengard@adolfinum.de      false        
+114  julia.mueller@adolfinum.de         false        
+115  philipp.nothers@adolfinum.de       false        
+116  judith.oppenberg@adolfinum.de      false        
+117  dilan.oeztuerk@adolfinum.de        false        
+118  malo.soulier@adolfinum.de          false        
+119  mery.stern@adolfinum.de            false        
+120  nouel.verberkt@adolfinum.de        false        
+121  leon.viktora@adolfinum.de          false        
+122  pia.anthes@adolfinum.de            false        
+123  eray.arici@adolfinum.de            false        
+124  christian.beutel@adolfinum.de      false        
+125  mara.blanke@adolfinum.de           false        
+126  lilly.ventzke@adolfinum.de         false        
+127  luzi.weichert@adolfinum.de         false        
+128  moritz.weihnacht@adolfinum.de      false        
+129  leony.wittmann@adolfinum.de        false        
+130  annika.lieblang@adolfinum.de       false        
+131  leonie.wallusch@adolfinum.de       false        
+132  felix.kirsten@adolfinum.de         false        
+133  moritz.liebisch@adolfinum.de       false        
+134  christian.pickardt@adolfinum.de    false        
+135  jan.schliekmann@adolfinum.de       false        
+136  elsa.piplack@adolfinum.de          false        
+137  jolan.gerritzen@adolfinum.de       false        
+138  lorena.garau@adolfinum.de          false        
+139  matthias.karl@adolfinum.de         false        
+140  justin.kauschke@adolfinum.de       false        
+141  leonie.kramer@adolfinum.de         false        
+142  laura.kurreck@adolfinum.de         false        
+143  maya.lueck@adolfinum.de            false        
+144  sean.mccormick-silex@adolfinum.de  false        
+145  tim.mueller@adolfinum.de           false        
+146  lana.peric@adolfinum.de            false        
+147  jan.pintostrohhaeusl@adolfinum.de  false        
+148  laura.ruettershoff@adolfinum.de    false        
+149  charlotte.schirmer@adolfinum.de    false        
+150  lavinia.schmitz@adolfinum.de       false        
+151  victor.schroers@adolfinum.de       false        
+152  gerrit.schulz@adolfinum.de         false        
+153  clemens.spoo@adolfinum.de          false        
+154  simon.stavroulakis@adolfinum.de    false        
+155  ioannis.boerner@adolfinum.de       false        
+156  marwa.nafouti@adolfinum.de         false        
+
+2020-11-04 18:00:53,993 INFO [http-nio-8080-exec-1] 
+Id  Name            Votes  
+4   Greta Bentgens  0      
+5   Laura König     0      
+6   Aaron Glos      0      
+7   Lukas Boy       0      
+8   Frau Meyering   0      
+9   Frau Adams      0      
+10  Herr Petering   0      
+11  Frau Milde      0      
+12  Frau Meyer      0      
+
+2020-11-04 18:00:54,015 INFO [http-nio-8080-exec-1] 
+Id  Name                Candidates                                                          
+1   Beste/r Schüler/in  Greta Bentgens; Laura König; Aaron Glos; Lukas Boy;                 
+2   Beste/r Lehrer/in   Frau Meyering; Frau Adams; Herr Petering; Frau Milde; Frau Meyer;   
+
+2020-11-04 18:00:54,026 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-04 18:01:15,490 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 18:01:15,492 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 18:01:15,496 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-04 18:01:15,503 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-04 18:01:17,302 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 11809 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-04 18:01:17,305 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-04 18:01:17,780 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-04 18:01:17,827 INFO [main] Finished Spring Data repository scanning in 38ms. Found 3 JPA repository interfaces.
+2020-11-04 18:01:18,418 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-04 18:01:18,426 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-04 18:01:18,426 INFO [main] Starting service [Tomcat]
+2020-11-04 18:01:18,427 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 18:01:18,521 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-04 18:01:18,522 INFO [main] Root WebApplicationContext: initialization completed in 1172 ms
+2020-11-04 18:01:18,704 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 18:01:18,734 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-04 18:01:18,820 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-04 18:01:18,878 INFO [main] HikariPool-1 - Starting...
+2020-11-04 18:01:19,219 INFO [main] HikariPool-1 - Start completed.
+2020-11-04 18:01:19,242 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-04 18:01:19,808 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 18:01:19,814 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 18:01:20,151 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 18:01:20,260 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 18:01:20,442 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-04 18:01:20,462 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-04 18:01:20,472 INFO [main] Started AbizeitungVotingSystemApplication in 3.45 seconds (JVM running for 3.883)
+2020-11-04 18:01:28,323 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-04 18:01:28,324 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-04 18:01:28,328 INFO [http-nio-8080-exec-1] Completed initialization in 4 ms
+2020-11-04 18:01:28,442 INFO [http-nio-8080-exec-1] 
+Id   E-Mail                             Vote_status  
+1    negar.barzegar@adolfinum.de        false        
+2    simon.berger@adolfinum.de          false        
+3    nicolas.cunha@adolfinum.de         false        
+4    joline.hackstein@adolfinum.de      false        
+5    philip.heckhoff@adolfinum.de       false        
+6    simon.hormes@adolfinum.de          false        
+7    benjamin.vogt@adolfinum.de         false        
+8    taycan.arslan@adolfinum.de         false        
+9    luca.boom@adolfinum.de             false        
+10   leon.borgerding@adolfinum.de       false        
+11   lukas.boy@adolfinum.de             false        
+12   lukas.corell@adolfinum.de          false        
+13   cedric.damerow@adolfinum.de        false        
+14   amelie.david@adolfinum.de          false        
+15   zeynep.efe@adolfinum.de            false        
+16   melinda.hirschelmann@adolfinum.de  false        
+17   lars.hogardt@adolfinum.de          false        
+18   malin.kalnins@adolfinum.de         false        
+19   victor.kocksnchez@adolfinum.de     false        
+20   kamil.kowalczyk@adolfinum.de       false        
+21   romyna.gurny@adolfinum.de          false        
+22   noelia.kocksnchez@adolfinum.de     false        
+23   lili.schweitzer@adolfinum.de       false        
+24   jerome.laukamp@adolfinum.de        false        
+25   elisa.bahl@adolfinum.de            false        
+26   lisa.baumeister@adolfinum.de       false        
+27   johanna.boeckmann@adolfinum.de     false        
+28   svenja.fischer@adolfinum.de        false        
+29   lena.goehlich@adolfinum.de         false        
+30   paula.haub@adolfinum.de            false        
+31   daria.horstmann@adolfinum.de       false        
+32   melina.kascha@adolfinum.de         false        
+33   pia.kleinwegen@adolfinum.de        false        
+34   lauramarie.koenig@adolfinum.de     false        
+35   yarkin.kulaksiz@adolfinum.de       false        
+36   amelie.laake@adolfinum.de          false        
+37   noemi.malaponti@adolfinum.de       false        
+38   yara.mueser@adolfinum.de           false        
+39   paul.nowack@adolfinum.de           false        
+40   luca.ofiera@adolfinum.de           false        
+41   timo.otto@adolfinum.de             false        
+42   linnea.paulukuhn@adolfinum.de      false        
+43   isabelle.schneider@adolfinum.de    false        
+44   nico.scholzen@adolfinum.de         false        
+45   manon.schroff@adolfinum.de         false        
+46   carlotta.tueckmantel@adolfinum.de  false        
+47   simon.bussmann@adolfinum.de        false        
+48   luis.erpenbach@adolfinum.de        false        
+49   meret.fass@adolfinum.de            false        
+50   anna.feldmann@adolfinum.de         false        
+51   alina.fuenderich@adolfinum.de      false        
+52   joline.gilles@adolfinum.de         false        
+53   karolina.hein@adolfinum.de         false        
+54   robin.heldt@adolfinum.de           false        
+55   annika.koch@adolfinum.de           false        
+56   dusanka.djukanovic@adolfinum.de    false        
+57   aaron.glos@adolfinum.de            false        
+58   ayseguel.guelten@adolfinum.de      false        
+59   hamza.hasoumi@adolfinum.de         false        
+60   evelyn.hofmann@adolfinum.de        false        
+61   burakmustafa.kulac@adolfinum.de    false        
+62   dominik.kwitowski@adolfinum.de     false        
+63   julia.lener@adolfinum.de           false        
+64   paula.may@adolfinum.de             false        
+65   luca.mueller@adolfinum.de          false        
+66   mathieu.mueller@adolfinum.de       false        
+67   marie.puetter@adolfinum.de         false        
+68   hendrik.herffs@adolfinum.de        false        
+69   greta.bentgens@adolfinum.de        false        
+70   sven.mittmann@adolfinum.de         false        
+71   jan.hoevel@adolfinum.de            false        
+72   tim.krichel@adolfinum.de           false        
+73   milo.lehnen@adolfinum.de           false        
+74   lewis.lehner@adolfinum.de          false        
+75   nico.lipinski@adolfinum.de         false        
+76   luise.lu@adolfinum.de              false        
+77   maike.nawarotzky@adolfinum.de      false        
+78   rabea.peters@adolfinum.de          false        
+79   patrick.preuss@adolfinum.de        false        
+80   julius.preusser@adolfinum.de       false        
+81   marie.scheidung@adolfinum.de       false        
+82   lena.schlayer@adolfinum.de         false        
+83   emma.sprenger@adolfinum.de         false        
+84   klaudia.kapala@adolfinum.de        false        
+85   gabriel.schacht@adolfinum.de       false        
+86   delia.schmitz@adolfinum.de         false        
+87   katharina.schmitz@adolfinum.de     false        
+88   laurin.severith@adolfinum.de       false        
+89   julian.sievers@adolfinum.de        false        
+90   anna.siewert@adolfinum.de          false        
+91   chiara.welter@adolfinum.de         false        
+92   kira.winzen@adolfinum.de           false        
+93   tim.zentzis@adolfinum.de           false        
+94   justus.boesken@adolfinum.de        false        
+95   finia.brinkmann@adolfinum.de       false        
+96   anesa.cavcic@adolfinum.de          false        
+97   antonia.eigemann@adolfinum.de      false        
+98   nico.hahn@adolfinum.de             false        
+99   timo.kohlmann@adolfinum.de         false        
+100  alexander.kupillas@adolfinum.de    false        
+101  alexander.neumann@adolfinum.de     false        
+102  sophie.osterloh@adolfinum.de       false        
+103  clemens.palinsky@adolfinum.de      false        
+104  oliver.palinsky@adolfinum.de       false        
+105  hendrik.pierlo@adolfinum.de        false        
+106  lilly.schmidtke@adolfinum.de       false        
+107  mara.spicker@adolfinum.de          false        
+108  anhtrung.vo@adolfinum.de           false        
+109  ben.schwarz@adolfinum.de           false        
+110  luca.urbanczyk@adolfinum.de        false        
+111  helena.neukirch@adolfinum.de       false        
+112  nikita.lauff@adolfinum.de          false        
+113  jennifer.lengard@adolfinum.de      false        
+114  julia.mueller@adolfinum.de         false        
+115  philipp.nothers@adolfinum.de       false        
+116  judith.oppenberg@adolfinum.de      false        
+117  dilan.oeztuerk@adolfinum.de        false        
+118  malo.soulier@adolfinum.de          false        
+119  mery.stern@adolfinum.de            false        
+120  nouel.verberkt@adolfinum.de        false        
+121  leon.viktora@adolfinum.de          false        
+122  pia.anthes@adolfinum.de            false        
+123  eray.arici@adolfinum.de            false        
+124  christian.beutel@adolfinum.de      false        
+125  mara.blanke@adolfinum.de           false        
+126  lilly.ventzke@adolfinum.de         false        
+127  luzi.weichert@adolfinum.de         false        
+128  moritz.weihnacht@adolfinum.de      false        
+129  leony.wittmann@adolfinum.de        false        
+130  annika.lieblang@adolfinum.de       false        
+131  leonie.wallusch@adolfinum.de       false        
+132  felix.kirsten@adolfinum.de         false        
+133  moritz.liebisch@adolfinum.de       false        
+134  christian.pickardt@adolfinum.de    false        
+135  jan.schliekmann@adolfinum.de       false        
+136  elsa.piplack@adolfinum.de          false        
+137  jolan.gerritzen@adolfinum.de       false        
+138  lorena.garau@adolfinum.de          false        
+139  matthias.karl@adolfinum.de         false        
+140  justin.kauschke@adolfinum.de       false        
+141  leonie.kramer@adolfinum.de         false        
+142  laura.kurreck@adolfinum.de         false        
+143  maya.lueck@adolfinum.de            false        
+144  sean.mccormick-silex@adolfinum.de  false        
+145  tim.mueller@adolfinum.de           false        
+146  lana.peric@adolfinum.de            false        
+147  jan.pintostrohhaeusl@adolfinum.de  false        
+148  laura.ruettershoff@adolfinum.de    false        
+149  charlotte.schirmer@adolfinum.de    false        
+150  lavinia.schmitz@adolfinum.de       false        
+151  victor.schroers@adolfinum.de       false        
+152  gerrit.schulz@adolfinum.de         false        
+153  clemens.spoo@adolfinum.de          false        
+154  simon.stavroulakis@adolfinum.de    false        
+155  ioannis.boerner@adolfinum.de       false        
+156  marwa.nafouti@adolfinum.de         false        
+
+2020-11-04 18:01:28,454 INFO [http-nio-8080-exec-1] 
+Id  Name            Votes  
+4   Greta Bentgens  0      
+5   Laura König     0      
+6   Aaron Glos      0      
+7   Lukas Boy       0      
+8   Frau Meyering   0      
+9   Frau Adams      0      
+10  Herr Petering   0      
+11  Frau Milde      0      
+12  Frau Meyer      0      
+
+2020-11-04 18:01:28,473 INFO [http-nio-8080-exec-1] 
+Id  Name                Candidates                                                          
+1   Beste/r Schüler/in  Greta Bentgens; Laura König; Aaron Glos; Lukas Boy;                 
+2   Beste/r Lehrer/in   Frau Meyering; Frau Adams; Herr Petering; Frau Milde; Frau Meyer;   
+
+2020-11-04 18:01:28,481 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-04 18:01:57,437 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 18:01:57,440 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 18:01:57,442 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-04 18:01:57,451 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-04 18:01:59,278 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 12288 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-04 18:01:59,281 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-04 18:01:59,720 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-04 18:01:59,761 INFO [main] Finished Spring Data repository scanning in 35ms. Found 3 JPA repository interfaces.
+2020-11-04 18:02:00,347 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-04 18:02:00,355 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-04 18:02:00,356 INFO [main] Starting service [Tomcat]
+2020-11-04 18:02:00,356 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 18:02:00,425 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-04 18:02:00,426 INFO [main] Root WebApplicationContext: initialization completed in 1097 ms
+2020-11-04 18:02:00,574 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 18:02:00,604 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-04 18:02:00,692 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-04 18:02:00,751 INFO [main] HikariPool-1 - Starting...
+2020-11-04 18:02:01,060 INFO [main] HikariPool-1 - Start completed.
+2020-11-04 18:02:01,077 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-04 18:02:01,526 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 18:02:01,533 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 18:02:01,804 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 18:02:01,895 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 18:02:02,074 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-04 18:02:02,091 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-04 18:02:02,105 INFO [main] Started AbizeitungVotingSystemApplication in 3.126 seconds (JVM running for 3.526)
+2020-11-04 18:02:04,472 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-04 18:02:04,473 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-04 18:02:04,477 INFO [http-nio-8080-exec-1] Completed initialization in 4 ms
+2020-11-04 18:02:04,599 INFO [http-nio-8080-exec-1] 
+Id   E-Mail                             Vote_status  
+1    negar.barzegar@adolfinum.de        false        
+2    simon.berger@adolfinum.de          false        
+3    nicolas.cunha@adolfinum.de         false        
+4    joline.hackstein@adolfinum.de      false        
+5    philip.heckhoff@adolfinum.de       false        
+6    simon.hormes@adolfinum.de          false        
+7    benjamin.vogt@adolfinum.de         false        
+8    taycan.arslan@adolfinum.de         false        
+9    luca.boom@adolfinum.de             false        
+10   leon.borgerding@adolfinum.de       false        
+11   lukas.boy@adolfinum.de             false        
+12   lukas.corell@adolfinum.de          false        
+13   cedric.damerow@adolfinum.de        false        
+14   amelie.david@adolfinum.de          false        
+15   zeynep.efe@adolfinum.de            false        
+16   melinda.hirschelmann@adolfinum.de  false        
+17   lars.hogardt@adolfinum.de          false        
+18   malin.kalnins@adolfinum.de         false        
+19   victor.kocksnchez@adolfinum.de     false        
+20   kamil.kowalczyk@adolfinum.de       false        
+21   romyna.gurny@adolfinum.de          false        
+22   noelia.kocksnchez@adolfinum.de     false        
+23   lili.schweitzer@adolfinum.de       false        
+24   jerome.laukamp@adolfinum.de        false        
+25   elisa.bahl@adolfinum.de            false        
+26   lisa.baumeister@adolfinum.de       false        
+27   johanna.boeckmann@adolfinum.de     false        
+28   svenja.fischer@adolfinum.de        false        
+29   lena.goehlich@adolfinum.de         false        
+30   paula.haub@adolfinum.de            false        
+31   daria.horstmann@adolfinum.de       false        
+32   melina.kascha@adolfinum.de         false        
+33   pia.kleinwegen@adolfinum.de        false        
+34   lauramarie.koenig@adolfinum.de     false        
+35   yarkin.kulaksiz@adolfinum.de       false        
+36   amelie.laake@adolfinum.de          false        
+37   noemi.malaponti@adolfinum.de       false        
+38   yara.mueser@adolfinum.de           false        
+39   paul.nowack@adolfinum.de           false        
+40   luca.ofiera@adolfinum.de           false        
+41   timo.otto@adolfinum.de             false        
+42   linnea.paulukuhn@adolfinum.de      false        
+43   isabelle.schneider@adolfinum.de    false        
+44   nico.scholzen@adolfinum.de         false        
+45   manon.schroff@adolfinum.de         false        
+46   carlotta.tueckmantel@adolfinum.de  false        
+47   simon.bussmann@adolfinum.de        false        
+48   luis.erpenbach@adolfinum.de        false        
+49   meret.fass@adolfinum.de            false        
+50   anna.feldmann@adolfinum.de         false        
+51   alina.fuenderich@adolfinum.de      false        
+52   joline.gilles@adolfinum.de         false        
+53   karolina.hein@adolfinum.de         false        
+54   robin.heldt@adolfinum.de           false        
+55   annika.koch@adolfinum.de           false        
+56   dusanka.djukanovic@adolfinum.de    false        
+57   aaron.glos@adolfinum.de            false        
+58   ayseguel.guelten@adolfinum.de      false        
+59   hamza.hasoumi@adolfinum.de         false        
+60   evelyn.hofmann@adolfinum.de        false        
+61   burakmustafa.kulac@adolfinum.de    false        
+62   dominik.kwitowski@adolfinum.de     false        
+63   julia.lener@adolfinum.de           false        
+64   paula.may@adolfinum.de             false        
+65   luca.mueller@adolfinum.de          false        
+66   mathieu.mueller@adolfinum.de       false        
+67   marie.puetter@adolfinum.de         false        
+68   hendrik.herffs@adolfinum.de        false        
+69   greta.bentgens@adolfinum.de        false        
+70   sven.mittmann@adolfinum.de         false        
+71   jan.hoevel@adolfinum.de            false        
+72   tim.krichel@adolfinum.de           false        
+73   milo.lehnen@adolfinum.de           false        
+74   lewis.lehner@adolfinum.de          false        
+75   nico.lipinski@adolfinum.de         false        
+76   luise.lu@adolfinum.de              false        
+77   maike.nawarotzky@adolfinum.de      false        
+78   rabea.peters@adolfinum.de          false        
+79   patrick.preuss@adolfinum.de        false        
+80   julius.preusser@adolfinum.de       false        
+81   marie.scheidung@adolfinum.de       false        
+82   lena.schlayer@adolfinum.de         false        
+83   emma.sprenger@adolfinum.de         false        
+84   klaudia.kapala@adolfinum.de        false        
+85   gabriel.schacht@adolfinum.de       false        
+86   delia.schmitz@adolfinum.de         false        
+87   katharina.schmitz@adolfinum.de     false        
+88   laurin.severith@adolfinum.de       false        
+89   julian.sievers@adolfinum.de        false        
+90   anna.siewert@adolfinum.de          false        
+91   chiara.welter@adolfinum.de         false        
+92   kira.winzen@adolfinum.de           false        
+93   tim.zentzis@adolfinum.de           false        
+94   justus.boesken@adolfinum.de        false        
+95   finia.brinkmann@adolfinum.de       false        
+96   anesa.cavcic@adolfinum.de          false        
+97   antonia.eigemann@adolfinum.de      false        
+98   nico.hahn@adolfinum.de             false        
+99   timo.kohlmann@adolfinum.de         false        
+100  alexander.kupillas@adolfinum.de    false        
+101  alexander.neumann@adolfinum.de     false        
+102  sophie.osterloh@adolfinum.de       false        
+103  clemens.palinsky@adolfinum.de      false        
+104  oliver.palinsky@adolfinum.de       false        
+105  hendrik.pierlo@adolfinum.de        false        
+106  lilly.schmidtke@adolfinum.de       false        
+107  mara.spicker@adolfinum.de          false        
+108  anhtrung.vo@adolfinum.de           false        
+109  ben.schwarz@adolfinum.de           false        
+110  luca.urbanczyk@adolfinum.de        false        
+111  helena.neukirch@adolfinum.de       false        
+112  nikita.lauff@adolfinum.de          false        
+113  jennifer.lengard@adolfinum.de      false        
+114  julia.mueller@adolfinum.de         false        
+115  philipp.nothers@adolfinum.de       false        
+116  judith.oppenberg@adolfinum.de      false        
+117  dilan.oeztuerk@adolfinum.de        false        
+118  malo.soulier@adolfinum.de          false        
+119  mery.stern@adolfinum.de            false        
+120  nouel.verberkt@adolfinum.de        false        
+121  leon.viktora@adolfinum.de          false        
+122  pia.anthes@adolfinum.de            false        
+123  eray.arici@adolfinum.de            false        
+124  christian.beutel@adolfinum.de      false        
+125  mara.blanke@adolfinum.de           false        
+126  lilly.ventzke@adolfinum.de         false        
+127  luzi.weichert@adolfinum.de         false        
+128  moritz.weihnacht@adolfinum.de      false        
+129  leony.wittmann@adolfinum.de        false        
+130  annika.lieblang@adolfinum.de       false        
+131  leonie.wallusch@adolfinum.de       false        
+132  felix.kirsten@adolfinum.de         false        
+133  moritz.liebisch@adolfinum.de       false        
+134  christian.pickardt@adolfinum.de    false        
+135  jan.schliekmann@adolfinum.de       false        
+136  elsa.piplack@adolfinum.de          false        
+137  jolan.gerritzen@adolfinum.de       false        
+138  lorena.garau@adolfinum.de          false        
+139  matthias.karl@adolfinum.de         false        
+140  justin.kauschke@adolfinum.de       false        
+141  leonie.kramer@adolfinum.de         false        
+142  laura.kurreck@adolfinum.de         false        
+143  maya.lueck@adolfinum.de            false        
+144  sean.mccormick-silex@adolfinum.de  false        
+145  tim.mueller@adolfinum.de           false        
+146  lana.peric@adolfinum.de            false        
+147  jan.pintostrohhaeusl@adolfinum.de  false        
+148  laura.ruettershoff@adolfinum.de    false        
+149  charlotte.schirmer@adolfinum.de    false        
+150  lavinia.schmitz@adolfinum.de       false        
+151  victor.schroers@adolfinum.de       false        
+152  gerrit.schulz@adolfinum.de         false        
+153  clemens.spoo@adolfinum.de          false        
+154  simon.stavroulakis@adolfinum.de    false        
+155  ioannis.boerner@adolfinum.de       false        
+156  marwa.nafouti@adolfinum.de         false        
+
+2020-11-04 18:02:04,612 INFO [http-nio-8080-exec-1] 
+Id  Name            Votes  
+4   Greta Bentgens  0      
+5   Laura König     0      
+6   Aaron Glos      0      
+7   Lukas Boy       0      
+8   Frau Meyering   0      
+9   Frau Adams      0      
+10  Herr Petering   0      
+11  Frau Milde      0      
+12  Frau Meyer      0      
+
+2020-11-04 18:02:04,637 INFO [http-nio-8080-exec-1] 
+Id  Name                Candidates                                                          
+1   Beste/r Schüler/in  Greta Bentgens; Laura König; Aaron Glos; Lukas Boy;                 
+2   Beste/r Lehrer/in   Frau Meyering; Frau Adams; Herr Petering; Frau Milde; Frau Meyer;   
+
+2020-11-04 18:02:04,645 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-04 18:02:09,348 INFO [http-nio-8080-exec-3] 
+Id   E-Mail                             Vote_status  
+1    negar.barzegar@adolfinum.de        false        
+2    simon.berger@adolfinum.de          false        
+3    nicolas.cunha@adolfinum.de         false        
+4    joline.hackstein@adolfinum.de      false        
+5    philip.heckhoff@adolfinum.de       false        
+6    simon.hormes@adolfinum.de          false        
+7    benjamin.vogt@adolfinum.de         false        
+8    taycan.arslan@adolfinum.de         false        
+9    luca.boom@adolfinum.de             false        
+10   leon.borgerding@adolfinum.de       false        
+11   lukas.boy@adolfinum.de             false        
+12   lukas.corell@adolfinum.de          false        
+13   cedric.damerow@adolfinum.de        false        
+14   amelie.david@adolfinum.de          false        
+15   zeynep.efe@adolfinum.de            false        
+16   melinda.hirschelmann@adolfinum.de  false        
+17   lars.hogardt@adolfinum.de          false        
+18   malin.kalnins@adolfinum.de         false        
+19   victor.kocksnchez@adolfinum.de     false        
+20   kamil.kowalczyk@adolfinum.de       false        
+21   romyna.gurny@adolfinum.de          false        
+22   noelia.kocksnchez@adolfinum.de     false        
+23   lili.schweitzer@adolfinum.de       false        
+24   jerome.laukamp@adolfinum.de        false        
+25   elisa.bahl@adolfinum.de            false        
+26   lisa.baumeister@adolfinum.de       false        
+27   johanna.boeckmann@adolfinum.de     false        
+28   svenja.fischer@adolfinum.de        false        
+29   lena.goehlich@adolfinum.de         false        
+30   paula.haub@adolfinum.de            false        
+31   daria.horstmann@adolfinum.de       false        
+32   melina.kascha@adolfinum.de         false        
+33   pia.kleinwegen@adolfinum.de        false        
+34   lauramarie.koenig@adolfinum.de     false        
+35   yarkin.kulaksiz@adolfinum.de       false        
+36   amelie.laake@adolfinum.de          false        
+37   noemi.malaponti@adolfinum.de       false        
+38   yara.mueser@adolfinum.de           false        
+39   paul.nowack@adolfinum.de           false        
+40   luca.ofiera@adolfinum.de           false        
+41   timo.otto@adolfinum.de             false        
+42   linnea.paulukuhn@adolfinum.de      false        
+43   isabelle.schneider@adolfinum.de    false        
+44   nico.scholzen@adolfinum.de         false        
+45   manon.schroff@adolfinum.de         false        
+46   carlotta.tueckmantel@adolfinum.de  false        
+47   simon.bussmann@adolfinum.de        false        
+48   luis.erpenbach@adolfinum.de        false        
+49   meret.fass@adolfinum.de            false        
+50   anna.feldmann@adolfinum.de         false        
+51   alina.fuenderich@adolfinum.de      false        
+52   joline.gilles@adolfinum.de         false        
+53   karolina.hein@adolfinum.de         false        
+54   robin.heldt@adolfinum.de           false        
+55   annika.koch@adolfinum.de           false        
+56   dusanka.djukanovic@adolfinum.de    false        
+57   aaron.glos@adolfinum.de            false        
+58   ayseguel.guelten@adolfinum.de      false        
+59   hamza.hasoumi@adolfinum.de         false        
+60   evelyn.hofmann@adolfinum.de        false        
+61   burakmustafa.kulac@adolfinum.de    false        
+62   dominik.kwitowski@adolfinum.de     false        
+63   julia.lener@adolfinum.de           false        
+64   paula.may@adolfinum.de             false        
+65   luca.mueller@adolfinum.de          false        
+66   mathieu.mueller@adolfinum.de       false        
+67   marie.puetter@adolfinum.de         false        
+68   hendrik.herffs@adolfinum.de        false        
+69   greta.bentgens@adolfinum.de        false        
+70   sven.mittmann@adolfinum.de         false        
+71   jan.hoevel@adolfinum.de            false        
+72   tim.krichel@adolfinum.de           false        
+73   milo.lehnen@adolfinum.de           false        
+74   lewis.lehner@adolfinum.de          false        
+75   nico.lipinski@adolfinum.de         false        
+76   luise.lu@adolfinum.de              false        
+77   maike.nawarotzky@adolfinum.de      false        
+78   rabea.peters@adolfinum.de          false        
+79   patrick.preuss@adolfinum.de        false        
+80   julius.preusser@adolfinum.de       false        
+81   marie.scheidung@adolfinum.de       false        
+82   lena.schlayer@adolfinum.de         false        
+83   emma.sprenger@adolfinum.de         false        
+84   klaudia.kapala@adolfinum.de        false        
+85   gabriel.schacht@adolfinum.de       false        
+86   delia.schmitz@adolfinum.de         false        
+87   katharina.schmitz@adolfinum.de     false        
+88   laurin.severith@adolfinum.de       false        
+89   julian.sievers@adolfinum.de        false        
+90   anna.siewert@adolfinum.de          false        
+91   chiara.welter@adolfinum.de         false        
+92   kira.winzen@adolfinum.de           false        
+93   tim.zentzis@adolfinum.de           false        
+94   justus.boesken@adolfinum.de        false        
+95   finia.brinkmann@adolfinum.de       false        
+96   anesa.cavcic@adolfinum.de          false        
+97   antonia.eigemann@adolfinum.de      false        
+98   nico.hahn@adolfinum.de             false        
+99   timo.kohlmann@adolfinum.de         false        
+100  alexander.kupillas@adolfinum.de    false        
+101  alexander.neumann@adolfinum.de     false        
+102  sophie.osterloh@adolfinum.de       false        
+103  clemens.palinsky@adolfinum.de      false        
+104  oliver.palinsky@adolfinum.de       false        
+105  hendrik.pierlo@adolfinum.de        false        
+106  lilly.schmidtke@adolfinum.de       false        
+107  mara.spicker@adolfinum.de          false        
+108  anhtrung.vo@adolfinum.de           false        
+109  ben.schwarz@adolfinum.de           false        
+110  luca.urbanczyk@adolfinum.de        false        
+111  helena.neukirch@adolfinum.de       false        
+112  nikita.lauff@adolfinum.de          false        
+113  jennifer.lengard@adolfinum.de      false        
+114  julia.mueller@adolfinum.de         false        
+115  philipp.nothers@adolfinum.de       false        
+116  judith.oppenberg@adolfinum.de      false        
+117  dilan.oeztuerk@adolfinum.de        false        
+118  malo.soulier@adolfinum.de          false        
+119  mery.stern@adolfinum.de            false        
+120  nouel.verberkt@adolfinum.de        false        
+121  leon.viktora@adolfinum.de          false        
+122  pia.anthes@adolfinum.de            false        
+123  eray.arici@adolfinum.de            false        
+124  christian.beutel@adolfinum.de      false        
+125  mara.blanke@adolfinum.de           false        
+126  lilly.ventzke@adolfinum.de         false        
+127  luzi.weichert@adolfinum.de         false        
+128  moritz.weihnacht@adolfinum.de      false        
+129  leony.wittmann@adolfinum.de        false        
+130  annika.lieblang@adolfinum.de       false        
+131  leonie.wallusch@adolfinum.de       false        
+132  felix.kirsten@adolfinum.de         false        
+133  moritz.liebisch@adolfinum.de       false        
+134  christian.pickardt@adolfinum.de    false        
+135  jan.schliekmann@adolfinum.de       false        
+136  elsa.piplack@adolfinum.de          false        
+137  jolan.gerritzen@adolfinum.de       false        
+138  lorena.garau@adolfinum.de          false        
+139  matthias.karl@adolfinum.de         false        
+140  justin.kauschke@adolfinum.de       false        
+141  leonie.kramer@adolfinum.de         false        
+142  laura.kurreck@adolfinum.de         false        
+143  maya.lueck@adolfinum.de            false        
+144  sean.mccormick-silex@adolfinum.de  false        
+145  tim.mueller@adolfinum.de           false        
+146  lana.peric@adolfinum.de            false        
+147  jan.pintostrohhaeusl@adolfinum.de  false        
+148  laura.ruettershoff@adolfinum.de    false        
+149  charlotte.schirmer@adolfinum.de    false        
+150  lavinia.schmitz@adolfinum.de       false        
+151  victor.schroers@adolfinum.de       false        
+152  gerrit.schulz@adolfinum.de         false        
+153  clemens.spoo@adolfinum.de          false        
+154  simon.stavroulakis@adolfinum.de    false        
+155  ioannis.boerner@adolfinum.de       false        
+156  marwa.nafouti@adolfinum.de         false        
+
+2020-11-04 18:02:09,352 INFO [http-nio-8080-exec-3] 
+Id  Name            Votes  
+4   Greta Bentgens  0      
+5   Laura König     0      
+6   Aaron Glos      0      
+7   Lukas Boy       0      
+8   Frau Meyering   0      
+9   Frau Adams      0      
+10  Herr Petering   0      
+11  Frau Milde      0      
+12  Frau Meyer      0      
+
+2020-11-04 18:02:09,360 INFO [http-nio-8080-exec-3] 
+Id  Name                Candidates                                                          
+1   Beste/r Schüler/in  Greta Bentgens; Laura König; Aaron Glos; Lukas Boy;                 
+2   Beste/r Lehrer/in   Frau Meyering; Frau Adams; Herr Petering; Frau Milde; Frau Meyer;   
+
+2020-11-04 19:59:43,226 INFO [http-nio-8080-exec-6] Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030xbc0x10j0xbf0xb40xf90xef0x0400xd00xbb0xa6s0xbc0xfa0xe3%+0xb40x9cM0x96'0xab0x01F%0xec0xa20xce20x83]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:413)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2020-11-04 21:34:19,641 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 21:34:19,644 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 21:34:19,647 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-04 21:34:19,655 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-04 21:34:21,509 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 16610 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-04 21:34:21,513 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-04 21:34:22,073 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-04 21:34:22,125 INFO [main] Finished Spring Data repository scanning in 43ms. Found 3 JPA repository interfaces.
+2020-11-04 21:34:22,728 INFO [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-04 21:34:22,738 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-04 21:34:22,739 INFO [main] Starting service [Tomcat]
+2020-11-04 21:34:22,739 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 21:34:22,813 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-04 21:34:22,814 INFO [main] Root WebApplicationContext: initialization completed in 1248 ms
+2020-11-04 21:34:23,003 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 21:34:23,033 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-04 21:34:23,121 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-04 21:34:23,179 INFO [main] HikariPool-1 - Starting...
+2020-11-04 21:34:23,509 INFO [main] HikariPool-1 - Start completed.
+2020-11-04 21:34:23,527 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-04 21:34:24,004 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 21:34:24,012 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 21:34:24,333 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 21:34:24,440 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 21:34:24,661 INFO [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-04 21:34:24,675 INFO [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-04 21:34:24,686 INFO [main] Started AbizeitungVotingSystemApplication in 3.486 seconds (JVM running for 3.893)
+2020-11-04 21:34:29,123 INFO [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-04 21:34:29,124 INFO [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-04 21:34:29,128 INFO [http-nio-8080-exec-1] Completed initialization in 4 ms
+2020-11-04 21:34:29,305 INFO [http-nio-8080-exec-1] 
+Id   E-Mail                             Vote_status  
+1    negar.barzegar@adolfinum.de        false        
+2    simon.berger@adolfinum.de          false        
+3    nicolas.cunha@adolfinum.de         false        
+4    joline.hackstein@adolfinum.de      false        
+5    philip.heckhoff@adolfinum.de       false        
+6    simon.hormes@adolfinum.de          false        
+7    benjamin.vogt@adolfinum.de         false        
+8    taycan.arslan@adolfinum.de         false        
+9    luca.boom@adolfinum.de             false        
+10   leon.borgerding@adolfinum.de       false        
+11   lukas.boy@adolfinum.de             false        
+12   lukas.corell@adolfinum.de          false        
+13   cedric.damerow@adolfinum.de        false        
+14   amelie.david@adolfinum.de          false        
+15   zeynep.efe@adolfinum.de            false        
+16   melinda.hirschelmann@adolfinum.de  false        
+17   lars.hogardt@adolfinum.de          false        
+18   malin.kalnins@adolfinum.de         false        
+19   victor.kocksnchez@adolfinum.de     false        
+20   kamil.kowalczyk@adolfinum.de       false        
+21   romyna.gurny@adolfinum.de          false        
+22   noelia.kocksnchez@adolfinum.de     false        
+23   lili.schweitzer@adolfinum.de       false        
+24   jerome.laukamp@adolfinum.de        false        
+25   elisa.bahl@adolfinum.de            false        
+26   lisa.baumeister@adolfinum.de       false        
+27   johanna.boeckmann@adolfinum.de     false        
+28   svenja.fischer@adolfinum.de        false        
+29   lena.goehlich@adolfinum.de         false        
+30   paula.haub@adolfinum.de            false        
+31   daria.horstmann@adolfinum.de       false        
+32   melina.kascha@adolfinum.de         false        
+33   pia.kleinwegen@adolfinum.de        false        
+34   lauramarie.koenig@adolfinum.de     false        
+35   yarkin.kulaksiz@adolfinum.de       false        
+36   amelie.laake@adolfinum.de          false        
+37   noemi.malaponti@adolfinum.de       false        
+38   yara.mueser@adolfinum.de           false        
+39   paul.nowack@adolfinum.de           false        
+40   luca.ofiera@adolfinum.de           false        
+41   timo.otto@adolfinum.de             false        
+42   linnea.paulukuhn@adolfinum.de      false        
+43   isabelle.schneider@adolfinum.de    false        
+44   nico.scholzen@adolfinum.de         false        
+45   manon.schroff@adolfinum.de         false        
+46   carlotta.tueckmantel@adolfinum.de  false        
+47   simon.bussmann@adolfinum.de        false        
+48   luis.erpenbach@adolfinum.de        false        
+49   meret.fass@adolfinum.de            false        
+50   anna.feldmann@adolfinum.de         false        
+51   alina.fuenderich@adolfinum.de      false        
+52   joline.gilles@adolfinum.de         false        
+53   karolina.hein@adolfinum.de         false        
+54   robin.heldt@adolfinum.de           false        
+55   annika.koch@adolfinum.de           false        
+56   dusanka.djukanovic@adolfinum.de    false        
+57   aaron.glos@adolfinum.de            false        
+58   ayseguel.guelten@adolfinum.de      false        
+59   hamza.hasoumi@adolfinum.de         false        
+60   evelyn.hofmann@adolfinum.de        false        
+61   burakmustafa.kulac@adolfinum.de    false        
+62   dominik.kwitowski@adolfinum.de     false        
+63   julia.lener@adolfinum.de           false        
+64   paula.may@adolfinum.de             false        
+65   luca.mueller@adolfinum.de          false        
+66   mathieu.mueller@adolfinum.de       false        
+67   marie.puetter@adolfinum.de         false        
+68   hendrik.herffs@adolfinum.de        false        
+69   greta.bentgens@adolfinum.de        false        
+70   sven.mittmann@adolfinum.de         false        
+71   jan.hoevel@adolfinum.de            false        
+72   tim.krichel@adolfinum.de           false        
+73   milo.lehnen@adolfinum.de           false        
+74   lewis.lehner@adolfinum.de          false        
+75   nico.lipinski@adolfinum.de         false        
+76   luise.lu@adolfinum.de              false        
+77   maike.nawarotzky@adolfinum.de      false        
+78   rabea.peters@adolfinum.de          false        
+79   patrick.preuss@adolfinum.de        false        
+80   julius.preusser@adolfinum.de       false        
+81   marie.scheidung@adolfinum.de       false        
+82   lena.schlayer@adolfinum.de         false        
+83   emma.sprenger@adolfinum.de         false        
+84   klaudia.kapala@adolfinum.de        false        
+85   gabriel.schacht@adolfinum.de       false        
+86   delia.schmitz@adolfinum.de         false        
+87   katharina.schmitz@adolfinum.de     false        
+88   laurin.severith@adolfinum.de       false        
+89   julian.sievers@adolfinum.de        false        
+90   anna.siewert@adolfinum.de          false        
+91   chiara.welter@adolfinum.de         false        
+92   kira.winzen@adolfinum.de           false        
+93   tim.zentzis@adolfinum.de           false        
+94   justus.boesken@adolfinum.de        false        
+95   finia.brinkmann@adolfinum.de       false        
+96   anesa.cavcic@adolfinum.de          false        
+97   antonia.eigemann@adolfinum.de      false        
+98   nico.hahn@adolfinum.de             false        
+99   timo.kohlmann@adolfinum.de         false        
+100  alexander.kupillas@adolfinum.de    false        
+101  alexander.neumann@adolfinum.de     false        
+102  sophie.osterloh@adolfinum.de       false        
+103  clemens.palinsky@adolfinum.de      false        
+104  oliver.palinsky@adolfinum.de       false        
+105  hendrik.pierlo@adolfinum.de        false        
+106  lilly.schmidtke@adolfinum.de       false        
+107  mara.spicker@adolfinum.de          false        
+108  anhtrung.vo@adolfinum.de           false        
+109  ben.schwarz@adolfinum.de           false        
+110  luca.urbanczyk@adolfinum.de        false        
+111  helena.neukirch@adolfinum.de       false        
+112  nikita.lauff@adolfinum.de          false        
+113  jennifer.lengard@adolfinum.de      false        
+114  julia.mueller@adolfinum.de         false        
+115  philipp.nothers@adolfinum.de       false        
+116  judith.oppenberg@adolfinum.de      false        
+117  dilan.oeztuerk@adolfinum.de        false        
+118  malo.soulier@adolfinum.de          false        
+119  mery.stern@adolfinum.de            false        
+120  nouel.verberkt@adolfinum.de        false        
+121  leon.viktora@adolfinum.de          false        
+122  pia.anthes@adolfinum.de            false        
+123  eray.arici@adolfinum.de            false        
+124  christian.beutel@adolfinum.de      false        
+125  mara.blanke@adolfinum.de           false        
+126  lilly.ventzke@adolfinum.de         false        
+127  luzi.weichert@adolfinum.de         false        
+128  moritz.weihnacht@adolfinum.de      false        
+129  leony.wittmann@adolfinum.de        false        
+130  annika.lieblang@adolfinum.de       false        
+131  leonie.wallusch@adolfinum.de       false        
+132  felix.kirsten@adolfinum.de         false        
+133  moritz.liebisch@adolfinum.de       false        
+134  christian.pickardt@adolfinum.de    false        
+135  jan.schliekmann@adolfinum.de       false        
+136  elsa.piplack@adolfinum.de          false        
+137  jolan.gerritzen@adolfinum.de       false        
+138  lorena.garau@adolfinum.de          false        
+139  matthias.karl@adolfinum.de         false        
+140  justin.kauschke@adolfinum.de       false        
+141  leonie.kramer@adolfinum.de         false        
+142  laura.kurreck@adolfinum.de         false        
+143  maya.lueck@adolfinum.de            false        
+144  sean.mccormick-silex@adolfinum.de  false        
+145  tim.mueller@adolfinum.de           false        
+146  lana.peric@adolfinum.de            false        
+147  jan.pintostrohhaeusl@adolfinum.de  false        
+148  laura.ruettershoff@adolfinum.de    false        
+149  charlotte.schirmer@adolfinum.de    false        
+150  lavinia.schmitz@adolfinum.de       false        
+151  victor.schroers@adolfinum.de       false        
+152  gerrit.schulz@adolfinum.de         false        
+153  clemens.spoo@adolfinum.de          false        
+154  simon.stavroulakis@adolfinum.de    false        
+155  ioannis.boerner@adolfinum.de       false        
+156  marwa.nafouti@adolfinum.de         false        
+
+2020-11-04 21:34:29,323 INFO [http-nio-8080-exec-1] 
+Id  Name            Votes  
+4   Greta Bentgens  0      
+5   Laura König     0      
+6   Aaron Glos      0      
+7   Lukas Boy       0      
+8   Frau Meyering   0      
+9   Frau Adams      0      
+10  Herr Petering   0      
+11  Frau Milde      0      
+12  Frau Meyer      0      
+
+2020-11-04 21:34:29,354 INFO [http-nio-8080-exec-1] 
+Id  Name                Candidates                                                          
+1   Beste/r Schüler/in  Greta Bentgens; Laura König; Aaron Glos; Lukas Boy;                 
+2   Beste/r Lehrer/in   Frau Meyering; Frau Adams; Herr Petering; Frau Milde; Frau Meyer;   
+
+2020-11-04 21:34:29,367 INFO [http-nio-8080-exec-1] User IP: 127.0.0.1
+2020-11-04 22:56:55,432 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 22:56:55,433 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 22:56:55,436 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-04 22:56:55,440 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.

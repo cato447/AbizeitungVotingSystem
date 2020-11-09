@@ -1,0 +1,4 @@
+2020-11-08 00:27:25,859 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-08 00:27:25,861 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-08 00:27:25,863 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-08 00:27:25,868 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.

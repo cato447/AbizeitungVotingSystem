@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(44, 49, 54);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    color: whitesmoke;
+    font-size: 2em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-bottom: 5px dotted #e3e7ec;
+    border-top: 5px dotted white;
+    width: 50%;
+}
+
+form {
+    color: #3cff00;
+    font-weight: bold;
+}
