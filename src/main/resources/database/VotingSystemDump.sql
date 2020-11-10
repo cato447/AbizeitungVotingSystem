@@ -39,7 +39,7 @@ CREATE TABLE `candidates` (
 
 LOCK TABLES `candidates` WRITE;
 /*!40000 ALTER TABLE `candidates` DISABLE KEYS */;
-INSERT INTO `candidates` VALUES (1,'Greta Bentgens',0,1),(2,'Laura König',0,1),(3,'Aaron Glos',0,1),(4,'Lukas Boy',0,1),(5,'Frau Meyering',0,1),(6,'Frau Adams',0,1),(7,'Herr Petering',0,1),(8,'Frau Milde',0,1),(9,'Frau Meyer',0,1);
+INSERT INTO `candidates` VALUES (1,'Greta Bentgens',0,2),(2,'Laura König',0,2),(3,'Aaron Glos',0,2),(4,'Lukas Boy',0,2),(5,'Frau Meyering',0,2),(6,'Frau Adams',0,2),(7,'Herr Petering',0,2),(8,'Frau Milde',0,2),(9,'Frau Meyer',0,2);
 /*!40000 ALTER TABLE `candidates` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,4 +123,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-10 23:26:50
+-- Dump completed on 2020-11-10 23:34:02
