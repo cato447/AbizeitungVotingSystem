@@ -1,128 +1,106 @@
-2020-11-10 00:01:16,168 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2020-11-10 00:01:16,171 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-11-10 00:01:16,173 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2020-11-10 00:01:16,183 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2020-11-10 23:29:49,904 INFO [main] Starting AbizeitungVotingSystemApplication on coding-laptop with PID 273415 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
-2020-11-10 23:29:49,912 INFO [main] No active profile set, falling back to default profiles: default
-2020-11-10 23:29:51,345 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-11-10 23:29:51,569 INFO [main] Finished Spring Data repository scanning in 189ms. Found 3 JPA repository interfaces.
-2020-11-10 23:29:53,369 INFO [main] Tomcat initialized with port(s): 8080 (http)
-2020-11-10 23:29:53,403 INFO [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-11-10 23:29:53,417 INFO [main] Starting service [Tomcat]
-2020-11-10 23:29:53,420 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2020-11-10 23:29:53,738 INFO [main] Initializing Spring embedded WebApplicationContext
-2020-11-10 23:29:53,739 INFO [main] Root WebApplicationContext: initialization completed in 3649 ms
-2020-11-10 23:29:54,342 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-11-10 23:29:54,499 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
-2020-11-10 23:29:54,826 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-11-10 23:29:55,059 INFO [main] HikariPool-1 - Starting...
-2020-11-10 23:29:57,149 ERROR [main] HikariPool-1 - Exception during pool initialization.
-java.sql.SQLException: Access denied for user 'root'@'localhost'
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1109)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplication.main(AbizeitungVotingSystemApplication.java:12)
-2020-11-10 23:29:57,150 WARN [main] HHH000342: Could not obtain connection to query metadata : Access denied for user 'root'@'localhost'
-2020-11-10 23:29:57,155 WARN [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
-2020-11-10 23:29:57,159 INFO [main] Stopping service [Tomcat]
-2020-11-10 23:29:57,173 INFO [main] 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-11-10 23:29:57,175 ERROR [main] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1109)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplication.main(AbizeitungVotingSystemApplication.java:12)
-Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
-	... 17 common frames omitted
-Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	... 34 common frames omitted
+2020-11-11 15:42:05,011 INFO [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplicationTests], using SpringBootContextLoader
+2020-11-11 15:42:05,019 INFO [main] Could not detect default resource locations for test class [com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-11-11 15:42:05,021 INFO [main] Could not detect default configuration classes for test class [com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplicationTests]: AbizeitungVotingSystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-11-11 15:42:05,119 INFO [main] Found @SpringBootConfiguration com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplication for test class com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplicationTests
+2020-11-11 15:42:05,200 INFO [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-11-11 15:42:05,214 INFO [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@33b1c5c5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5b202a3a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@10b9db7b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@9ef8eb7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@34cdeda2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6ee660fb, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@305a0c5f, org.springframework.test.context.event.EventPublishingTestExecutionListener@4535b6d5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1ecee32c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4372b9b6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@232a7d73, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4b41e4dd, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@22ffa91a, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@74960bfa]
+2020-11-11 15:42:05,408 INFO [main] Starting AbizeitungVotingSystemApplicationTests on bitecoding-System-Product-Name with PID 34286 (started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-11 15:42:05,409 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-11 15:42:05,861 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-11 15:42:05,910 INFO [main] Finished Spring Data repository scanning in 40ms. Found 3 JPA repository interfaces.
+2020-11-11 15:42:06,537 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-11 15:42:06,597 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-11 15:42:06,720 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-11 15:42:06,805 INFO [main] HikariPool-1 - Starting...
+2020-11-11 15:42:07,229 INFO [main] HikariPool-1 - Start completed.
+2020-11-11 15:42:07,252 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-11 15:42:07,837 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-11 15:42:07,844 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-11 15:42:08,332 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-11 15:42:08,544 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-11 15:42:08,882 INFO [main] Started AbizeitungVotingSystemApplicationTests in 3.64 seconds (JVM running for 4.479)
+2020-11-11 15:42:09,061 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-11 15:42:09,063 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-11 15:42:09,066 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-11 15:42:09,073 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-11 15:42:20,142 INFO [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplicationTests], using SpringBootContextLoader
+2020-11-11 15:42:20,148 INFO [main] Could not detect default resource locations for test class [com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-11-11 15:42:20,149 INFO [main] Could not detect default configuration classes for test class [com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplicationTests]: AbizeitungVotingSystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-11-11 15:42:20,228 INFO [main] Found @SpringBootConfiguration com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplication for test class com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplicationTests
+2020-11-11 15:42:20,306 INFO [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-11-11 15:42:20,319 INFO [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@33b1c5c5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5b202a3a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@10b9db7b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@9ef8eb7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@34cdeda2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6ee660fb, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@305a0c5f, org.springframework.test.context.event.EventPublishingTestExecutionListener@4535b6d5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1ecee32c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4372b9b6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@232a7d73, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4b41e4dd, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@22ffa91a, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@74960bfa]
+2020-11-11 15:42:20,506 INFO [main] Starting AbizeitungVotingSystemApplicationTests on bitecoding-System-Product-Name with PID 34413 (started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-11 15:42:20,507 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-11 15:42:20,963 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-11 15:42:21,004 INFO [main] Finished Spring Data repository scanning in 35ms. Found 3 JPA repository interfaces.
+2020-11-11 15:42:21,603 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-11 15:42:21,636 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-11 15:42:21,737 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-11 15:42:21,807 INFO [main] HikariPool-1 - Starting...
+2020-11-11 15:42:22,149 INFO [main] HikariPool-1 - Start completed.
+2020-11-11 15:42:22,167 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-11 15:42:22,733 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-11 15:42:22,741 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-11 15:42:23,215 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-11 15:42:23,413 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-11 15:42:23,742 INFO [main] Started AbizeitungVotingSystemApplicationTests in 3.399 seconds (JVM running for 4.237)
+2020-11-11 15:42:23,905 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-11 15:42:23,907 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-11 15:42:23,909 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-11 15:42:23,917 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-11 16:24:12,172 INFO [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplicationTests], using SpringBootContextLoader
+2020-11-11 16:24:12,178 INFO [main] Could not detect default resource locations for test class [com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-11-11 16:24:12,179 INFO [main] Could not detect default configuration classes for test class [com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplicationTests]: AbizeitungVotingSystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-11-11 16:24:12,255 INFO [main] Found @SpringBootConfiguration com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplication for test class com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplicationTests
+2020-11-11 16:24:12,325 INFO [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-11-11 16:24:12,338 INFO [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@33b1c5c5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5b202a3a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@10b9db7b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@9ef8eb7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@34cdeda2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6ee660fb, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@305a0c5f, org.springframework.test.context.event.EventPublishingTestExecutionListener@4535b6d5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1ecee32c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4372b9b6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@232a7d73, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4b41e4dd, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@22ffa91a, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@74960bfa]
+2020-11-11 16:24:12,546 INFO [main] Starting AbizeitungVotingSystemApplicationTests on bitecoding-System-Product-Name with PID 40525 (started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-11 16:24:12,547 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-11 16:24:12,998 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-11 16:24:13,045 INFO [main] Finished Spring Data repository scanning in 37ms. Found 3 JPA repository interfaces.
+2020-11-11 16:24:13,711 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-11 16:24:13,745 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-11 16:24:13,830 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-11 16:24:13,903 INFO [main] HikariPool-1 - Starting...
+2020-11-11 16:24:14,245 INFO [main] HikariPool-1 - Start completed.
+2020-11-11 16:24:14,267 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-11 16:24:14,809 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-11 16:24:14,814 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-11 16:24:15,292 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-11 16:24:15,479 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-11 16:24:15,809 INFO [main] Started AbizeitungVotingSystemApplicationTests in 3.444 seconds (JVM running for 4.259)
+2020-11-11 16:24:16,006 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-11 16:24:16,009 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-11 16:24:16,011 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-11 16:24:16,023 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-11-11 16:24:34,881 INFO [main] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 40654 (/home/bitecoding/Documents/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Documents/AbizeitungVotingSystem)
+2020-11-11 16:24:34,883 INFO [main] No active profile set, falling back to default profiles: default
+2020-11-11 16:24:35,393 INFO [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-11 16:24:35,451 INFO [main] Finished Spring Data repository scanning in 49ms. Found 3 JPA repository interfaces.
+2020-11-11 16:24:36,061 INFO [main] Tomcat initialized with port(s): 8000 (http)
+2020-11-11 16:24:36,071 INFO [main] Initializing ProtocolHandler ["http-nio-8000"]
+2020-11-11 16:24:36,072 INFO [main] Starting service [Tomcat]
+2020-11-11 16:24:36,073 INFO [main] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-11 16:24:36,175 INFO [main] Initializing Spring embedded WebApplicationContext
+2020-11-11 16:24:36,176 INFO [main] Root WebApplicationContext: initialization completed in 1226 ms
+2020-11-11 16:24:36,373 INFO [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-11 16:24:36,406 INFO [main] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-11 16:24:36,497 INFO [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-11 16:24:36,557 INFO [main] HikariPool-1 - Starting...
+2020-11-11 16:24:36,916 INFO [main] HikariPool-1 - Start completed.
+2020-11-11 16:24:36,935 INFO [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-11 16:24:37,431 INFO [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-11 16:24:37,436 INFO [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-11 16:24:37,761 WARN [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-11 16:24:37,873 INFO [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-11 16:24:38,052 INFO [main] Starting ProtocolHandler ["http-nio-8000"]
+2020-11-11 16:24:38,066 INFO [main] Tomcat started on port(s): 8000 (http) with context path ''
+2020-11-11 16:24:38,076 INFO [main] Started AbizeitungVotingSystemApplication in 3.511 seconds (JVM running for 3.96)
+2020-11-11 16:24:48,118 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-11 16:24:48,119 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-11 16:24:48,125 INFO [http-nio-8000-exec-1] Completed initialization in 6 ms
+2020-11-11 16:24:48,278 INFO [http-nio-8000-exec-1] User IP: 127.0.0.1
+2020-11-11 16:56:49,334 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-11 16:56:49,336 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-11 16:56:49,338 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-11-11 16:56:49,346 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
