@@ -5,20 +5,18 @@
     <meta charset="UTF-8">
     <title>Abizeitung 2020/2021 Voting</title>
     <link th:href="@{/styles/start.css}" rel="stylesheet" />
+
 </head>
 
 <body>
-    <h2>Gebe deine Adolfinum E-Mail Adresse ein</h2>
     <form action="#" th:action="@{/vote}" method="post">
-        <input type="text" name="name" />
-        <input type="submit" value="submit" />
-    </form>
-
-    <h2>Admin-Console Passwort</h2>
-    <form action="#" th:action="@{/dashboard}" method="post">
-        <input type="text" name="name" />
-        <input type="password" name="password" />
-        <input type="submit" value="login" />
+        <input id="input-1" type="text" placeholder="name.nachname@adolfinum.de" name="name" required autofocus />
+        <label for="input-1">
+          <span class="label-text">Adolfinum E-Mail</span>
+          <div class="signup-button-trigger">Sign Up</div>
+        </label>
+        <p class="tip">Press Enter</p>
+        <div class="signup-button">Abstimmen</div>
     </form>
 </body>
 
