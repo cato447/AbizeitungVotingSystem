@@ -68,21 +68,24 @@ public class VotingController {
 
     @RequestMapping("/vote")
     public String VerifyName(@RequestParam String name, Model model) {
-        try {
-            Voter voter = voterRepository.findByEmail(name);
-            if (voter.getVote_status()) {
-                LOGGER.warn(name + " has already voted");
-                return "errors/alreadyVoted.html";
-            } else {
-                List<Candidate> candidates = candidateRepository.findAll();
-                model.addAttribute("candidates", candidates);
-                LOGGER.info(name + " is voting now");
-                return "voting.html";
+        if (name.strip().toLowerCase().matches("[a-z]+\\.[a-z]+@adolfinum+\\.de$")) {
+            try {
+                Voter voter = voterRepository.findByEmail(name.toLowerCase().strip());
+                if (voter.getVote_status()) {
+                    LOGGER.warn(name + " has already voted");
+                    return "errors/alreadyVoted.html";
+                } else {
+                    List<Candidate> candidates = candidateRepository.findAll();
+                    model.addAttribute("candidates", candidates);
+                    LOGGER.info(name + " is voting now");
+                    return "voting.html";
+                }
+            } catch (Exception e) {
+                LOGGER.error(name + " is not allowed to vote");
+                return "errors/notRegistered.html";
             }
-        } catch (Exception e) {
-            LOGGER.error(name + " is not allowed to vote");
-            return "errors/notRegistered.html";
         }
+        return "errors/wrongEmail.html";
     }
 
     @RequestMapping("/processVote")
