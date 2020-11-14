@@ -1,6 +1,7 @@
 package com.github.cato447.AbizeitungVotingSystem.controller;
 
 import com.github.cato447.AbizeitungVotingSystem.entities.Candidate;
+import com.github.cato447.AbizeitungVotingSystem.entities.Category;
 import com.github.cato447.AbizeitungVotingSystem.entities.Voter;
 import com.github.cato447.AbizeitungVotingSystem.repositories.CandidateRepository;
 import com.github.cato447.AbizeitungVotingSystem.repositories.CategoryRepository;
@@ -76,7 +77,9 @@ public class VotingController {
                     return "errors/alreadyVoted.html";
                 } else {
                     List<Candidate> candidates = candidateRepository.findAll();
+                    List<Category> categories = categoryRepository.findAll();
                     model.addAttribute("candidates", candidates);
+                    model.addAttribute("categories", categories);
                     LOGGER.info(name + " is voting now");
                     return "voting.html";
                 }
