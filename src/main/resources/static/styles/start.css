@@ -1,3 +1,11 @@
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+body {
+    background-color: rgb(44, 49, 54);
+    font-family: Arial, Helvetica, sans-serif;
+=======
+>>>>>>> Stashed changes
 input {
     position: fixed;
     top: 50%;
@@ -30,6 +38,10 @@ input::selection {
 .signup-button {
     padding: .25em 0;
     border: 0;
+<<<<<<< Updated upstream
+=======
+    border-radius: 12px;
+>>>>>>> Stashed changes
     outline: 0;
     background: #bb1515;
     color: #fff;
@@ -137,6 +149,10 @@ input:focus+label .nav-dot:before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }
 
 html,
