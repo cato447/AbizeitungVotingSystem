@@ -40,5 +40,5 @@ public class Candidate {
         return votes;
     }
 
-    public String getCategory() {return category.getName();}
+    public Category getCategory() {return category;}
 }

@@ -10,13 +10,13 @@
 <body>
     <h1>Wähle deine Kandidaten:</h1>
 
-    <div th:each="candidate: ${candidates}">
-        <p th:text="${candidate.id}"></p>
-        <p th:text="${candidate.name}"></p>
-        <p th:text="${candidate.votes}"></p>
-        <p th:text="${candidate.category}"></p>
-        <!-- <input type="checkbox" id="${candidate.id}" name="${candidate.name}" unchecked>
-        <label for="${candidate.id}" th:text="${candidate.name}"></label> -->
+    <div th:each="candidate : ${candidates}" class="candidates">
+        <h2 th:text="${candidate.category.name}"></h2>
+        <ul>
+            <li th:text="${candidate.name}"></li>
+            <li th:text="${candidate.votes}"></li>
+            <li th:text="${candidate.category.id}"></li>
+        </ul>
     </div>
 </body>
 

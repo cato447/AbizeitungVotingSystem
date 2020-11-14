@@ -85,6 +85,7 @@ public class VotingController {
                 return "errors/notRegistered.html";
             }
         }
+        LOGGER.error("Wrong input format detected: " + name);
         return "errors/wrongEmail.html";
     }
 
