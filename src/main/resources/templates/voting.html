@@ -10,6 +10,10 @@
 <body>
     <h1>Wähle deine Kandidaten:</h1>
 
+    <div th:each="category,iter : ${categories}">
+        <h2 th:text="${category.candidateList[iter.index]}"></h2>
+    </div>
+
     <div th:each="candidate : ${candidates}" class="candidates">
         <h2 th:text="${candidate.category.name}"></h2>
         <ul>
