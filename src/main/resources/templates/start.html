@@ -5,19 +5,43 @@
     <meta charset="UTF-8">
     <title>Abizeitung 2020/2021 Voting</title>
     <link th:href="@{/styles/start.css}" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
 <body>
-    <form action="#" th:action="@{/vote}" method="post">
-        <input id="input-1" type="text" placeholder="name.nachname@adolfinum.de" name="name" required autofocus />
-        <label for="input-1">
-          <span class="label-text">Adolfinum E-Mail</span>
-          <div class="signup-button-trigger">Sign Up</div>
-        </label>
-        <p class="tip">Press Enter</p>
-        <div class="signup-button">Abstimmen</div>
-    </form>
+    <script>
+        window.addEventListener("load", function() {
+            document.getElementById("signup_button").addEventListener("click", test);
+        });
+
+        function test() {
+            let input_field = document.getElementById("email_input");
+            let input = input_field.value;
+            if (!input.match("[a-z]+\\.[a-z]+@adolfinum+\\.de$")) {
+                input_field.value = "";
+                alert("Die Email-Adresse \"" + input + "\" entspricht nicht den Vorgaben");
+            }
+        }
+    </script>
+
+    <div class="userLogin">
+        <form action="#" th:action="@{/vote}" method="post">
+            <label for="email_input">
+                <span class="label-text">Adolfinum E-Mail</span>
+            </label>
+            <input class="email_input" id="email_input" type="text" placeholder="name.nachname@adolfinum.de" name="name" required autofocus />
+            <p></p>
+            <button type="submit" id="signup_button">Abstimmen</button>
+        </form>
+    </div>
+    <div class="adminLogin">
+        <form action="#" th:action="@{/dashboard}" method="post">
+            <input class="password_input" id="password_input" type="password" placeholder="••••••" name="password" required autofocus />
+            <p></p>
+            <button type="submit" id="login_button">Login</button>
+        </form>
+    </div>
 </body>
 
 </html>

@@ -87,9 +87,9 @@ public class VotingController {
                 LOGGER.error(name + " is not allowed to vote");
                 return "errors/notRegistered.html";
             }
+        } else {
+            return "errors/falseInput";
         }
-        LOGGER.error("Wrong input format detected: " + name);
-        return "errors/wrongEmail.html";
     }
 
     @RequestMapping("/processVote")
@@ -99,21 +99,20 @@ public class VotingController {
     }
 
     @RequestMapping("/dashboard")
-    public String AccessDashboard(@RequestParam String name, @RequestParam String password, Model model){
+    public String AccessDashboard(@RequestParam String password, Model model){
         try {
-            if (name.equals("admin")) {
                 if (password.equals("admin")) {
                     List<Voter> voters = voterRepository.findAll();
                     List<Candidate> candidates = candidateRepository.findAll();
+                    List<Category> categories = categoryRepository.findAll();
                     model.addAttribute("voters", voters);
-                    model.addAttribute("candidates", candidates);
+                    model.addAttribute("categories", categories);
                     return "dashboard.html";
-                } else{
+                } else {
                     LOGGER.error("Wrong Password");
                 }
                 LOGGER.error("Wrong Username");
-            }
-        } catch (Exception e){
+        } catch (Exception e) {
             LOGGER.fatal("voters table is not existing!");
         }
         return "redirect:/";
