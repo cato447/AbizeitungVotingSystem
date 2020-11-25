@@ -7,20 +7,13 @@
     <link th:href="@{/styles/voting.css}" rel="stylesheet" />
 </head>
 
-<body>
+<body class="center-screen">
     <h1>Wähle deine Kandidaten:</h1>
-
     <div th:each="category,iter : ${categories}">
-        <h2 th:text="${category.candidateList[iter.index]}"></h2>
-    </div>
-
-    <div th:each="candidate : ${candidates}" class="candidates">
-        <h2 th:text="${candidate.category.name}"></h2>
-        <ul>
-            <li th:text="${candidate.name}"></li>
-            <li th:text="${candidate.votes}"></li>
-            <li th:text="${candidate.category.id}"></li>
-        </ul>
+        <h2 class="categoryHeader" th:text="${category.name}"></h2>
+        <div th:each="candidate : ${category.candidateList}">
+            <a class="candidate" th:text="${candidate.name}"></a>
+        </div>
     </div>
 </body>
 
