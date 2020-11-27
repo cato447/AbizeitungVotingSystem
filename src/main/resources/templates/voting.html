@@ -54,6 +54,7 @@
     </div>
     <form action="#" th:action="@{/processVote}" method="post">
         <input id="voteValues" type="hidden" name="voteValues" value="" />
+        <input id="voterName" type="hidden" name="voterEmail" th:value="${name}" />
         <button type="submit" id="submitButton" onclick="getVotes()">Auswahl bestätigen</button>
     </form>
 

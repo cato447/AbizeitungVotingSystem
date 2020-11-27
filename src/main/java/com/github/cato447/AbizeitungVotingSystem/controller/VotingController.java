@@ -95,6 +95,7 @@ public class VotingController {
                     List<Category> categories = categoryRepository.findAll();
                     model.addAttribute("candidates", candidates);
                     model.addAttribute("categories", categories);
+                    model.addAttribute("name", name);
                     //sendSimpleMessage(name,"test", "test");
                     LOGGER.info(name + " is voting now");
                     return "voting.html";
@@ -109,7 +110,7 @@ public class VotingController {
     }
 
     @RequestMapping("/processVote")
-    public String ProcessVote(@RequestParam String voteValues) {
+    public String ProcessVote(@RequestParam String voteValues, @RequestParam String voterEmail) {
         String[] partVoteValues = voteValues.split(",");
         for (String s: partVoteValues) {
             long candidateID = Long.valueOf(s);
@@ -117,6 +118,10 @@ public class VotingController {
             candidate.votedFor();
             candidateRepository.save(candidate);
         }
+        Voter voter = voterRepository.findByEmail(voterEmail);
+        voter.vote();
+        voterRepository.save(voter);
+        LOGGER.info(voterEmail + " has voted!");
         return "success.html";
     }
 

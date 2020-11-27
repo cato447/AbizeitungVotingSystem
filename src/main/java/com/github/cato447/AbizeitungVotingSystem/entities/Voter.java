@@ -32,4 +32,8 @@ public class Voter {
     public Boolean getVote_status() {
         return vote_status;
     }
+
+    public void vote(){
+        vote_status = true;
+    }
 }
