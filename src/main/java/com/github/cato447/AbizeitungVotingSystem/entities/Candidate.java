@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "candidates")
-public class Candidate {
+public class Candidate implements Comparable<Candidate>{
 
     public Candidate() {
         super();
@@ -41,4 +41,16 @@ public class Candidate {
     }
 
     public Category getCategory() {return category;}
+
+    public void votedFor() {
+        this.votes += 1;
+    }
+
+    @Override
+    public int compareTo(Candidate c) {
+        if (getVotes() == null || c.getVotes() == null) {
+            return 0;
+        }
+        return c.getVotes().compareTo(getVotes());
+    }
 }

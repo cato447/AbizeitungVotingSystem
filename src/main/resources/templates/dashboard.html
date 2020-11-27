@@ -8,50 +8,56 @@
 </head>
 
 <body>
-    <h1>Wähler Liste</h1>
 
-    <div class="voterTable">
-        <table class="tableVoters" border="5">
-            <tr>
-                <th>Id</th>
-                <th>E-Mail</th>
-                <th>Vote status</th>
-            </tr>
+    <ul>
+        <li>
+            <h1>Wähler Liste</h1>
+            <div class="voterTable">
 
-            <tr th:each="voter : ${voters}">
-                <!-- If voter has voted -->
-                <div th:if="${voter.vote_status}">
-                    <td class="voted" th:text="${voter.id}"></td>
-                    <td class="voted" th:text="${voter.email}"></td>
-                    <td class="voted" th:text="${voter.vote_status}"></td>
+                <table class="tableVoters" border="5">
+                    <tr>
+                        <th>Id</th>
+                        <th>E-Mail</th>
+                        <th>Vote status</th>
+                    </tr>
+
+                    <tr th:each="voter : ${voters}">
+                        <!-- If voter has voted -->
+                        <div th:if="${voter.vote_status}">
+                            <td class="voted" th:text="${voter.id}"></td>
+                            <td class="voted" th:text="${voter.email}"></td>
+                            <td class="voted" th:text="${voter.vote_status}"></td>
+                        </div>
+
+                        <!-- ELSE -->
+                        <div th:unless="${voter.vote_status}">
+                            <td class="notVoted" th:text="${voter.id}"></td>
+                            <td class="notVoted" th:text="${voter.email}"></td>
+                            <td class="notVoted" th:text="${voter.vote_status}"></td>
+                    </tr>
+                </table>
                 </div>
+        </li>
+        <li>
+            <h1>Kandidaten Liste</h1>
+            <div th:each="category : ${categories}" th:id="${category.id}">
+                <h2 th:text="${category.name}"></h2>
+                <table class="tableCandidates" border="5">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Votes</th>
+                    </tr>
 
-                <!-- ELSE -->
-                <div th:unless="${voter.vote_status}">
-                    <td class="notVoted" th:text="${voter.id}"></td>
-                    <td class="notVoted" th:text="${voter.email}"></td>
-                    <td class="notVoted" th:text="${voter.vote_status}"></td>
-            </tr>
-        </table>
-        </div>
-
-        <h1>Kandidaten Liste</h1>
-        <div th:each="category : ${categories}" th:id="${category.id}">
-            <h2 th:text="${category.name}"></h2>
-            <table class="tableCandidates" border="5">
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Votes</th>
-                </tr>
-
-                <tr th:each="candidate: ${category.candidateList}" th:id="${category.id} + '_' + ${candidate.id}">
-                    <td th:text="${candidate.id}"></td>
-                    <td th:text="${candidate.name}"></td>
-                    <td th:text="${candidate.votes}"></td>
-                </tr>
-            </table>
-        </div>
+                    <tr th:each="candidate: ${category.candidateList}" th:id="${category.id} + '_' + ${candidate.id}">
+                        <td th:text="${candidate.id}"></td>
+                        <td th:text="${candidate.name}"></td>
+                        <td th:text="${candidate.votes}"></td>
+                    </tr>
+                </table>
+            </div>
+        </li>
+    </ul>
 </body>
 
 </html>

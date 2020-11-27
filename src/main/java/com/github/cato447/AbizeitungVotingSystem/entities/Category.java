@@ -1,6 +1,7 @@
 package com.github.cato447.AbizeitungVotingSystem.entities;
 
 import javax.persistence.*;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -34,6 +35,11 @@ public class Category {
     }
 
     public List<Candidate> getCandidateList() {
+        Collections.sort(candidateList);
         return candidateList;
+    }
+
+    public int getCandidateListSize(){
+        return candidateList.size();
     }
 }
