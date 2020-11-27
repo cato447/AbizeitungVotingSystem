@@ -5,3 +5,9 @@ td.voted {
 td.notVoted {
     background-color: #76ed6b;
 }
+
+li {
+    padding-left: 15px;
+    display: inline;
+    float: left;
+}
