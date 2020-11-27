@@ -7,14 +7,56 @@
     <link th:href="@{/styles/voting.css}" rel="stylesheet" />
 </head>
 
+
 <body class="center-screen">
+
+    <script>
+        function setColor(button) {
+            groupButtons = document.querySelectorAll('[id^= ' + button.id.split("_")[0] + ']');
+            groupButtons.forEach(button => {
+                button.style.background = 'transparent';
+                button.style.fontWeight = 'normal';
+            });
+            button.style.background = "#bb1515";
+            button.style.fontWeight = 'bold';
+        }
+
+        function rgbToHex(rgb) {
+            rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+            var color = (rgb && rgb.length === 4) ? "#" +
+                ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) +
+                ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) +
+                ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
+
+            return color;
+        }
+
+        function getVotes() {
+            groupButtons = document.querySelectorAll(".inputButton");
+            var voteIds = [];
+            groupButtons.forEach(button => {
+                if (button.style.fontWeight == 'bold') {
+                    var str = button.id.split("_");
+                    voteIds.push(str[1].replace(/\D/g, ""));
+                }
+            });
+            input = document.getElementById("voteValues");
+            input.value = voteIds;
+        }
+    </script>
+
     <h1>Wähle deine Kandidaten:</h1>
     <div th:each="category,iter : ${categories}">
         <h2 class="categoryHeader" th:text="${category.name}"></h2>
-        <div th:each="candidate : ${category.candidateList}">
-            <a class="candidate" th:text="${candidate.name}"></a>
+        <div th:each="candidate : ${category.candidateList}" class="voteDiv">
+            <button class="inputButton" th:id="|category${category.id}_candidate${candidate.id}|" th:text="${candidate.name}" th:onclick="|setColor(category${category.id}_candidate${candidate.id})|"></button>
         </div>
     </div>
+    <form action="#" th:action="@{/processVote}" method="post">
+        <input id="voteValues" type="hidden" name="voteValues" value="" />
+        <button type="submit" id="submitButton" onclick="getVotes()">Auswahl bestätigen</button>
+    </form>
+
 </body>
 
 </html>

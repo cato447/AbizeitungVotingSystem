@@ -7,6 +7,7 @@ import com.github.cato447.AbizeitungVotingSystem.repositories.CandidateRepositor
 import com.github.cato447.AbizeitungVotingSystem.repositories.CategoryRepository;
 import com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository;
 import com.github.cato447.AbizeitungVotingSystem.table.TableAction;
+import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -71,7 +72,7 @@ public class VotingController {
 
         return "start.html";
     }
-    
+
     public void sendSimpleMessage(
             String to, String subject, String text) {
         SimpleMailMessage message = new SimpleMailMessage();
@@ -94,7 +95,7 @@ public class VotingController {
                     List<Category> categories = categoryRepository.findAll();
                     model.addAttribute("candidates", candidates);
                     model.addAttribute("categories", categories);
-                    sendSimpleMessage(name,"test", "test");
+                    //sendSimpleMessage(name,"test", "test");
                     LOGGER.info(name + " is voting now");
                     return "voting.html";
                 }
@@ -108,8 +109,14 @@ public class VotingController {
     }
 
     @RequestMapping("/processVote")
-    public String ProcessVote(@RequestParam String name) {
-        LOGGER.info(name + " has voted");
+    public String ProcessVote(@RequestParam String voteValues) {
+        String[] partVoteValues = voteValues.split(",");
+        for (String s: partVoteValues) {
+            long candidateID = Long.valueOf(s);
+            Candidate candidate = candidateRepository.findById(candidateID).get();
+            candidate.votedFor();
+            candidateRepository.save(candidate);
+        }
         return "success.html";
     }
 
@@ -118,7 +125,6 @@ public class VotingController {
         try {
                 if (password.equals("admin")) {
                     List<Voter> voters = voterRepository.findAll();
-                    List<Candidate> candidates = candidateRepository.findAll();
                     List<Category> categories = categoryRepository.findAll();
                     model.addAttribute("voters", voters);
                     model.addAttribute("categories", categories);
@@ -126,7 +132,6 @@ public class VotingController {
                 } else {
                     LOGGER.error("Wrong Password");
                 }
-                LOGGER.error("Wrong Username");
         } catch (Exception e) {
             LOGGER.fatal("voters table is not existing!");
         }

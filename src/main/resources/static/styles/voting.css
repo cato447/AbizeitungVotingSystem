@@ -20,14 +20,31 @@ h2.categoryHeader {
     color: #FFF;
 }
 
-a.candidate {
-    color: #fff;
+button {
+    background: transparent;
+    border: none;
+    color: #FFF;
     font-size: .875rem;
-    font-weight: 300;
+    font-weight: normal;
     letter-spacing: .125rem;
     text-transform: uppercase;
-    text-align: right;
+    text-align: center;
     transition: opacity .25s .5s;
+}
+
+#submitButton {
+    margin-top: 5%;
+    padding: .25em 0;
+    border: 0;
+    outline: 0;
+    background: #bb1515;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 2rem;
+    width: 500px;
+    letter-spacing: .0625rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 html,
