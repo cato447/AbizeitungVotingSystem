@@ -8,6 +8,8 @@ import com.github.cato447.AbizeitungVotingSystem.repositories.CategoryRepository
 import com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository;
 import com.github.cato447.AbizeitungVotingSystem.table.TableAction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,6 +41,9 @@ public class VotingController {
     @Autowired
     CategoryRepository categoryRepository;
 
+    @Autowired
+    JavaMailSender emailSender;
+
     @RequestMapping("/")
     public String WelcomeSite() {
 
@@ -66,6 +71,15 @@ public class VotingController {
 
         return "start.html";
     }
+    
+    public void sendSimpleMessage(
+            String to, String subject, String text) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(to);
+        message.setSubject(subject);
+        message.setText(text);
+        emailSender.send(message);
+    }
 
     @RequestMapping("/vote")
     public String VerifyName(@RequestParam String name, Model model) {
@@ -80,6 +94,7 @@ public class VotingController {
                     List<Category> categories = categoryRepository.findAll();
                     model.addAttribute("candidates", candidates);
                     model.addAttribute("categories", categories);
+                    sendSimpleMessage(name,"test", "test");
                     LOGGER.info(name + " is voting now");
                     return "voting.html";
                 }
