@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <h1>Schlage für jede Kategorie eine/n Kandiadt/en vor:</h1>
+    <form action="#" th:action="@{/saveCandidates}" th:object="${form}" method="post">
+        <fieldset>
+            <table>
+                <thead>
+                    <tr>
+                        <th> Kategorie</th>
+                        <th> Kandidat/in</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="category, itemStat : ${categories}">
+                        <td th:text="${category.name}"></td>
+                        <td><input th:field="*{candidates[__${itemStat.index}__].name}" /></td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" id="submitButton" th:value="Confirm"></button>
+        </fieldset>
+    </form>
+</body>
+
+</html>

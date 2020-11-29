@@ -1,5 +1,6 @@
 package com.github.cato447.AbizeitungVotingSystem.table;
 
+import com.github.cato447.AbizeitungVotingSystem.controller.VotingController;
 import com.github.cato447.AbizeitungVotingSystem.entities.Candidate;
 import com.github.cato447.AbizeitungVotingSystem.entities.Category;
 import com.github.cato447.AbizeitungVotingSystem.entities.Voter;
@@ -19,6 +20,19 @@ public class TableAction {
 
     public void addCandidate(String name, CandidateRepository candidateRepository){
         Candidate candidate = new Candidate(name);
+        candidateRepository.save(candidate);
+    }
+
+    public void updateVotingStatus(String email, VoterRepository voterRepository){
+        Voter voter = voterRepository.findByEmail(email);
+        voter.vote();
+        voterRepository.save(voter);
+    }
+
+    public void voteFor(String id, CandidateRepository candidateRepository){
+        long candidateID = Long.valueOf(id);
+        Candidate candidate = candidateRepository.findById(candidateID).get();
+        candidate.votedFor();
         candidateRepository.save(candidate);
     }
 
@@ -53,6 +67,25 @@ public class TableAction {
         candidateRepository.saveAll(candidates);
     }
 
+    public void setUpCategories(CategoryRepository categoryRepository){
+        ArrayList<String> names = new ArrayList<>();
+        try {
+            File categoryFile = new File("src/main/resources/Categories.txt");
+            Scanner myReader = new Scanner(categoryFile);
+            ArrayList<Category> categories = new ArrayList<Category>();
+            while (myReader.hasNextLine()) {
+                String name = myReader.nextLine();
+                Category category = new Category(name);
+                categories.add(category);
+            }
+            categoryRepository.saveAll(categories);
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
     public String logCategories(CategoryRepository categoryRepository){
         List<List<String>> rows = new ArrayList<>();
         List<String> headers = Arrays.asList("Id", "Name", "Candidates");
@@ -80,12 +113,26 @@ public class TableAction {
 
     }
 
-    public String logCandidates(CandidateRepository candidateRepository){
+    public String logCandidatesRepository(CandidateRepository candidateRepository){
         List<List<String>> rows = new ArrayList<>();
         List<String> headers = Arrays.asList("Id", "Name", "Votes");
         rows.add(headers);
         for (Candidate candidate: candidateRepository.findAll()) {
             rows.add(Arrays.asList(""+candidate.getId(), candidate.getName(), ""+candidate.getVotes()));
+        }
+
+        return formatAsTable(rows);
+    }
+
+    public String logCandidates(LinkedList<Candidate> candidates, CategoryRepository categoryRepository){
+        List<List<String>> rows = new ArrayList<>();
+        List<String> headers = Arrays.asList("Id", "Name", "Votes", "Category_ID");
+        rows.add(headers);
+        long i = 1;
+        for (Candidate candidate: candidates) {
+                Category category = categoryRepository.findById(i).get();
+                rows.add(Arrays.asList("" + i, candidate.getName(), "" + 0, "" + category.getId()));
+                i++;
         }
 
         return formatAsTable(rows);

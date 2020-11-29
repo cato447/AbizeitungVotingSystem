@@ -42,6 +42,18 @@ public class Candidate implements Comparable<Candidate>{
 
     public Category getCategory() {return category;}
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setVotes(Integer votes) {
+        this.votes = votes;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     public void votedFor() {
         this.votes += 1;
     }

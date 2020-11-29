@@ -18,6 +18,11 @@ public class Category {
         this.candidateList = candidateList;
     }
 
+    public Category(String name){
+        super();
+        this.name = name;
+    }
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;

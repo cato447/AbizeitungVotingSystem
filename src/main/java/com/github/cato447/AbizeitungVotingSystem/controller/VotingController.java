@@ -3,16 +3,17 @@ package com.github.cato447.AbizeitungVotingSystem.controller;
 import com.github.cato447.AbizeitungVotingSystem.entities.Candidate;
 import com.github.cato447.AbizeitungVotingSystem.entities.Category;
 import com.github.cato447.AbizeitungVotingSystem.entities.Voter;
+import com.github.cato447.AbizeitungVotingSystem.helper.CandidateWrapper;
 import com.github.cato447.AbizeitungVotingSystem.repositories.CandidateRepository;
 import com.github.cato447.AbizeitungVotingSystem.repositories.CategoryRepository;
 import com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository;
 import com.github.cato447.AbizeitungVotingSystem.table.TableAction;
-import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -21,11 +22,14 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 @Controller
 public class VotingController {
+
+    private Boolean candidatesAdded = false;
 
     private static final Logger LOGGER = LogManager.getLogger(VotingController.class);
 
@@ -45,18 +49,28 @@ public class VotingController {
     @Autowired
     JavaMailSender emailSender;
 
-    @RequestMapping("/")
-    public String WelcomeSite() {
 
+    @PostConstruct
+    public void init() {
+        LOGGER.info("setups");
         if (voterRepository.findAll().size() == 0) {
             tableAction.setUpVoters(voterRepository);
             LOGGER.info("Voters successfully set up");
         }
+
+        if (categoryRepository.findAll().size() == 0){
+            tableAction.setUpCategories(categoryRepository);
+            LOGGER.info("Categories successfully set up");
+        }
+
         if (candidateRepository.findAll().size() == 0) {
             tableAction.setUpCandidates(candidateRepository);
             LOGGER.info("Candidates successfully set up");
         }
+    }
 
+    @RequestMapping("/")
+    public String WelcomeSite() {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes())
                 .getRequest();
 
@@ -65,11 +79,6 @@ public class VotingController {
             LOGGER.info("User IP: " + request.getRemoteAddr());
             ipAddresses.add(currentIpAddress);
         }
-
-        tableAction.logVoters(voterRepository);
-        tableAction.logCandidates(candidateRepository);
-        tableAction.logCategories(categoryRepository);
-
         return "start.html";
     }
 
@@ -91,14 +100,26 @@ public class VotingController {
                     LOGGER.warn(name + " has already voted");
                     return "errors/alreadyVoted.html";
                 } else {
-                    List<Candidate> candidates = candidateRepository.findAll();
-                    List<Category> categories = categoryRepository.findAll();
-                    model.addAttribute("candidates", candidates);
-                    model.addAttribute("categories", categories);
-                    model.addAttribute("name", name);
-                    //sendSimpleMessage(name,"test", "test");
-                    LOGGER.info(name + " is voting now");
-                    return "voting.html";
+                    if(candidatesAdded) {
+                        List<Category> categories = categoryRepository.findAll();
+                        model.addAttribute("categories", categories);
+                        model.addAttribute("name", name);
+                        //sendSimpleMessage(name,"test", "test");
+                        LOGGER.info(name + " is voting now");
+                        return "voting.html";
+                    } else {
+                        CandidateWrapper candidates = new CandidateWrapper();
+                        List<Category> categories = categoryRepository.findAll();
+
+                        for (int i = 0; i < categories.size(); i++){
+                            candidates.addCandidate(new Candidate());
+                        }
+
+                        model.addAttribute("categories", categories);
+                        model.addAttribute("form", candidates);
+                        LOGGER.info(name + " is submitting candidates");
+                        return "addingCandidates.html";
+                    }
                 }
             } catch (Exception e) {
                 LOGGER.error(name + " is not allowed to vote");
@@ -109,20 +130,21 @@ public class VotingController {
         }
     }
 
+    @RequestMapping("/saveCandidates")
+    public String candidateSaving(@ModelAttribute CandidateWrapper candidates){
+        LOGGER.info(tableAction.logCandidates(candidates.getCandidates(), categoryRepository));
+        return "candidateAddingSuccessful.html";
+    }
+
     @RequestMapping("/processVote")
     public String ProcessVote(@RequestParam String voteValues, @RequestParam String voterEmail) {
         String[] partVoteValues = voteValues.split(",");
         for (String s: partVoteValues) {
-            long candidateID = Long.valueOf(s);
-            Candidate candidate = candidateRepository.findById(candidateID).get();
-            candidate.votedFor();
-            candidateRepository.save(candidate);
+            tableAction.voteFor(s, candidateRepository);
         }
-        Voter voter = voterRepository.findByEmail(voterEmail);
-        voter.vote();
-        voterRepository.save(voter);
+        tableAction.updateVotingStatus(voterEmail,voterRepository);
         LOGGER.info(voterEmail + " has voted!");
-        return "success.html";
+        return "voteSuccessful.html";
     }
 
     @RequestMapping("/dashboard")
