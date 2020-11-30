@@ -1,11 +1,12 @@
 package com.github.cato447.AbizeitungVotingSystem.controller;
 
-import com.github.cato447.AbizeitungVotingSystem.entities.Candidate;
 import com.github.cato447.AbizeitungVotingSystem.entities.Category;
+import com.github.cato447.AbizeitungVotingSystem.entities.PossibleCandidate;
 import com.github.cato447.AbizeitungVotingSystem.entities.Voter;
-import com.github.cato447.AbizeitungVotingSystem.helper.CandidateWrapper;
+import com.github.cato447.AbizeitungVotingSystem.helper.PossibleCandidateWrapper;
 import com.github.cato447.AbizeitungVotingSystem.repositories.CandidateRepository;
 import com.github.cato447.AbizeitungVotingSystem.repositories.CategoryRepository;
+import com.github.cato447.AbizeitungVotingSystem.repositories.PossibleCandidateRepository;
 import com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository;
 import com.github.cato447.AbizeitungVotingSystem.table.TableAction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,9 @@ public class VotingController {
     CategoryRepository categoryRepository;
 
     @Autowired
+    PossibleCandidateRepository possibleCandidateRepository;
+
+    @Autowired
     JavaMailSender emailSender;
 
 
@@ -64,7 +68,7 @@ public class VotingController {
         }
 
         if (candidateRepository.findAll().size() == 0) {
-            tableAction.setUpCandidates(candidateRepository);
+            tableAction.setUpCandidates(candidateRepository, categoryRepository);
             LOGGER.info("Candidates successfully set up");
         }
     }
@@ -96,9 +100,13 @@ public class VotingController {
         if (name.strip().toLowerCase().matches("[a-z]+\\.[a-z]+@adolfinum+\\.de$")) {
             try {
                 Voter voter = voterRepository.findByEmail(name.toLowerCase().strip());
+                LOGGER.warn(voter.getEmail());
                 if (voter.getVote_status()) {
                     LOGGER.warn(name + " has already voted");
                     return "errors/alreadyVoted.html";
+                } else if (voter.getCandidatesubmit_status()) {
+                    LOGGER.warn(name + " has already submitted its candidates");
+                    return "errors/alreadysubmittedcandidates.html";
                 } else {
                     if(candidatesAdded) {
                         List<Category> categories = categoryRepository.findAll();
@@ -108,15 +116,13 @@ public class VotingController {
                         LOGGER.info(name + " is voting now");
                         return "voting.html";
                     } else {
-                        CandidateWrapper candidates = new CandidateWrapper();
+                        PossibleCandidateWrapper possibleCandidates = new PossibleCandidateWrapper();
                         List<Category> categories = categoryRepository.findAll();
-
                         for (int i = 0; i < categories.size(); i++){
-                            candidates.addCandidate(new Candidate());
+                            possibleCandidates.addPossibleCandidate(new PossibleCandidate());
                         }
-
                         model.addAttribute("categories", categories);
-                        model.addAttribute("form", candidates);
+                        model.addAttribute("form", possibleCandidates);
                         LOGGER.info(name + " is submitting candidates");
                         return "addingCandidates.html";
                     }
@@ -131,8 +137,22 @@ public class VotingController {
     }
 
     @RequestMapping("/saveCandidates")
-    public String candidateSaving(@ModelAttribute CandidateWrapper candidates){
-        LOGGER.info(tableAction.logCandidates(candidates.getCandidates(), categoryRepository));
+    public String candidateSaving(@ModelAttribute PossibleCandidateWrapper possibleCandidates){
+        LOGGER.info(tableAction.logPossibleCandidates(possibleCandidates.getPossibleCandidates(), categoryRepository));
+        LinkedList<PossibleCandidate> posCandidates = possibleCandidates.getPossibleCandidates();
+        long index = 1;
+        for (PossibleCandidate posCandidate : posCandidates){
+            if (posCandidate.getName() != "") {
+                if (possibleCandidateRepository.findByName(posCandidate.getName()) != null) {
+                    PossibleCandidate p = possibleCandidateRepository.findByName(posCandidate.getName());
+                    p.setVotes(p.getVotes() + 1);
+                } else {
+                    PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
+                    possibleCandidateRepository.save(possibleCandidate);
+                }
+            }
+            index++;
+        }
         return "candidateAddingSuccessful.html";
     }
 

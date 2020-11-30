@@ -3,9 +3,11 @@ package com.github.cato447.AbizeitungVotingSystem.table;
 import com.github.cato447.AbizeitungVotingSystem.controller.VotingController;
 import com.github.cato447.AbizeitungVotingSystem.entities.Candidate;
 import com.github.cato447.AbizeitungVotingSystem.entities.Category;
+import com.github.cato447.AbizeitungVotingSystem.entities.PossibleCandidate;
 import com.github.cato447.AbizeitungVotingSystem.entities.Voter;
 import com.github.cato447.AbizeitungVotingSystem.repositories.CandidateRepository;
 import com.github.cato447.AbizeitungVotingSystem.repositories.CategoryRepository;
+import com.github.cato447.AbizeitungVotingSystem.repositories.PossibleCandidateRepository;
 import com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository;
 
 import java.io.File;
@@ -18,9 +20,14 @@ public class TableAction {
 
     }
 
-    public void addCandidate(String name, CandidateRepository candidateRepository){
-        Candidate candidate = new Candidate(name);
+    public void addCandidate(String name, long category_id, CategoryRepository categoryRepository,CandidateRepository candidateRepository){
+        Candidate candidate = new Candidate(name, categoryRepository.findById(category_id).get());
         candidateRepository.save(candidate);
+    }
+
+    public void addPossibleCandidate(String name, long category_id, CategoryRepository categoryRepository, PossibleCandidateRepository possibleCandidateRepository){
+        PossibleCandidate possibleCandidate = new PossibleCandidate(name, categoryRepository.findById(category_id).get());
+        possibleCandidateRepository.save(possibleCandidate);
     }
 
     public void updateVotingStatus(String email, VoterRepository voterRepository){
@@ -43,7 +50,7 @@ public class TableAction {
             ArrayList<Voter> voters = new ArrayList<Voter>();
             while (myReader.hasNextLine()) {
                 String email = myReader.nextLine();
-                Voter voter = new Voter(email, false);
+                Voter voter = new Voter(email);
                 voters.add(voter);
             }
             voterRepository.saveAll(voters);
@@ -54,14 +61,14 @@ public class TableAction {
         }
     }
 
-    public void setUpCandidates(CandidateRepository candidateRepository){
+    public void setUpCandidates(CandidateRepository candidateRepository, CategoryRepository categoryRepository){
         ArrayList<String> names = new ArrayList<>();
         Collections.addAll(names, "Greta Bentgens", "Laura König", "Aaron Glos", "Lukas Boy", "Frau Meyering"
                 , "Frau Adams", "Herr Petering", "Frau Milde", "Frau Meyer");
 
         ArrayList<Candidate> candidates = new ArrayList<>();
         for (String name: names) {
-            Candidate candidate = new Candidate(name);
+            Candidate candidate = new Candidate(name, categoryRepository.findById(20l).get());
             candidates.add(candidate);
         }
         candidateRepository.saveAll(candidates);
@@ -133,6 +140,20 @@ public class TableAction {
                 Category category = categoryRepository.findById(i).get();
                 rows.add(Arrays.asList("" + i, candidate.getName(), "" + 0, "" + category.getId()));
                 i++;
+        }
+
+        return formatAsTable(rows);
+    }
+
+    public String logPossibleCandidates(LinkedList<PossibleCandidate> possibleCandidates, CategoryRepository categoryRepository){
+        List<List<String>> rows = new ArrayList<>();
+        List<String> headers = Arrays.asList("Id", "Name", "Votes", "Category_ID");
+        rows.add(headers);
+        long i = 1;
+        for (PossibleCandidate possibleCandidate: possibleCandidates) {
+            Category category = categoryRepository.findById(i).get();
+            rows.add(Arrays.asList("" + i, possibleCandidate.getName(), "" + 0, "" + category.getId()));
+            i++;
         }
 
         return formatAsTable(rows);

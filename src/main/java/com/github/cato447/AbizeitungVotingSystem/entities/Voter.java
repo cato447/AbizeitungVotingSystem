@@ -10,9 +10,10 @@ public class Voter {
         super();
     }
 
-    public Voter(String email, boolean vote_status) {
+    public Voter(String email) {
         this.email = email;
-        this.vote_status= vote_status;
+        this.vote_status = false;
+        this.candidatesubmit_status = false;
     }
 
     @Id
@@ -20,6 +21,7 @@ public class Voter {
     private Long id;
     private String email;
     private Boolean vote_status;
+    private Boolean candidatesubmit_status;
 
     public Long getId() {
         return id;
@@ -31,6 +33,10 @@ public class Voter {
 
     public Boolean getVote_status() {
         return vote_status;
+    }
+
+    public Boolean getCandidatesubmit_status() {
+        return candidatesubmit_status;
     }
 
     public void vote(){
