@@ -138,14 +138,15 @@ public class VotingController {
 
     @RequestMapping("/saveCandidates")
     public String candidateSaving(@ModelAttribute PossibleCandidateWrapper possibleCandidates){
-        LOGGER.info(tableAction.logPossibleCandidates(possibleCandidates.getPossibleCandidates(), categoryRepository));
         LinkedList<PossibleCandidate> posCandidates = possibleCandidates.getPossibleCandidates();
         long index = 1;
         for (PossibleCandidate posCandidate : posCandidates){
             if (posCandidate.getName() != "") {
-                if (possibleCandidateRepository.findByName(posCandidate.getName()) != null) {
-                    PossibleCandidate p = possibleCandidateRepository.findByName(posCandidate.getName());
+                if (possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get()) != null) {
+                    PossibleCandidate p = possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get());
+                    LOGGER.warn(p.getVotes());
                     p.setVotes(p.getVotes() + 1);
+                    possibleCandidateRepository.save(p);
                 } else {
                     PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
                     possibleCandidateRepository.save(possibleCandidate);

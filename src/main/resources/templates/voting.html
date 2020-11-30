@@ -44,20 +44,20 @@
             input.value = voteIds;
         }
     </script>
-
-    <h1>Wähle deine Kandidaten:</h1>
-    <div th:each="category,iter : ${categories}">
-        <h2 class="categoryHeader" th:text="${category.name}"></h2>
-        <div th:each="candidate : ${category.candidateList}" class="voteDiv">
-            <button class="inputButton" th:id="|category${category.id}_candidate${candidate.id}|" th:text="${candidate.name}" th:onclick="|setColor(category${category.id}_candidate${candidate.id})|"></button>
+    <div class="centered">
+        <h1>Wähle deine Kandidaten:</h1>
+        <div th:each="category,iter : ${categories}">
+            <h2 class="categoryHeader" th:text="${category.name}"></h2>
+            <div th:each="candidate : ${category.candidateList}" class="voteDiv">
+                <button class="inputButton" th:id="|category${category.id}_candidate${candidate.id}|" th:text="${candidate.name}" th:onclick="|setColor(category${category.id}_candidate${candidate.id})|"></button>
+            </div>
         </div>
+        <form action="#" th:action="@{/processVote}" method="post">
+            <input id="voteValues" type="hidden" name="voteValues" value="" />
+            <input id="voterName" type="hidden" name="voterEmail" th:value="${name}" />
+            <button type="submit" id="submitButton" onclick="getVotes()">Auswahl bestätigen</button>
+        </form>
     </div>
-    <form action="#" th:action="@{/processVote}" method="post">
-        <input id="voteValues" type="hidden" name="voteValues" value="" />
-        <input id="voterName" type="hidden" name="voterEmail" th:value="${name}" />
-        <button type="submit" id="submitButton" onclick="getVotes()">Auswahl bestätigen</button>
-    </form>
-
 </body>
 
 </html>
