@@ -5,17 +5,49 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link th:href="@{/styles/addingCandidates.css}" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body class="center-screen">
+    <script>
+        var q = 1,
+            qMax = 0;
+
+        $(function() {
+            qMax = $('#inputForm div.group').length;
+            $('#inputForm div.group').hide();
+            $('#inputForm div.group:nth-child(1)').show();
+            $('#btnNext').on('click', function(event) {
+                event.preventDefault();
+                handleClick();
+            });
+        });
+
+        function handleClick() {
+            if (q < qMax) {
+                $('#inputForm div.group:nth-child(' + q + ')').hide();
+                $('#inputForm div.group:nth-child(' + (q + 1) + ')').show();
+                if (q == (qMax - 1)) {
+                    $('#btnNext').html('Submit Answers');
+                }
+                q++;
+            } else {
+                document.getElementById("inputForm").submit();
+            }
+        }
+    </script>
+
     <div class="centered">
         <h1>Schlage für jede Kategorie eine/n Kandiadt/en vor:</h1>
-        <form action="#" th:action="@{/saveCandidates}" th:object="${form}" method="post">
-            <div th:each="category, itemStat : ${categories}">
-                <h2 class="categoryHeader" th:text="${category.name}"></h2>
-                <input th:field="*{possibleCandidates[__${itemStat.index}__].name}" />
+        <form id="inputForm" action="#" th:action="@{/saveCandidates}" th:object="${form}" method="post">
+            <div id="candidateAdding">
+                <div class="group" th:each="category, itemStat : ${categories}">
+                    <h2 class="categoryHeader" th:text="${category.name}"></h2>
+                    <input th:field="*{possibleCandidates[__${itemStat.index}__].name}" />
+                </div>
             </div>
-            <input type="submit" id="submitButton" th:value="Confirm"></button>
+            <button class="submitButton" id="btnNext" type="submit">Nächste Frage</button>
+            <input id="voterName" type="hidden" name="name" th:value="${name}" />
         </form>
     </div>
 </body>

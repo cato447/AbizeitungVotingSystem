@@ -39,7 +39,7 @@ button {
     transition: opacity .25s .5s;
 }
 
-#submitButton {
+.submitButton {
     margin-top: 5%;
     padding: .25em 0;
     border: 0;

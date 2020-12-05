@@ -42,4 +42,8 @@ public class Voter {
     public void vote(){
         vote_status = true;
     }
+
+    public void submitCandidates()  {
+        candidatesubmit_status = true;
+    }
 }

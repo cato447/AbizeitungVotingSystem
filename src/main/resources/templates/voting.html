@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link th:href="@{/styles/voting.css}" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 
 <body class="center-screen">
-
     <script>
         function setColor(button) {
-            groupButtons = document.querySelectorAll('[id^= ' + button.id.split("_")[0] + ']');
+            groupButtons = document.querySelectorAll('[id^=' + button.id.split("_")[0] + ']');
             groupButtons.forEach(button => {
                 button.style.background = 'transparent';
                 button.style.fontWeight = 'normal';
@@ -43,19 +43,48 @@
             input = document.getElementById("voteValues");
             input.value = voteIds;
         }
+
+        var q = 1,
+            qMax = 0;
+
+        $(function() {
+            qMax = $('#votingButtons div.voteDiv').length;
+            $('#votingButtons div.voteDiv').hide();
+            $('#votingButtons div.voteDiv:nth-child(1)').show();
+            $('#btnNext').on('click', function(event) {
+                event.preventDefault();
+                handleClick();
+            });
+        });
+
+        function handleClick() {
+            if (q < qMax) {
+                $('#votingButtons div.voteDiv:nth-child(' + q + ')').hide();
+                $('#votingButtons div.voteDiv:nth-child(' + (q + 1) + ')').show();
+                if (q == (qMax - 1)) {
+                    $('#btnNext').html('Submit Answers');
+                }
+                q++;
+            } else {
+                getVotes();
+                document.getElementById("myForm").submit();
+            }
+        }
     </script>
     <div class="centered">
         <h1>Wähle deine Kandidaten:</h1>
-        <div th:each="category,iter : ${categories}">
-            <h2 class="categoryHeader" th:text="${category.name}"></h2>
-            <div th:each="candidate : ${category.candidateList}" class="voteDiv">
-                <button class="inputButton" th:id="|category${category.id}_candidate${candidate.id}|" th:text="${candidate.name}" th:onclick="|setColor(category${category.id}_candidate${candidate.id})|"></button>
+        <div id="votingButtons">
+            <div th:each="category,iter : ${categories}" class="voteDiv">
+                <h2 class="categoryHeader" th:text="${category.name}"></h2>
+                <div th:each="candidate : ${category.candidateList}">
+                    <button class="inputButton" th:id="|category${category.id}_candidate${candidate.id}|" th:text="${candidate.name}" th:onclick="|setColor(category${category.id}_candidate${candidate.id})|"></button>
+                </div>
             </div>
         </div>
-        <form action="#" th:action="@{/processVote}" method="post">
+        <button class="submitButton" id="btnNext" type="submit">Nächste Frage</button>
+        <form action="#" th:action="@{/processVote}" method="post" id="myForm">
             <input id="voteValues" type="hidden" name="voteValues" value="" />
-            <input id="voterName" type="hidden" name="voterEmail" th:value="${name}" />
-            <button type="submit" id="submitButton" onclick="getVotes()">Auswahl bestätigen</button>
+            <input id="voterName" type="hidden" name="name" th:value="${name}" />
         </form>
     </div>
 </body>

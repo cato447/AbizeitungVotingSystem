@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link th:href="@{/styles/authenticate.css}" rel="stylesheet" />
+</head>
+
+<body class="center-screen">
+
+    <script>
+        const $inp = $(".passInput");
+
+        $inp.on({
+            paste(ev) { // Handle Pasting
+
+                const clip = ev.originalEvent.clipboardData.getData('text').trim();
+                // Allow numbers only
+                if (!/\d{6}/.test(clip)) return ev.preventDefault(); // Invalid. Exit here
+                // Split string to Array or characters
+                const s = [...clip];
+                // Populate inputs. Focus last input.
+                $inp.val(i => s[i]).eq(5).focus();
+            },
+            input(ev) { // Handle typing
+
+                const i = $inp.index(this);
+                if (this.value) $inp.eq(i + 1).focus();
+            },
+            keydown(ev) { // Handle Deleting
+
+                const i = $inp.index(this);
+                if (!this.value && ev.key === "Backspace" && i) $inp.eq(i - 1).focus();
+            }
+        });
+    </script>
+
+    <h1 th:text="|Dir wurde eine Email an ${name} gesendet!|"></h1>
+    <h2>Gebe den enthaltenen Authentifizierungscode ein</h2>
+    <form action="#" id="passForm" th:action="@{/vote}" method="post">
+        <input id="voterName" type="hidden" name="name" th:value="${name}" />
+        <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}" autofocus>
+        <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}">
+        <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}">
+        <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}">
+        <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}">
+        <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}">
+
+        <button type="submit" id="signup_button">Abstimmen</button>
+    </form>
+</body>
+
+
+</html>

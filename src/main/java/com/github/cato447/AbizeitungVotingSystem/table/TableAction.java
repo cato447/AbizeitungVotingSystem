@@ -1,14 +1,9 @@
 package com.github.cato447.AbizeitungVotingSystem.table;
 
 import com.github.cato447.AbizeitungVotingSystem.controller.VotingController;
-import com.github.cato447.AbizeitungVotingSystem.entities.Candidate;
-import com.github.cato447.AbizeitungVotingSystem.entities.Category;
-import com.github.cato447.AbizeitungVotingSystem.entities.PossibleCandidate;
-import com.github.cato447.AbizeitungVotingSystem.entities.Voter;
-import com.github.cato447.AbizeitungVotingSystem.repositories.CandidateRepository;
-import com.github.cato447.AbizeitungVotingSystem.repositories.CategoryRepository;
-import com.github.cato447.AbizeitungVotingSystem.repositories.PossibleCandidateRepository;
-import com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository;
+import com.github.cato447.AbizeitungVotingSystem.entities.*;
+import com.github.cato447.AbizeitungVotingSystem.repositories.*;
+import org.aspectj.weaver.loadtime.definition.LightXMLParser;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -34,6 +29,40 @@ public class TableAction {
         Voter voter = voterRepository.findByEmail(email);
         voter.vote();
         voterRepository.save(voter);
+    }
+
+    public void updateCandidatesubmit_status(String email, VoterRepository voterRepository){
+        Voter voter = voterRepository.findByEmail(email);
+        voter.submitCandidates();
+        voterRepository.save(voter);
+    }
+
+    public AuthCode generateToken(String name, String code, AuthCodesRepository authCodesRepository) {
+        AuthCode authCode = new AuthCode(name, code);
+        if (authCodesRepository.findByName(authCode.getName()) != null) {
+            authCodesRepository.findByName(authCode.getName()).setCode(authCode.getCode());
+            return authCode;
+        } else {
+            authCodesRepository.save(authCode);
+            return authCode;
+        }
+    }
+
+    public String checkToken(String name, String code, AuthCodesRepository authCodesRepository){
+        AuthCode authCode = authCodesRepository.findByName(name);
+        if (authCode.getCode().equals(code) && !fiveMinutesPassed(authCode.getTime())){
+            authCodesRepository.delete(authCode);
+            return "matched";
+        } else if(fiveMinutesPassed(authCode.getTime())) {
+            authCodesRepository.delete(authCode);
+            return "expired";
+        } else {
+            return "wrong";
+        }
+    }
+
+    private boolean fiveMinutesPassed(Long time){
+        return System.currentTimeMillis() >= (time + 300*1000);
     }
 
     public void voteFor(String id, CandidateRepository candidateRepository){

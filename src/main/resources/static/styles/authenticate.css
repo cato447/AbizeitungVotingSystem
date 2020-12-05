@@ -30,13 +30,12 @@ h2.categoryHeader {
 }
 
 input {
-    background: #bb1515b2;
-    border: none;
+    background-color: transparent;
+    border: transparent;
+    border-bottom: 2px solid red;
     color: #FFF;
-    font-size: .875rem;
-    font-weight: normal;
-    text-align: left;
-    transition: opacity .25s .5s;
+    font-size: xx-large;
+    width: 1ch;
 }
 
 .submitButton {

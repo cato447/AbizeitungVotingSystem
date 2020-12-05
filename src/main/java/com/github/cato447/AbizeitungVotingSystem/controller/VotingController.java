@@ -1,13 +1,12 @@
 package com.github.cato447.AbizeitungVotingSystem.controller;
 
+import com.github.cato447.AbizeitungVotingSystem.entities.AuthCode;
 import com.github.cato447.AbizeitungVotingSystem.entities.Category;
 import com.github.cato447.AbizeitungVotingSystem.entities.PossibleCandidate;
 import com.github.cato447.AbizeitungVotingSystem.entities.Voter;
 import com.github.cato447.AbizeitungVotingSystem.helper.PossibleCandidateWrapper;
-import com.github.cato447.AbizeitungVotingSystem.repositories.CandidateRepository;
-import com.github.cato447.AbizeitungVotingSystem.repositories.CategoryRepository;
-import com.github.cato447.AbizeitungVotingSystem.repositories.PossibleCandidateRepository;
-import com.github.cato447.AbizeitungVotingSystem.repositories.VoterRepository;
+import com.github.cato447.AbizeitungVotingSystem.helper.RandomNumber;
+import com.github.cato447.AbizeitungVotingSystem.repositories.*;
 import com.github.cato447.AbizeitungVotingSystem.table.TableAction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -20,23 +19,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 @Controller
 public class VotingController {
 
-    private Boolean candidatesAdded = false;
-
+    private Boolean candidatesAdded = true;
     private static final Logger LOGGER = LogManager.getLogger(VotingController.class);
-
     private TableAction tableAction = new TableAction();
-
-    List<String> ipAddresses = new ArrayList<String>();
 
     @Autowired
     VoterRepository voterRepository;
@@ -49,6 +41,9 @@ public class VotingController {
 
     @Autowired
     PossibleCandidateRepository possibleCandidateRepository;
+
+    @Autowired
+    AuthCodesRepository authCodesRepository;
 
     @Autowired
     JavaMailSender emailSender;
@@ -75,14 +70,6 @@ public class VotingController {
 
     @RequestMapping("/")
     public String WelcomeSite() {
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes())
-                .getRequest();
-
-        String currentIpAddress = request.getRemoteAddr();
-        if (!this.ipAddresses.contains(currentIpAddress)) {
-            LOGGER.info("User IP: " + request.getRemoteAddr());
-            ipAddresses.add(currentIpAddress);
-        }
         return "start.html";
     }
 
@@ -95,77 +82,90 @@ public class VotingController {
         emailSender.send(message);
     }
 
-    @RequestMapping("/vote")
+    @RequestMapping("/checkStatus")
     public String VerifyName(@RequestParam String name, Model model) {
         if (name.strip().toLowerCase().matches("[a-z]+\\.[a-z]+@adolfinum+\\.de$")) {
             try {
                 Voter voter = voterRepository.findByEmail(name.toLowerCase().strip());
-                LOGGER.warn(voter.getEmail());
                 if (voter.getVote_status()) {
                     LOGGER.warn(name + " has already voted");
                     return "errors/alreadyVoted.html";
-                } else if (voter.getCandidatesubmit_status()) {
+                } else if (voter.getCandidatesubmit_status() && candidatesAdded == false) {
                     LOGGER.warn(name + " has already submitted its candidates");
                     return "errors/alreadysubmittedcandidates.html";
                 } else {
-                    if(candidatesAdded) {
-                        List<Category> categories = categoryRepository.findAll();
-                        model.addAttribute("categories", categories);
-                        model.addAttribute("name", name);
-                        //sendSimpleMessage(name,"test", "test");
-                        LOGGER.info(name + " is voting now");
-                        return "voting.html";
-                    } else {
-                        PossibleCandidateWrapper possibleCandidates = new PossibleCandidateWrapper();
-                        List<Category> categories = categoryRepository.findAll();
-                        for (int i = 0; i < categories.size(); i++){
-                            possibleCandidates.addPossibleCandidate(new PossibleCandidate());
-                        }
-                        model.addAttribute("categories", categories);
-                        model.addAttribute("form", possibleCandidates);
-                        LOGGER.info(name + " is submitting candidates");
-                        return "addingCandidates.html";
-                    }
+                    AuthCode authCode = tableAction.generateToken(name, RandomNumber.getRandomNumberString(), authCodesRepository);
+                    sendSimpleMessage(name,"Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
+                    model.addAttribute("name", name);
+                    return "authenticate.html";
                 }
             } catch (Exception e) {
                 LOGGER.error(name + " is not allowed to vote");
                 return "errors/notRegistered.html";
             }
         } else {
-            return "errors/falseInput";
+            return "errors/falseInput.html";
+        }
+    }
+
+    @RequestMapping("/vote")
+    public String voting_adding(@RequestParam String name, Model model){
+        if(candidatesAdded) {
+            List<Category> categories = categoryRepository.findAll();
+            model.addAttribute("categories", categories);
+            model.addAttribute("name", name);
+            return "voting.html";
+        } else {
+            PossibleCandidateWrapper possibleCandidates = new PossibleCandidateWrapper();
+            List<Category> categories = categoryRepository.findAll();
+            for (int i = 0; i < categories.size(); i++){
+                possibleCandidates.addPossibleCandidate(new PossibleCandidate());
+            }
+            model.addAttribute("categories", categories);
+            model.addAttribute("form", possibleCandidates);
+            model.addAttribute("name", name);
+            return "addingCandidates.html";
         }
     }
 
     @RequestMapping("/saveCandidates")
-    public String candidateSaving(@ModelAttribute PossibleCandidateWrapper possibleCandidates){
-        LinkedList<PossibleCandidate> posCandidates = possibleCandidates.getPossibleCandidates();
-        long index = 1;
-        for (PossibleCandidate posCandidate : posCandidates){
-            if (posCandidate.getName() != "") {
-                if (possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get()) != null) {
-                    PossibleCandidate p = possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get());
-                    LOGGER.warn(p.getVotes());
-                    p.setVotes(p.getVotes() + 1);
-                    possibleCandidateRepository.save(p);
-                } else {
-                    PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
-                    possibleCandidateRepository.save(possibleCandidate);
+    public String candidateSaving(@ModelAttribute PossibleCandidateWrapper possibleCandidates, @RequestParam String name){
+        if (voterRepository.findByEmail(name).getVote_status()){
+            return "errors/alreadyVoted.html";
+        } else {
+            LinkedList<PossibleCandidate> posCandidates = possibleCandidates.getPossibleCandidates();
+            long index = 1;
+            for (PossibleCandidate posCandidate : posCandidates){
+                if (posCandidate.getName() != "") {
+                    if (possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get()) != null) {
+                        PossibleCandidate p = possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get());
+                        p.setVotes(p.getVotes() + 1);
+                        possibleCandidateRepository.save(p);
+                    } else {
+                        PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
+                        possibleCandidateRepository.save(possibleCandidate);
+                    }
                 }
+                index++;
             }
-            index++;
+            //tableAction.updateCandidatesubmit_status(voterEmail, voterRepository);
+            return "candidateAddingSuccessful.html";
         }
-        return "candidateAddingSuccessful.html";
     }
 
     @RequestMapping("/processVote")
-    public String ProcessVote(@RequestParam String voteValues, @RequestParam String voterEmail) {
-        String[] partVoteValues = voteValues.split(",");
-        for (String s: partVoteValues) {
-            tableAction.voteFor(s, candidateRepository);
+    public String ProcessVote(@RequestParam String name, @RequestParam String voteValues) {
+        if (voterRepository.findByEmail(name).getCandidatesubmit_status()){
+            return "errors/alreadySubmitted.html";
+        } else {
+            String[] partVoteValues = voteValues.split(",");
+            for (String s : partVoteValues) {
+                tableAction.voteFor(s, candidateRepository);
+            }
+            //tableAction.updateVotingStatus(voterEmail, voterRepository);
+            LOGGER.info(name + " has voted!");
+            return "voteSuccessful.html";
         }
-        tableAction.updateVotingStatus(voterEmail,voterRepository);
-        LOGGER.info(voterEmail + " has voted!");
-        return "voteSuccessful.html";
     }
 
     @RequestMapping("/dashboard")
