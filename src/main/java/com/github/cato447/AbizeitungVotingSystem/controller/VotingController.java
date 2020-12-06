@@ -26,7 +26,7 @@ import java.util.*;
 @Controller
 public class VotingController {
 
-    private Boolean candidatesAdded = true;
+    private Boolean candidatesAdded = false;
     private static final Logger LOGGER = LogManager.getLogger(VotingController.class);
     private TableAction tableAction = new TableAction();
 
@@ -51,7 +51,6 @@ public class VotingController {
 
     @PostConstruct
     public void init() {
-        LOGGER.info("setups");
         if (voterRepository.findAll().size() == 0) {
             tableAction.setUpVoters(voterRepository);
             LOGGER.info("Voters successfully set up");
@@ -86,6 +85,7 @@ public class VotingController {
     public String VerifyName(@RequestParam String name, Model model) {
         if (name.strip().toLowerCase().matches("[a-z]+\\.[a-z]+@adolfinum+\\.de$")) {
             try {
+                LOGGER.warn(name);
                 Voter voter = voterRepository.findByEmail(name.toLowerCase().strip());
                 if (voter.getVote_status()) {
                     LOGGER.warn(name + " has already voted");
@@ -97,9 +97,12 @@ public class VotingController {
                     AuthCode authCode = tableAction.generateToken(name, RandomNumber.getRandomNumberString(), authCodesRepository);
                     sendSimpleMessage(name,"Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
                     model.addAttribute("name", name);
+                    model.addAttribute("codeExpired", false);
+                    model.addAttribute("codeFalse", false);
                     return "authenticate.html";
                 }
             } catch (Exception e) {
+                e.printStackTrace();
                 LOGGER.error(name + " is not allowed to vote");
                 return "errors/notRegistered.html";
             }
@@ -109,23 +112,40 @@ public class VotingController {
     }
 
     @RequestMapping("/vote")
-    public String voting_adding(@RequestParam String name, Model model){
-        if(candidatesAdded) {
-            List<Category> categories = categoryRepository.findAll();
-            model.addAttribute("categories", categories);
-            model.addAttribute("name", name);
-            return "voting.html";
-        } else {
-            PossibleCandidateWrapper possibleCandidates = new PossibleCandidateWrapper();
-            List<Category> categories = categoryRepository.findAll();
-            for (int i = 0; i < categories.size(); i++){
-                possibleCandidates.addPossibleCandidate(new PossibleCandidate());
-            }
-            model.addAttribute("categories", categories);
-            model.addAttribute("form", possibleCandidates);
-            model.addAttribute("name", name);
-            return "addingCandidates.html";
+    public String voting_adding(@RequestParam String code,@RequestParam String name, Model model){
+        switch (tableAction.checkToken(name, code, authCodesRepository)){
+            case "matched":
+                LOGGER.warn("matched");
+                if(candidatesAdded) {
+                    List<Category> categories = categoryRepository.findAll();
+                    model.addAttribute("categories", categories);
+                    model.addAttribute("name", name);
+                    return "voting.html";
+                } else {
+                    PossibleCandidateWrapper possibleCandidates = new PossibleCandidateWrapper();
+                    List<Category> categories = categoryRepository.findAll();
+                    for (int i = 0; i < categories.size(); i++){
+                        possibleCandidates.addPossibleCandidate(new PossibleCandidate());
+                    }
+                    model.addAttribute("categories", categories);
+                    model.addAttribute("form", possibleCandidates);
+                    model.addAttribute("name", name);
+                    return "addingCandidates.html";
+                }
+
+            case "expired":
+                model.addAttribute("name", name);
+                model.addAttribute("codeExpired", true);
+                model.addAttribute("codeFalse", false);
+                return "authenticate.html";
+
+            case "wrong":
+                model.addAttribute("name", name);
+                model.addAttribute("codeExpired", false);
+                model.addAttribute("codeFalse", true);
+                return "authenticate.html";
         }
+        return "fatalError";
     }
 
     @RequestMapping("/saveCandidates")
@@ -148,7 +168,7 @@ public class VotingController {
                 }
                 index++;
             }
-            //tableAction.updateCandidatesubmit_status(voterEmail, voterRepository);
+            tableAction.updateCandidatesubmit_status(name, voterRepository);
             return "candidateAddingSuccessful.html";
         }
     }
@@ -162,7 +182,7 @@ public class VotingController {
             for (String s : partVoteValues) {
                 tableAction.voteFor(s, candidateRepository);
             }
-            //tableAction.updateVotingStatus(voterEmail, voterRepository);
+            tableAction.updateVotingStatus(name, voterRepository);
             LOGGER.info(name + " has voted!");
             return "voteSuccessful.html";
         }

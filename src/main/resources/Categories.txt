@@ -1,36 +1,36 @@
-1. Wer wird nie von zuhause ausziehen? (Schüler)
-1. Wer ist der/die kreativste Zuspätkommer/in (Schüler)
-1. Mit wem wird man am ehesten in der Zukunft angeben zur Schule gegangen zu sein? (Schüler)
-1. Wer wohnt im Fittnessstudio? (Schüler)
-1. Wer ist der coolste Leherer?
-1. Wer ist die coolste Lehrerin?
-1. Wer macht den besten Matheunterricht?
-1. Welcher Lehrer hat den Beruf verfehlt?
-1. Welcher Lehrer ist nie da?
-1. Wer hat das Internet erfunden?
-1. Wer sponsort Schollin? (Schüler)
-1. Wer ist am engagiertesten? (Schüler)
-1. Wer wird Bundeskanzler? (Schüler)
-1. Wer hat das Kimpeltum gegründet? (Schüler)
-1. Wer saß am längsten im Klassenschrank? (Schüler)
-1. Wer hat die gößte Sauklaue? (Leherer)
-1. Wer gründet das nächste Google? (Schüler)
-1. Wer kommt am schnellsten in den Knast? (Schüler)
-1. Top 3-Pärchen? (Schüler)
-1. Top 3 Lehrergespanne? (Schüler)
-1. Wer ist der motiviertester Lehrer?
-1. Wer ist Google auf zwei Beinen(Schüler)?
-1. Wer hat den besten Style (Schüler)?
-1. Wer hat den besten Style (Lehrer)?
-1. Wer währe ein gutes Pärchen (Lehrer)?
-1. Wer trinkt am meisten Kaffe (Schüler)?
-1. Wer trinkt am meisten Kaffe (Lehrer)?
-1. Tischflip?
-1. Wer wird Harzer?
-1. Wer hat Wiedererkennungswert (Schüler)?
-1. Wen erkennt man an der Lache (Schüler)?
-1. Wer bringt die dümmsten Witze? (Lehrer)
-1. Wer hat den meisten Schwachsinn erzählt? (Lehrer)
-1. Welche Lehrer machen nie das, was die Schüler wollten? (Lehrer)
-1. Wer isst immer? (Lehrer)
-1. Wer hat die meisten peinlichen Momente gebracht?
+Wer wird nie von zuhause ausziehen?
+Wer ist der/die kreativste Zuspätkommer/in?
+Mit wem wird man am ehesten in der Zukunft angeben zur Schule gegangen zu sein?
+Wer wohnt im Fittnessstudio? (Schüler)
+Wer ist der coolste Leherer?
+Wer ist die coolste Lehrerin?
+Wer macht den besten Matheunterricht?
+Welcher Lehrer hat den Beruf verfehlt?
+Welcher Lehrer ist nie da?
+Wer hat das Internet erfunden?
+Wer sponsort Schollin? (Schüler)
+Wer ist am engagiertesten? (Schüler)
+Wer wird Bundeskanzler? (Schüler)
+Wer hat das Kimpeltum gegründet? (Schüler)
+Wer saß am längsten im Klassenschrank? (Schüler)
+Wer hat die gößte Sauklaue? (Leherer)
+Wer gründet das nächste Google? (Schüler)
+Wer kommt am schnellsten in den Knast? (Schüler)
+Top 3-Pärchen? (Schüler)
+Top 3 Lehrergespanne? (Schüler)
+Wer ist der motiviertester Lehrer?
+Wer ist Google auf zwei Beinen(Schüler)?
+Wer hat den besten Style (Schüler)?
+Wer hat den besten Style (Lehrer)?
+Wer währe ein gutes Pärchen (Lehrer)?
+Wer trinkt am meisten Kaffe (Schüler)?
+Wer trinkt am meisten Kaffe (Lehrer)?
+Tischflip?
+Wer wird Harzer?
+Wer hat Wiedererkennungswert (Schüler)?
+Wen erkennt man an der Lache (Schüler)?
+Wer bringt die dümmsten Witze? (Lehrer)
+Wer hat den meisten Schwachsinn erzählt? (Lehrer)
+Welche Lehrer machen nie das, was die Schüler wollten? (Lehrer)
+Wer isst immer? (Lehrer)
+Wer hat die meisten peinlichen Momente gebracht?

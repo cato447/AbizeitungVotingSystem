@@ -35,12 +35,26 @@
                 if (!this.value && ev.key === "Backspace" && i) $inp.eq(i - 1).focus();
             }
         });
+
+        function getCode() {
+            groupInputs = document.querySelectorAll(".passInput");
+            var code = "";
+            groupInputs.forEach(input => {
+                console.log("Input: " + input.value);
+                code += input.value;
+            });
+            console.log("Code: " + code);
+            output = document.getElementById("authCode");
+            output.value = code;
+            document.getElementById("passForm").submit();
+        }
     </script>
 
-    <h1 th:text="|Dir wurde eine Email an ${name} gesendet!|"></h1>
-    <h2>Gebe den enthaltenen Authentifizierungscode ein</h2>
+    <h1 th:text="|Dir wurde ein Code an ${name} gesendet!|"></h1>
+    <h2>Bitte gebe den Authentifizierungscode ein</h2>
     <form action="#" id="passForm" th:action="@{/vote}" method="post">
         <input id="voterName" type="hidden" name="name" th:value="${name}" />
+        <input id="authCode" type="hidden" name="code" value="" />
         <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}" autofocus>
         <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}">
         <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}">
@@ -48,8 +62,15 @@
         <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}">
         <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}">
 
-        <button type="submit" id="signup_button">Abstimmen</button>
     </form>
+    <button class="submitButton" id="signup_button" onclick="getCode()">Abstimmen</button>
+    <div th:if="${codeExpired}">
+        <h2 class="errorCode">Der Code ist nicht mehr gültig!<br>Fordere einen neuen an</h2>
+    </div>
+
+    <div th:if="${codeFalse}">
+        <h2 class="errorCode">Der eingegebene Code ist falsch</h2>
+    </div>
 </body>
 
 

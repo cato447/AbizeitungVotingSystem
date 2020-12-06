@@ -7,6 +7,10 @@ import org.aspectj.weaver.loadtime.definition.LightXMLParser;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.JarURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.*;
 
 public class TableAction {
@@ -39,10 +43,13 @@ public class TableAction {
 
     public AuthCode generateToken(String name, String code, AuthCodesRepository authCodesRepository) {
         AuthCode authCode = new AuthCode(name, code);
-        if (authCodesRepository.findByName(authCode.getName()) != null) {
-            authCodesRepository.findByName(authCode.getName()).setCode(authCode.getCode());
-            return authCode;
-        } else {
+        try{
+            AuthCode existingCode = authCodesRepository.findByName(authCode.getName());
+            existingCode.setCode(code);
+            existingCode.setTime(System.currentTimeMillis());
+            authCodesRepository.save(existingCode);
+            return existingCode;
+        } catch (Exception e){
             authCodesRepository.save(authCode);
             return authCode;
         }
@@ -74,7 +81,8 @@ public class TableAction {
 
     public void setUpVoters(VoterRepository voterRepository){
         try {
-            File emailFile = new File("src/main/resources/Q2_emails.txt");
+            String path = "src/main/resources/Q2_emails.txt";
+            File emailFile = new File(path);
             Scanner myReader = new Scanner(emailFile);
             ArrayList<Voter> voters = new ArrayList<Voter>();
             while (myReader.hasNextLine()) {
@@ -104,9 +112,9 @@ public class TableAction {
     }
 
     public void setUpCategories(CategoryRepository categoryRepository){
-        ArrayList<String> names = new ArrayList<>();
         try {
-            File categoryFile = new File("src/main/resources/Categories.txt");
+            String path = "src/main/resources/Categories.txt";
+            File categoryFile = new File(path);
             Scanner myReader = new Scanner(categoryFile);
             ArrayList<Category> categories = new ArrayList<Category>();
             while (myReader.hasNextLine()) {

@@ -36,4 +36,12 @@ public class AuthCode {
     public long getTime() {
         return time;
     }
+
+    public void setTime(long time) {
+        this.time = time;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

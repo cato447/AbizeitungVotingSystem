@@ -18,31 +18,30 @@
                     <tr>
                         <th>Id</th>
                         <th>E-Mail</th>
-                        <th>Status</th>
                     </tr>
 
                     <tr th:each="voter : ${voters}">
-                        <div th:if="${voter.candidatesubmit_status}">
-                            <td class="submitted" th:text="${voter.id}"></td>
-                            <td class="submitted" th:text="${voter.email}"></td>
-                            <td class="submitted" th:text="Candidates submitted"></td>
-                        </div>
 
                         <!-- If voter has voted -->
                         <div th:if="${voter.vote_status}">
                             <td class="voted" th:text="${voter.id}"></td>
                             <td class="voted" th:text="${voter.email}"></td>
-                            <td class="voted" th:text="Voted"></td>
                         </div>
 
                         <!-- ELSE -->
                         <div th:unless="${voter.vote_status}">
-                            <td class="notVoted" th:text="${voter.id}"></td>
-                            <td class="notVoted" th:text="${voter.email}"></td>
-                            <td class="notVoted" th:text="$Not voted"></td>
+                            <div th:if="${voter.candidatesubmit_status}">
+                                <td class="submitted" th:text="${voter.id}"></td>
+                                <td class="submitted" th:text="${voter.email}"></td>
+                            </div>
+                            <div th:unless="${voter.candidatesubmit_status}">
+                                <td class="notVoted" th:text="${voter.id}"></td>
+                                <td class="notVoted" th:text="${voter.email}"></td>
+                            </div>
+                        </div>
                     </tr>
                 </table>
-                </div>
+            </div>
         </li>
         <li>
             <h1>Kandidaten Liste</h1>
