@@ -26,7 +26,8 @@ import java.util.*;
 @Controller
 public class VotingController {
 
-    private Boolean candidatesAdded = false;
+    private Boolean candidatesAdded = true;
+
     private static final Logger LOGGER = LogManager.getLogger(VotingController.class);
     private TableAction tableAction = new TableAction();
 
@@ -61,8 +62,8 @@ public class VotingController {
             LOGGER.info("Categories successfully set up");
         }
 
-        if (candidateRepository.findAll().size() == 0) {
-            tableAction.setUpCandidates(candidateRepository, categoryRepository);
+        if (candidateRepository.findAll().size() == 0 && candidatesAdded == true) {
+            tableAction.setUpCandidates(possibleCandidateRepository, candidateRepository);
             LOGGER.info("Candidates successfully set up");
         }
     }

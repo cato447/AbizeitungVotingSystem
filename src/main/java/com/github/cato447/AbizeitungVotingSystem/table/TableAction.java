@@ -8,6 +8,7 @@ import org.aspectj.weaver.loadtime.definition.LightXMLParser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.JarURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
@@ -17,16 +18,6 @@ public class TableAction {
 
     public TableAction(){
 
-    }
-
-    public void addCandidate(String name, long category_id, CategoryRepository categoryRepository,CandidateRepository candidateRepository){
-        Candidate candidate = new Candidate(name, categoryRepository.findById(category_id).get());
-        candidateRepository.save(candidate);
-    }
-
-    public void addPossibleCandidate(String name, long category_id, CategoryRepository categoryRepository, PossibleCandidateRepository possibleCandidateRepository){
-        PossibleCandidate possibleCandidate = new PossibleCandidate(name, categoryRepository.findById(category_id).get());
-        possibleCandidateRepository.save(possibleCandidate);
     }
 
     public void updateVotingStatus(String email, VoterRepository voterRepository){
@@ -72,6 +63,10 @@ public class TableAction {
         return System.currentTimeMillis() >= (time + 300*1000);
     }
 
+    private int getLimit(List<PossibleCandidate> possibleCandidates){
+        return possibleCandidates.size() <= 5 ? possibleCandidates.size() : 5;
+    }
+
     public void voteFor(String id, CandidateRepository candidateRepository){
         long candidateID = Long.valueOf(id);
         Candidate candidate = candidateRepository.findById(candidateID).get();
@@ -98,17 +93,31 @@ public class TableAction {
         }
     }
 
-    public void setUpCandidates(CandidateRepository candidateRepository, CategoryRepository categoryRepository){
-        ArrayList<String> names = new ArrayList<>();
-        Collections.addAll(names, "Greta Bentgens", "Laura König", "Aaron Glos", "Lukas Boy", "Frau Meyering"
-                , "Frau Adams", "Herr Petering", "Frau Milde", "Frau Meyer");
-
-        ArrayList<Candidate> candidates = new ArrayList<>();
-        for (String name: names) {
-            Candidate candidate = new Candidate(name, categoryRepository.findById(20l).get());
-            candidates.add(candidate);
+    public void setUpCandidates(PossibleCandidateRepository possibleCandidateRepository, CandidateRepository candidateRepository){
+        List<PossibleCandidate> possibleCandidates = possibleCandidateRepository.findAll();
+        Collections.sort(possibleCandidates, Comparator.comparing(PossibleCandidate::getCategoryID));
+        long category_id = possibleCandidates.get(0).getCategory().getId();
+        List<PossibleCandidate> possibleCandidatesPerCategory = new LinkedList<>();
+        for (int i = 0; i < possibleCandidates.size(); i++) {
+            PossibleCandidate p = possibleCandidates.get(i);
+            if (category_id == p.getCategory().getId()){
+                possibleCandidatesPerCategory.add(p);
+            } else {
+                category_id = p.getCategory().getId();
+                Collections.sort(possibleCandidatesPerCategory, Comparator.comparing(PossibleCandidate::getVotes));
+                Collections.reverse(possibleCandidatesPerCategory);
+                for (int j = 0; j < getLimit(possibleCandidatesPerCategory); j++){
+                    Candidate candidate = new Candidate(possibleCandidatesPerCategory.get(j).getName(), possibleCandidatesPerCategory.get(j).getCategory());
+                    candidateRepository.save(candidate);
+                }
+                i += -1;
+                possibleCandidatesPerCategory.clear();
+            }
         }
-        candidateRepository.saveAll(candidates);
+        for (int j = 0; j < getLimit(possibleCandidatesPerCategory); j++){
+            Candidate candidate = new Candidate(possibleCandidatesPerCategory.get(j).getName(), possibleCandidatesPerCategory.get(j).getCategory());
+            candidateRepository.save(candidate);
+        }
     }
 
     public void setUpCategories(CategoryRepository categoryRepository){
@@ -128,97 +137,5 @@ public class TableAction {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-    }
-
-    public String logCategories(CategoryRepository categoryRepository){
-        List<List<String>> rows = new ArrayList<>();
-        List<String> headers = Arrays.asList("Id", "Name", "Candidates");
-        rows.add(headers);
-
-        for (Category category: categoryRepository.findAll()) {
-            String candidateNames = "";
-            for (Candidate candidate: category.getCandidateList()){
-                candidateNames += candidate.getName() + "; ";
-            }
-            rows.add(Arrays.asList(""+category.getId(), category.getName(), candidateNames));
-        }
-        return formatAsTable(rows);
-    }
-
-    public String logVoters(VoterRepository voterRepository){
-        List<List<String>> rows = new ArrayList<>();
-        List<String> headers = Arrays.asList("Id", "E-Mail", "Vote_status");
-        rows.add(headers);
-        for (Voter voter: voterRepository.findAll()) {
-            rows.add(Arrays.asList(""+voter.getId(), voter.getEmail(), ""+voter.getVote_status()));
-        }
-
-        return formatAsTable(rows);
-
-    }
-
-    public String logCandidatesRepository(CandidateRepository candidateRepository){
-        List<List<String>> rows = new ArrayList<>();
-        List<String> headers = Arrays.asList("Id", "Name", "Votes");
-        rows.add(headers);
-        for (Candidate candidate: candidateRepository.findAll()) {
-            rows.add(Arrays.asList(""+candidate.getId(), candidate.getName(), ""+candidate.getVotes()));
-        }
-
-        return formatAsTable(rows);
-    }
-
-    public String logCandidates(LinkedList<Candidate> candidates, CategoryRepository categoryRepository){
-        List<List<String>> rows = new ArrayList<>();
-        List<String> headers = Arrays.asList("Id", "Name", "Votes", "Category_ID");
-        rows.add(headers);
-        long i = 1;
-        for (Candidate candidate: candidates) {
-                Category category = categoryRepository.findById(i).get();
-                rows.add(Arrays.asList("" + i, candidate.getName(), "" + 0, "" + category.getId()));
-                i++;
-        }
-
-        return formatAsTable(rows);
-    }
-
-    public String logPossibleCandidates(LinkedList<PossibleCandidate> possibleCandidates, CategoryRepository categoryRepository){
-        List<List<String>> rows = new ArrayList<>();
-        List<String> headers = Arrays.asList("Id", "Name", "Votes", "Category_ID");
-        rows.add(headers);
-        long i = 1;
-        for (PossibleCandidate possibleCandidate: possibleCandidates) {
-            Category category = categoryRepository.findById(i).get();
-            rows.add(Arrays.asList("" + i, possibleCandidate.getName(), "" + 0, "" + category.getId()));
-            i++;
-        }
-
-        return formatAsTable(rows);
-    }
-
-    private String formatAsTable(List<List<String>> rows) {
-        int[] maxLengths = new int[rows.get(0).size()];
-        for (List<String> row : rows)
-        {
-            for (int i = 0; i < row.size(); i++)
-            {
-                maxLengths[i] = Math.max(maxLengths[i], row.get(i).length());
-            }
-        }
-
-        StringBuilder formatBuilder = new StringBuilder();
-        for (int maxLength : maxLengths)
-        {
-            formatBuilder.append("%-").append(maxLength + 2).append("s");
-        }
-        String format = formatBuilder.toString();
-
-        StringBuilder result = new StringBuilder();
-        result.append("\n");
-        for (List<String> row : rows)
-        {
-            result.append(String.format(format, row.toArray(new String[0]))).append("\n");
-        }
-        return result.toString();
     }
 }

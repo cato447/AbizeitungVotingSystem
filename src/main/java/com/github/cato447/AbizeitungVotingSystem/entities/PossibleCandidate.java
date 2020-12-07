@@ -37,7 +37,11 @@ public class PossibleCandidate{
 
     public Category getCategory() {return category;}
 
-    public int getVotes() {
+    public Long getCategoryID(){
+        return category.getId();
+    }
+
+    public Integer getVotes() {
         return votes;
     }
 
@@ -52,4 +56,5 @@ public class PossibleCandidate{
     public void setVotes(int votes) {
         this.votes = votes;
     }
+
 }

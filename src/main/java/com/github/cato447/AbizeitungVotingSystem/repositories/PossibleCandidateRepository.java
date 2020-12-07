@@ -10,8 +10,7 @@ import java.util.Optional;
 @Repository
 public interface PossibleCandidateRepository extends JpaRepository<PossibleCandidate, Integer> {
 
-    public PossibleCandidate findByNameAndCategory(String name, Category category);
+    PossibleCandidate findByNameAndCategory(String name, Category category);
+
     Optional<PossibleCandidate> findById(Long id);
-
-
 }

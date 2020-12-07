@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<html lang="de" xmlns:th="https://www.thymeleaf.org/">
 
 <head>
     <meta charset="UTF-8">
@@ -43,7 +43,7 @@
             <div id="candidateAdding">
                 <div class="group" th:each="category, itemStat : ${categories}">
                     <h2 class="categoryHeader" th:text="${category.name}"></h2>
-                    <input th:field="*{possibleCandidates[__${itemStat.index}__].name}" />
+                    <input th:field="*{possibleCandidates[__${itemStat.index}__].name}"/>
                 </div>
             </div>
             <button class="submitButton" id="btnNext" type="submit">Nächste Frage</button>
