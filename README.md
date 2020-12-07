@@ -1,4 +1,4 @@
 # AbizeitungVotingSystem
-Internet address: http://abizeitung-voting.ddns.net <br>
-Server IP address: 217.83.93.128 <br>
+Internet address: http://adolfinum-voting.tools/ <br>
+Server IP address: 192.168.2.159 <br>
 Port: 8000 <br>
