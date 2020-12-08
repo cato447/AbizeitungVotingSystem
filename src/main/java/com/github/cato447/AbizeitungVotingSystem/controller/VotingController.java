@@ -26,7 +26,8 @@ import java.util.*;
 @Controller
 public class VotingController {
 
-    private Boolean candidatesAdded = true;
+
+    private boolean votingPhase = false;
 
     private static final Logger LOGGER = LogManager.getLogger(VotingController.class);
     private TableAction tableAction = new TableAction();
@@ -52,20 +53,32 @@ public class VotingController {
 
     @PostConstruct
     public void init() {
+        try {
+            String mode = System.getProperty("votingPhase");
+            if (mode.equalsIgnoreCase("true")) {
+                votingPhase = true;
+            } else {
+                votingPhase = false;
+            }
+        } catch (Exception e){
+            votingPhase = false;
+        }
+
         if (voterRepository.findAll().size() == 0) {
             tableAction.setUpVoters(voterRepository);
             LOGGER.info("Voters successfully set up");
         }
 
-        if (categoryRepository.findAll().size() == 0){
+        if (categoryRepository.findAll().size() == 0) {
             tableAction.setUpCategories(categoryRepository);
             LOGGER.info("Categories successfully set up");
         }
 
-        if (candidateRepository.findAll().size() == 0 && candidatesAdded == true && possibleCandidateRepository.findAll().size()!=0) {
+        if (candidateRepository.findAll().size() == 0 && votingPhase == true && possibleCandidateRepository.findAll().size() != 0) {
             tableAction.setUpCandidates(possibleCandidateRepository, candidateRepository);
             LOGGER.info("Candidates successfully set up");
         }
+        LOGGER.info(votingPhase);
     }
 
     @RequestMapping("/")
@@ -91,12 +104,12 @@ public class VotingController {
                 if (voter.getVote_status()) {
                     LOGGER.warn(name + " has already voted");
                     return "errors/alreadyVoted.html";
-                } else if (voter.getCandidatesubmit_status() && candidatesAdded == false) {
+                } else if (voter.getCandidatesubmit_status() && votingPhase == false) {
                     LOGGER.warn(name + " has already submitted its candidates");
                     return "errors/alreadysubmittedcandidates.html";
                 } else {
                     AuthCode authCode = tableAction.generateToken(name, RandomNumber.getRandomNumberString(), authCodesRepository);
-                    sendSimpleMessage(name,"Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
+                    sendSimpleMessage(name, "Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
                     model.addAttribute("name", name);
                     model.addAttribute("codeExpired", false);
                     model.addAttribute("codeFalse", false);
@@ -113,11 +126,11 @@ public class VotingController {
     }
 
     @RequestMapping("/vote")
-    public String voting_adding(@RequestParam String code,@RequestParam String name, Model model){
-        switch (tableAction.checkToken(name, code, authCodesRepository)){
+    public String voting_adding(@RequestParam String code, @RequestParam String name, Model model) {
+        switch (tableAction.checkToken(name, code, authCodesRepository)) {
             case "matched":
                 LOGGER.warn("matched");
-                if(candidatesAdded) {
+                if (votingPhase) {
                     List<Category> categories = categoryRepository.findAll();
                     model.addAttribute("categories", categories);
                     model.addAttribute("name", name);
@@ -125,7 +138,7 @@ public class VotingController {
                 } else {
                     PossibleCandidateWrapper possibleCandidates = new PossibleCandidateWrapper();
                     List<Category> categories = categoryRepository.findAll();
-                    for (int i = 0; i < categories.size(); i++){
+                    for (int i = 0; i < categories.size(); i++) {
                         possibleCandidates.addPossibleCandidate(new PossibleCandidate());
                     }
                     model.addAttribute("categories", categories);
@@ -150,13 +163,13 @@ public class VotingController {
     }
 
     @RequestMapping("/saveCandidates")
-    public String candidateSaving(@ModelAttribute PossibleCandidateWrapper possibleCandidates, @RequestParam String name){
-        if (voterRepository.findByEmail(name).getVote_status()){
+    public String candidateSaving(@ModelAttribute PossibleCandidateWrapper possibleCandidates, @RequestParam String name) {
+        if (voterRepository.findByEmail(name).getVote_status()) {
             return "errors/alreadyVoted.html";
         } else {
             LinkedList<PossibleCandidate> posCandidates = possibleCandidates.getPossibleCandidates();
             long index = 1;
-            for (PossibleCandidate posCandidate : posCandidates){
+            for (PossibleCandidate posCandidate : posCandidates) {
                 if (posCandidate.getName() != "") {
                     if (possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get()) != null) {
                         PossibleCandidate p = possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get());
@@ -176,7 +189,7 @@ public class VotingController {
 
     @RequestMapping("/processVote")
     public String ProcessVote(@RequestParam String name, @RequestParam String voteValues) {
-        if (voterRepository.findByEmail(name).getCandidatesubmit_status()){
+        if (voterRepository.findByEmail(name).getCandidatesubmit_status()) {
             return "errors/alreadySubmitted.html";
         } else {
             String[] partVoteValues = voteValues.split(",");
@@ -190,17 +203,17 @@ public class VotingController {
     }
 
     @RequestMapping("/dashboard")
-    public String AccessDashboard(@RequestParam String password, Model model){
+    public String AccessDashboard(@RequestParam String password, Model model) {
         try {
-                if (password.equals("admin")) {
-                    List<Voter> voters = voterRepository.findAll();
-                    List<Category> categories = categoryRepository.findAll();
-                    model.addAttribute("voters", voters);
-                    model.addAttribute("categories", categories);
-                    return "dashboard.html";
-                } else {
-                    LOGGER.error("Wrong Password");
-                }
+            if (password.equals("admin")) {
+                List<Voter> voters = voterRepository.findAll();
+                List<Category> categories = categoryRepository.findAll();
+                model.addAttribute("voters", voters);
+                model.addAttribute("categories", categories);
+                return "dashboard.html";
+            } else {
+                LOGGER.error("Wrong Password");
+            }
         } catch (Exception e) {
             LOGGER.fatal("voters table is not existing!");
         }
