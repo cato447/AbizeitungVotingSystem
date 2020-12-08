@@ -62,7 +62,7 @@ public class VotingController {
             LOGGER.info("Categories successfully set up");
         }
 
-        if (candidateRepository.findAll().size() == 0 && candidatesAdded == true) {
+        if (candidateRepository.findAll().size() == 0 && candidatesAdded == true && possibleCandidateRepository.findAll().size()!=0) {
             tableAction.setUpCandidates(possibleCandidateRepository, candidateRepository);
             LOGGER.info("Candidates successfully set up");
         }

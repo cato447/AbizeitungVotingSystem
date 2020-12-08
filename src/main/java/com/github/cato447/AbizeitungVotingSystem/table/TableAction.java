@@ -5,9 +5,7 @@ import com.github.cato447.AbizeitungVotingSystem.entities.*;
 import com.github.cato447.AbizeitungVotingSystem.repositories.*;
 import org.aspectj.weaver.loadtime.definition.LightXMLParser;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Array;
 import java.net.JarURLConnection;
 import java.net.URL;
@@ -75,20 +73,17 @@ public class TableAction {
     }
 
     public void setUpVoters(VoterRepository voterRepository){
-        try {
-            String path = "src/main/resources/Q2_emails.txt";
-            File emailFile = new File(path);
-            Scanner myReader = new Scanner(emailFile);
+        try (InputStream inputStream = getClass().getResourceAsStream("/Q2_emails.txt");
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            String line = "";
             ArrayList<Voter> voters = new ArrayList<Voter>();
-            while (myReader.hasNextLine()) {
-                String email = myReader.nextLine();
+            while ((line = reader.readLine())!= null){
+                String email = line;
                 Voter voter = new Voter(email);
                 voters.add(voter);
             }
             voterRepository.saveAll(voters);
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -121,20 +116,17 @@ public class TableAction {
     }
 
     public void setUpCategories(CategoryRepository categoryRepository){
-        try {
-            String path = "src/main/resources/Categories.txt";
-            File categoryFile = new File(path);
-            Scanner myReader = new Scanner(categoryFile);
+        try (InputStream inputStream = getClass().getResourceAsStream("/Categories.txt");
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            String line = "";
             ArrayList<Category> categories = new ArrayList<Category>();
-            while (myReader.hasNextLine()) {
-                String name = myReader.nextLine();
+            while ((line = reader.readLine())!= null){
+                String name = line;
                 Category category = new Category(name);
                 categories.add(category);
             }
             categoryRepository.saveAll(categories);
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
