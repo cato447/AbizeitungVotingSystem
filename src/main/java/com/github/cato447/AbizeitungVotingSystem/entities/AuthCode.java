@@ -37,6 +37,10 @@ public class AuthCode {
         return time;
     }
 
+    public boolean isExpired(){
+            return System.currentTimeMillis() >= (time + 600*1000);
+    }
+
     public void setTime(long time) {
         this.time = time;
     }

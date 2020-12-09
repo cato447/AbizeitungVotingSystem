@@ -10,6 +10,13 @@
 
 <body class="center-screen">
 
+    <script>
+        var scale = Math.min(
+            availableWidth / contentWidth,
+            availableHeight / contentHeight
+        );
+    </script>
+
     <h1 th:text="|Dir wurde ein Code an ${name} gesendet!|"></h1>
     <h2>Bitte gebe den Authentifizierungscode ein</h2>
     <form action="#" id="passForm" th:action="@{/vote}" method="post">

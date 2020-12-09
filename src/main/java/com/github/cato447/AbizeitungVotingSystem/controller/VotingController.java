@@ -108,8 +108,13 @@ public class VotingController {
                     LOGGER.warn(name + " has already submitted its candidates");
                     return "errors/alreadysubmittedcandidates.html";
                 } else {
-                    AuthCode authCode = tableAction.generateToken(name, RandomNumber.getRandomNumberString(), authCodesRepository);
-                    sendSimpleMessage(name, "Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
+                    if (authCodesRepository.findByName(name) == null) {
+                        AuthCode authCode = tableAction.generateToken(name, RandomNumber.getRandomNumberString(), authCodesRepository);
+                        sendSimpleMessage(name, "Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
+                    }  else if (authCodesRepository.findByName(name) != null && authCodesRepository.findByName(name).isExpired()){
+                        AuthCode authCode = tableAction.generateToken(name, RandomNumber.getRandomNumberString(), authCodesRepository);
+                        sendSimpleMessage(name, "Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
+                    }
                     model.addAttribute("name", name);
                     model.addAttribute("codeExpired", false);
                     model.addAttribute("codeFalse", false);

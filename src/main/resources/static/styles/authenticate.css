@@ -17,6 +17,7 @@ body {
     padding: 20px;
     width: 100%;
     overflow: auto;
+    transform: scale();
 }
 
 h1 {
