@@ -10,6 +10,7 @@ import java.lang.reflect.Array;
 import java.net.JarURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.Buffer;
 import java.util.*;
 
 public class TableAction {
@@ -30,6 +31,12 @@ public class TableAction {
         voterRepository.save(voter);
     }
 
+    public void updateMottoStatus(String email, VoterRepository voterRepository){
+        Voter voter = voterRepository.findByEmail(email);
+        voter.voteMotto();
+        voterRepository.save(voter);
+    }
+
     public AuthCode generateToken(String name, String code, AuthCodesRepository authCodesRepository) {
         AuthCode authCode = new AuthCode(name, code);
         try{
@@ -45,16 +52,19 @@ public class TableAction {
     }
 
     public String checkToken(String name, String code, AuthCodesRepository authCodesRepository){
-        AuthCode authCode = authCodesRepository.findByName(name);
-        if (authCode.getCode().equals(code) && !fiveMinutesPassed(authCode.getTime())){
-            authCodesRepository.delete(authCode);
-            return "matched";
-        } else if(fiveMinutesPassed(authCode.getTime())) {
-            authCodesRepository.delete(authCode);
-            return "expired";
-        } else {
+        try {
+            AuthCode authCode = authCodesRepository.findByName(name);
+            if (authCode.getCode().equals(code) && !authCode.isExpired()) {
+                authCodesRepository.delete(authCode);
+                return "matched";
+            } else if (authCode.isExpired()) {
+                authCodesRepository.delete(authCode);
+                return "expired";
+            }
+        } catch(Exception e){
             return "wrong";
         }
+        return "wrong";
     }
 
     private boolean fiveMinutesPassed(Long time){
@@ -65,11 +75,18 @@ public class TableAction {
         return possibleCandidates.size() <= 5 ? possibleCandidates.size() : 5;
     }
 
-    public void voteFor(String id, CandidateRepository candidateRepository){
+    public void voteForCandidate(String id, CandidateRepository candidateRepository){
         long candidateID = Long.valueOf(id);
         Candidate candidate = candidateRepository.findById(candidateID).get();
         candidate.votedFor();
         candidateRepository.save(candidate);
+    }
+
+    public void voteForMotto(String id, MottoRepository mottoRepository){
+        long mottoID = Long.valueOf(id);
+        Motto motto = mottoRepository.findById(mottoID).get();
+        motto.voteFor();
+        mottoRepository.save(motto);
     }
 
     public void setUpVoters(VoterRepository voterRepository){
@@ -126,6 +143,22 @@ public class TableAction {
                 categories.add(category);
             }
             categoryRepository.saveAll(categories);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setUpMottos(MottoRepository mottoRepository){
+        try (InputStream inputStream = getClass().getResourceAsStream("/Mottos.txt");
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            String line = "";
+            ArrayList<Motto> mottos = new ArrayList<>();
+            while ((line = reader.readLine())!= null){
+                String name = line;
+                Motto motto = new Motto(name);
+                mottos.add(motto);
+            }
+            mottoRepository.saveAll(mottos);
         } catch (IOException e) {
             e.printStackTrace();
         }

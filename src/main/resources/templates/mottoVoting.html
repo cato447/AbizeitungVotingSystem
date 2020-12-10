@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/styles/mottoVoting.css}" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+
+<body class="center-screen">
+
+    <div class="centered">
+        <h1>Wähle das Abimotto:</h1>
+        <div id="votingButtons">
+            <div th:each="motto : ${mottos}" class="voteDiv">
+                <button class="inputButton" th:id="|motto${motto.id}|" th:text="${motto.name}" th:onclick="|setColor(motto${motto.id})|"></button>
+            </div>
+        </div>
+
+        <form action="#" th:action="@{/saveMotto}" method="post" id="mottoForm">
+            <input id="voteValue" type="hidden" name="voteValue" value="" />
+            <input id="voterName" type="hidden" name="name" th:value="${name}" />
+            <button class="submitButton" id="btnNext" onclick=getVotes()>Auswahl bestätigen</button>
+        </form>
+    </div>
+    <script>
+        function setColor(button) {
+            console.log(button);
+            groupButtons = document.querySelectorAll('[id^=motto]');
+            groupButtons.forEach(button => {
+                button.style.background = 'transparent';
+                button.style.fontWeight = 'normal';
+            });
+            button.style.background = "#bb1515";
+            button.style.fontWeight = 'bold';
+        }
+
+        function rgbToHex(rgb) {
+            rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+            var color = (rgb && rgb.length === 4) ? "#" +
+                ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) +
+                ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) +
+                ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
+
+            return color;
+        }
+
+        function getVotes() {
+            groupButtons = document.querySelectorAll(".inputButton");
+            var voteID;
+            groupButtons.forEach(button => {
+                if (button.style.fontWeight == 'bold') {
+                    voteID = 5;
+                }
+            });
+            input = document.getElementById("voteValue");
+            input.value = voteID;
+            document.getElementById("mottoForm").submit();
+        }
+    </script>
+</body>
+
+</html>
