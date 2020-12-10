@@ -60,8 +60,8 @@ public class VotingController {
                 votingPhase = true;
             }
 
-            String mottoVotingConfig = System.getProperty("mottoVoting");
-            if (mottoVotingConfig.equalsIgnoreCase("true")) {
+            String mottoPhaseConfig = System.getProperty("mottoPhase");
+            if (mottoPhaseConfig.equalsIgnoreCase("true")) {
                 mottoPhase = true;
             }
 
@@ -78,7 +78,7 @@ public class VotingController {
 //        mottoPhase = true;
 //        addingPhase = false;
 
-        LOGGER.info("Program started with arguments: votingPhase="+ votingPhase + " mottoVoting=" + mottoPhase + " addingPhase=" + addingPhase);
+        LOGGER.info("Program started with arguments: votingPhase="+ votingPhase + " mottoPhase=" + mottoPhase + " addingPhase=" + addingPhase);
 
         if (voterRepository.findAll().size() == 0) {
             tableAction.setUpVoters(voterRepository);
