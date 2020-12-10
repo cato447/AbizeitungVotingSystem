@@ -6,6 +6,7 @@ import com.github.cato447.AbizeitungVotingSystem.helper.RandomNumber;
 import com.github.cato447.AbizeitungVotingSystem.repositories.*;
 import com.github.cato447.AbizeitungVotingSystem.table.TableAction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
@@ -23,9 +24,15 @@ import java.util.*;
 @Controller
 public class VotingController {
 
-    private boolean votingPhase;
-    private boolean mottoPhase;
-    private boolean addingPhase;
+    @Value("$(voting)")
+    private String voting;
+    @Value("$(motto)")
+    private String motto;
+    @Value("$(adding)")
+    private String adding;
+
+    private Boolean votingPhase = false, mottoPhase = false, addingPhase = false;
+
 
     private static final Logger LOGGER = LogManager.getLogger(VotingController.class);
     private TableAction tableAction = new TableAction();
@@ -54,31 +61,19 @@ public class VotingController {
 
     @PostConstruct
     public void init() {
-        try {
-            String votingPhaseConfig = System.getProperty("votingPhase");
-            if (votingPhaseConfig.equalsIgnoreCase("true")) {
-                votingPhase = true;
-            }
-
-            String mottoVotingConfig = System.getProperty("mottoVoting");
-            if (mottoVotingConfig.equalsIgnoreCase("true")) {
-                mottoPhase = true;
-            }
-
-            String addingPhaseConfig = System.getProperty("addingPhase");
-            if (addingPhaseConfig.equalsIgnoreCase("true")){
-                addingPhase = true;
-            }
-        } catch (Exception e){
-
+        if (voting != null) {
+            votingPhase = true;
+        } else if (adding != null) {
+            addingPhase = true;
+        } else if (motto != null) {
+            mottoPhase = true;
         }
-
 //        //TODO: TESTING REMOVE ON SHIPPING
 //        votingPhase = false;
 //        mottoPhase = true;
 //        addingPhase = false;
 
-        LOGGER.info("Program started with arguments: votingPhase="+ votingPhase + " mottoVoting=" + mottoPhase + " addingPhase=" + addingPhase);
+        LOGGER.info("Program started with arguments: votingPhase=" + votingPhase + " mottoPhase=" + mottoPhase + " addingPhase=" + addingPhase);
 
         if (voterRepository.findAll().size() == 0) {
             tableAction.setUpVoters(voterRepository);
@@ -90,7 +85,7 @@ public class VotingController {
             LOGGER.info("Categories successfully set up");
         }
 
-        if (mottoRepository.findAll().size() == 0){
+        if (mottoRepository.findAll().size() == 0) {
             tableAction.setUpMottos(mottoRepository);
             LOGGER.info("Mottos successfully set up");
         }
@@ -126,7 +121,7 @@ public class VotingController {
                 } else if (voter.getCandidatesubmit_status() && addingPhase) {
                     LOGGER.warn(name + " has already submitted its candidates");
                     return "errors/alreadysubmittedcandidates.html";
-                } else if (voter.getMotto_status() && mottoPhase){
+                } else if (voter.getMotto_status() && mottoPhase) {
                     LOGGER.warn(name + " has already chose their motto");
                     return "errors/alreadyVotedForMotto.html";
                 } else {
@@ -134,7 +129,7 @@ public class VotingController {
                         LOGGER.warn("no code");
                         AuthCode authCode = tableAction.generateToken(name, RandomNumber.getRandomNumberString(), authCodesRepository);
                         sendSimpleMessage(name, "Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
-                    }  else if (authCodesRepository.findByName(name) != null && authCodesRepository.findByName(name).isExpired()){
+                    } else if (authCodesRepository.findByName(name) != null && authCodesRepository.findByName(name).isExpired()) {
                         AuthCode authCode = tableAction.generateToken(name, RandomNumber.getRandomNumberString(), authCodesRepository);
                         sendSimpleMessage(name, "Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
                     }
@@ -157,9 +152,9 @@ public class VotingController {
     public String voting_adding(@RequestParam String code, @RequestParam String name, Model model) {
         String tokenStatus = tableAction.checkToken(name, code, authCodesRepository);
 
-        if (tokenStatus.equals("matched")){
+        if (tokenStatus.equals("matched")) {
             LOGGER.warn("matched");
-            if (mottoPhase){
+            if (mottoPhase) {
                 List<Motto> mottos = mottoRepository.findAll();
                 model.addAttribute("mottos", mottos);
                 model.addAttribute("name", name);
@@ -180,13 +175,13 @@ public class VotingController {
                 model.addAttribute("name", name);
                 return "voting.html";
             }
-        } else if (tokenStatus.equals("expired")){
+        } else if (tokenStatus.equals("expired")) {
             LOGGER.warn("expired");
             model.addAttribute("name", name);
             model.addAttribute("codeExpired", true);
             model.addAttribute("codeFalse", false);
             return "authenticate.html";
-        } else if (tokenStatus.equals("wrong")){
+        } else if (tokenStatus.equals("wrong")) {
             LOGGER.warn("wrong");
             model.addAttribute("name", name);
             model.addAttribute("codeExpired", false);
@@ -222,9 +217,9 @@ public class VotingController {
     }
 
     @RequestMapping("/saveMotto")
-    public String mottoSaving(@RequestParam String name, @RequestParam String voteValue){
+    public String mottoSaving(@RequestParam String name, @RequestParam String voteValue) {
         LOGGER.info(name);
-        if (voterRepository.findByEmail(name).getMotto_status()){
+        if (voterRepository.findByEmail(name).getMotto_status()) {
             return "errors/alreadySubmitted.html";
         } else {
             tableAction.voteForMotto(voteValue, mottoRepository);
