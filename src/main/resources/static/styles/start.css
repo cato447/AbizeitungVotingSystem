@@ -14,14 +14,6 @@ div.userLogin {
     transform: translate(-50%, -50%);
 }
 
-div.adminLogin {
-    position: absolute;
-    right: 10%;
-    bottom: 10%;
-    -webkit-transform: translate(-10%, -10%);
-    transform: translate(-10%, -10%);
-}
-
 input.email_input {
     background-color: transparent;
     border: transparent;

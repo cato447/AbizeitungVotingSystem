@@ -248,22 +248,4 @@ public class VotingController {
         }
     }
 
-    @RequestMapping("/dashboard")
-    public String AccessDashboard(@RequestParam String password, Model model) {
-        try {
-            if (password.equals("admin")) {
-                List<Voter> voters = voterRepository.findAll();
-                List<Category> categories = categoryRepository.findAll();
-                model.addAttribute("voters", voters);
-                model.addAttribute("categories", categories);
-                return "dashboard.html";
-            } else {
-                LOGGER.error("Wrong Password");
-            }
-        } catch (Exception e) {
-            LOGGER.fatal("voters table is not existing!");
-        }
-        return "redirect:/";
-    }
-
 }
