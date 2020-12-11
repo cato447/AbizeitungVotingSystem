@@ -24,15 +24,17 @@ import java.util.*;
 @Controller
 public class VotingController {
 
-    @Value("$(voting)")
-    private String voting;
-    @Value("$(motto)")
-    private String motto;
-    @Value("$(adding)")
-    private String adding;
 
-    private Boolean votingPhase = false, mottoPhase = false, addingPhase = false;
+    @Value("motto")
+    String motto;
+    @Value("adding")
+    String adding;
+    @Value("voting")
+    String voting;
 
+    private boolean votingPhase = false;
+    private boolean mottoPhase = false;
+    private boolean addingPhase = false;
 
     private static final Logger LOGGER = LogManager.getLogger(VotingController.class);
     private TableAction tableAction = new TableAction();
@@ -61,40 +63,42 @@ public class VotingController {
 
     @PostConstruct
     public void init() {
-        if (voting != null) {
-            votingPhase = true;
-        } else if (adding != null) {
-            addingPhase = true;
-        } else if (motto != null) {
-            mottoPhase = true;
-        }
+            if (motto != null){
+                mottoPhase = true;
+            } else if (adding != null){
+                addingPhase = true;
+            } else if (voting != null){
+                votingPhase = true;
+            }
+
+
 //        //TODO: TESTING REMOVE ON SHIPPING
 //        votingPhase = false;
 //        mottoPhase = true;
 //        addingPhase = false;
 
-        LOGGER.info("Program started with arguments: votingPhase=" + votingPhase + " mottoPhase=" + mottoPhase + " addingPhase=" + addingPhase);
+            LOGGER.info("Program started with arguments: votingPhase="+ votingPhase + " mottoPhase=" + mottoPhase + " addingPhase=" + addingPhase);
 
-        if (voterRepository.findAll().size() == 0) {
-            tableAction.setUpVoters(voterRepository);
-            LOGGER.info("Voters successfully set up");
-        }
+            if (voterRepository.findAll().size() == 0) {
+                tableAction.setUpVoters(voterRepository);
+                LOGGER.info("Voters successfully set up");
+            }
 
-        if (categoryRepository.findAll().size() == 0) {
-            tableAction.setUpCategories(categoryRepository);
-            LOGGER.info("Categories successfully set up");
-        }
+            if (categoryRepository.findAll().size() == 0) {
+                tableAction.setUpCategories(categoryRepository);
+                LOGGER.info("Categories successfully set up");
+            }
 
-        if (mottoRepository.findAll().size() == 0) {
-            tableAction.setUpMottos(mottoRepository);
-            LOGGER.info("Mottos successfully set up");
-        }
+            if (mottoRepository.findAll().size() == 0){
+                tableAction.setUpMottos(mottoRepository);
+                LOGGER.info("Mottos successfully set up");
+            }
 
-        if (candidateRepository.findAll().size() == 0 && votingPhase == true && possibleCandidateRepository.findAll().size() != 0) {
-            tableAction.setUpCandidates(possibleCandidateRepository, candidateRepository);
-            LOGGER.info("Candidates successfully set up");
+            if (candidateRepository.findAll().size() == 0 && votingPhase == true && possibleCandidateRepository.findAll().size() != 0) {
+                tableAction.setUpCandidates(possibleCandidateRepository, candidateRepository);
+                LOGGER.info("Candidates successfully set up");
+            }
         }
-    }
 
     @RequestMapping("/")
     public String WelcomeSite() {
