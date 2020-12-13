@@ -20,7 +20,7 @@ input.email_input {
     border-bottom: 2px solid greenyellow;
     color: #FFF;
     font-size: xx-large;
-    width: 100%;
+    width: fit-content;
 }
 
 input.password_input {
@@ -50,10 +50,4 @@ label {
     border-radius: 12px;
     box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.25);
     text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-@media only screen and (max-device-width: 1024px) {
-    input.email_input {
-        font-size: large;
-    }
 }
