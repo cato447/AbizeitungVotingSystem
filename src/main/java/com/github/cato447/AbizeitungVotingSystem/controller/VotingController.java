@@ -27,8 +27,10 @@ public class VotingController {
 
     @Value("motto")
     String motto;
+
     @Value("adding")
     String adding;
+
     @Value("voting")
     String voting;
 
@@ -64,7 +66,9 @@ public class VotingController {
     @PostConstruct
     public void init() {
             if (motto != null){
-                mottoPhase = true;
+                mottoPhase = false;
+                addingPhase = true;
+                votingPhase = false;
             } else if (adding != null){
                 addingPhase = true;
             } else if (voting != null){
