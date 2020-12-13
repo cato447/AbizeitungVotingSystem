@@ -17,10 +17,10 @@ div.userLogin {
 input.email_input {
     background-color: transparent;
     border: transparent;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid greenyellow;
     color: #FFF;
     font-size: xx-large;
-    width: fit-content;
+    width: 100%;
 }
 
 input.password_input {

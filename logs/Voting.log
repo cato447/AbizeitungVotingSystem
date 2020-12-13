@@ -3769,3 +3769,7 @@ java.lang.NullPointerException: null
 2020-12-10 23:50:09,131 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-12-10 23:50:09,137 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
 2020-12-10 23:50:09,152 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-12-12 00:17:46,630 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-12 00:17:46,632 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-12 00:17:46,633 INFO [SpringContextShutdownHook] HikariPool-2 - Shutdown initiated...
+2020-12-12 00:17:46,655 INFO [SpringContextShutdownHook] HikariPool-2 - Shutdown completed.
