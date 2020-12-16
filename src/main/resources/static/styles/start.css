@@ -33,7 +33,7 @@ div.userLogin {
 input.email_input {
     background-color: transparent;
     border: transparent;
-    border-bottom: 2px solid greenyellow;
+    border-bottom: 2px solid #bb1515;
     color: #FFF;
     font-size: xx-large;
     width: 500px;
