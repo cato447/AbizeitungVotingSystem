@@ -3849,3 +3849,9 @@ java.lang.NullPointerException: null
 2020-12-16 23:40:06,992 WARN [http-nio-8000-exec-10] simon.bussmann@adolfinum.de has already submitted its candidates
 2020-12-16 23:41:01,246 WARN [http-nio-8000-exec-2] simon.bussmann@adolfinum.de
 2020-12-16 23:41:01,250 WARN [http-nio-8000-exec-2] simon.bussmann@adolfinum.de has already submitted its candidates
+2020-12-16 23:46:16,518 WARN [http-nio-8000-exec-7] simon.bussmann@adolfinum.de
+2020-12-16 23:46:16,522 WARN [http-nio-8000-exec-7] simon.bussmann@adolfinum.de has already submitted its candidates
+2020-12-16 23:47:29,293 WARN [http-nio-8000-exec-10] simon.bussmann@adolfinum.de
+2020-12-16 23:47:29,297 WARN [http-nio-8000-exec-10] simon.bussmann@adolfinum.de has already submitted its candidates
+2020-12-16 23:49:09,880 WARN [http-nio-8000-exec-3] simon.bussmann@adolfinum.de
+2020-12-16 23:49:09,884 WARN [http-nio-8000-exec-3] simon.bussmann@adolfinum.de has already submitted its candidates

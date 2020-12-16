@@ -31,11 +31,13 @@
 
         function showTimeRemaining() {
             var dateNow = Date.now();
-            var days = Math.floor((dateFuture - dateNow) / (1000 * 60 * 60 * 24))
-            var hours = Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24) / (1000 * 60 * 60))
-            var mins = Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60) / (1000 * 60))
-            var secs = Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60 - mins * 1000 * 60) / 1000)
+            var days = Math.floor((dateFuture - dateNow) / (1000 * 60 * 60 * 24));
+            var hours = Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+            var mins = Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60) / (1000 * 60));
+            var secs = Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60 - mins * 1000 * 60) / 1000);
             document.getElementById("time_remain").innerHTML = "Nächste Abstimmung in: " + days + "D " + hours + ":" + mins + ":" + secs;
+            console.log("Nächste Abstimmung in: " + days + "D " + hours + ":" + mins + ":" + secs);
+        }
     </script>
 </body>
 
