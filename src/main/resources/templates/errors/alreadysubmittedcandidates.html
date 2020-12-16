@@ -9,10 +9,34 @@
 
 <body class="center-screen">
     <div class="centered">
-        <h1 style="color: red;">Du hast deine Kandidaten schon vorgeschlagen!</h1>
-        <a href="/">Return to Login-Site</a>
-        <button type="submit" id="signup_button">Abstimmen</button>
+        <h1>Du hast schon abgestimmt!</h1>
+        <h2 id="time_remain">Nächste Abstimmung in: </h2>
+        <button id="backButton" class="submitButton">Zurück zum Anfang</button>
     </div>
+
+    <script>
+        document.getElementById("backButton").onclick = function() {
+            location.href = "/";
+        };
+
+        // We can set endTime to whatever we want here (e.g. Midnight today )
+        // Use moment().endOf('day') to do this.
+        var dateFuture = new Date(2020, 11, 28, 0, 0);
+
+        // Show time remaining now.
+        showTimeRemaining();
+
+        // Set a timer to update the displayed clock every 1000 milliseconds.
+        setInterval(showTimeRemaining, 1000);
+
+        function showTimeRemaining() {
+            var dateNow = Date.now();
+            var days = Math.floor((dateFuture - dateNow) / (1000 * 60 * 60 * 24))
+            var hours = Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24) / (1000 * 60 * 60))
+            var mins = Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60) / (1000 * 60))
+            var secs = Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60 - mins * 1000 * 60) / 1000)
+            document.getElementById("time_remain").innerHTML = "Nächste Abstimmung in: " + days + "D " + hours + ":" + mins + ":" + secs;
+    </script>
 </body>
 
 </html>

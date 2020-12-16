@@ -65,21 +65,9 @@ public class VotingController {
 
     @PostConstruct
     public void init() {
-            if (motto != null){
-                mottoPhase = false;
-                addingPhase = true;
-                votingPhase = false;
-            } else if (adding != null){
-                addingPhase = true;
-            } else if (voting != null){
-                votingPhase = true;
-            }
-
-
-//        //TODO: TESTING REMOVE ON SHIPPING
-//        votingPhase = false;
-//        mottoPhase = true;
-//        addingPhase = false;
+            mottoPhase = false;
+            votingPhase = false;
+            addingPhase = true;
 
             LOGGER.info("Program started with arguments: votingPhase="+ votingPhase + " mottoPhase=" + mottoPhase + " addingPhase=" + addingPhase);
 
