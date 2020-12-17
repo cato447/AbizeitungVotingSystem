@@ -24,6 +24,10 @@ h1 {
     font-size: 75px;
 }
 
+h2 {
+    color: #6d6d78;
+}
+
 .submitButton {
     padding: .25em 0;
     border: 0;

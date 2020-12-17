@@ -10,14 +10,9 @@
 
 <body class="center-screen">
 
-    <script>
-        var scale = Math.min(
-            availableWidth / contentWidth,
-            availableHeight / contentHeight
-        );
-    </script>
-
     <h1 th:text="|Dir wurde ein Code an ${name} gesendet!|"></h1>
+    <h1>Nicht wundern das kann ein wenig dauern!</h1>
+    <h1 id="time_remain" class="end" th:text="${codeTime}"></h1>
     <h2>Bitte gebe den Authentifizierungscode ein</h2>
     <form action="#" id="passForm" th:action="@{/vote}" method="post">
         <input id="voterName" type="hidden" name="name" th:value="${name}" />
@@ -28,11 +23,18 @@
         <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}">
         <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}">
         <input type="text" placeholder="•" class="passInput" name="pass[]" maxlength="1" autocomplete="off" required pattern="\d{1}">
-
     </form>
     <button class="submitButton" id="signup_button" onclick="getCode()">Abstimmen</button>
+
+
+    <form action="#" th:action="@{/newCode}" method="post">
+        <input id="voterName" type="hidden" name="name" th:value="${name}" />
+        <button class="newCode">Neuen Code anfordern</button>
+    </form>
+
+
     <div th:if="${codeExpired}">
-        <h2 class="errorCode">Der Code ist nicht mehr gültig!<br>Fordere einen neuen an</h2>
+        <h2 class="errorCode">Der Code ist nicht mehr gültig!</h2>
     </div>
 
     <div th:if="${codeFalse}">
@@ -76,6 +78,33 @@
             output.value = code;
             document.getElementById("passForm").submit();
         }
+
+        function updateCounter(time) {
+            const zeroPad = (num, places) => String(num).padStart(places, '0')
+
+            // Show time remaining now.
+            showTimeRemaining();
+
+            var dateFuture = time;
+            console.log(dateFuture);
+
+            // Set a timer to update the displayed clock every 1000 milliseconds.
+            var updateTimeLoop = setInterval(showTimeRemaining, 1000);
+
+            function showTimeRemaining() {
+                var dateNow = Date.now();
+                var days = zeroPad(Math.floor((dateFuture - dateNow) / (1000 * 60 * 60 * 24)), 2);
+                var hours = zeroPad(Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24) / (1000 * 60 * 60)), 2);
+                var mins = zeroPad(Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60) / (1000 * 60)), 2);
+                var secs = zeroPad(Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60 - mins * 1000 * 60) / 1000), 2);
+                document.getElementById("time_remain").innerHTML = "Der Code gilt noch für " + mins + ":" + secs;
+                if (hours + mins + secs == 0) {
+                    document.getElementById("time_remain").innerHTML = "Der Code ist abgelaufen";
+                }
+            }
+        }
+
+        updateCounter(document.getElementById("time_remain").innerHTML);
     </script>
 
 </body>

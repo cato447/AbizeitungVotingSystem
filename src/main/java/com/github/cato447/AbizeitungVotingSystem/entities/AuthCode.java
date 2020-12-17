@@ -37,6 +37,10 @@ public class AuthCode {
         return time;
     }
 
+    public long getExpirationTime(){
+        return time + 1800*1000;
+    }
+
     public boolean isExpired(){
             return System.currentTimeMillis() >= (time + 1800*1000);
     }

@@ -55,7 +55,6 @@ public class TableAction {
         try {
             AuthCode authCode = authCodesRepository.findByName(name);
             if (authCode.getCode().equals(code) && !authCode.isExpired()) {
-                authCodesRepository.delete(authCode);
                 return "matched";
             } else if (authCode.isExpired()) {
                 authCodesRepository.delete(authCode);
@@ -65,6 +64,10 @@ public class TableAction {
             return "wrong";
         }
         return "wrong";
+    }
+
+    public void deleteToken(String name, AuthCodesRepository authCodesRepository){
+        authCodesRepository.delete(authCodesRepository.findByName(name));
     }
 
     private boolean fiveMinutesPassed(Long time){
