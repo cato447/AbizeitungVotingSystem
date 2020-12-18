@@ -227,7 +227,7 @@ public class VotingController {
                 index++;
             }
             tableAction.updateCandidatesubmit_status(name, voterRepository);
-            return "candidateAddingSuccessful.html";
+            return "voteSuccessful.html";
         }
     }
 
