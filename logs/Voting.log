@@ -641,3 +641,155 @@ org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as express
 2020-12-18 19:43:16,620 WARN [http-nio-8000-exec-6] no code
 2020-12-18 19:43:25,932 WARN [http-nio-8000-exec-8] 424637
 2020-12-18 19:43:25,933 WARN [http-nio-8000-exec-8] matched
+2020-12-18 20:09:41,573 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-18 20:09:41,574 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-18 20:09:41,575 INFO [SpringContextShutdownHook] HikariPool-2 - Shutdown initiated...
+2020-12-18 20:09:41,585 INFO [SpringContextShutdownHook] HikariPool-2 - Shutdown completed.
+2020-12-18 20:09:43,658 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 13713 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
+2020-12-18 20:09:43,661 INFO [restartedMain] No active profile set, falling back to default profiles: default
+2020-12-18 20:09:43,715 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-18 20:09:43,716 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-18 20:09:44,064 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-18 20:09:44,111 INFO [restartedMain] Finished Spring Data repository scanning in 41ms. Found 6 JPA repository interfaces.
+2020-12-18 20:09:44,704 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
+2020-12-18 20:09:44,713 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
+2020-12-18 20:09:44,713 INFO [restartedMain] Starting service [Tomcat]
+2020-12-18 20:09:44,713 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-18 20:09:44,768 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-12-18 20:09:44,768 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1052 ms
+2020-12-18 20:09:44,913 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-18 20:09:44,946 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-12-18 20:09:45,031 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-18 20:09:45,093 INFO [restartedMain] HikariPool-1 - Starting...
+2020-12-18 20:09:45,416 INFO [restartedMain] HikariPool-1 - Start completed.
+2020-12-18 20:09:45,440 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-12-18 20:09:46,045 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-18 20:09:46,052 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-18 20:09:46,062 INFO [restartedMain] LiveReload server is running on port 35729
+2020-12-18 20:09:46,429 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
+2020-12-18 20:09:46,589 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-18 20:09:46,680 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-18 20:09:46,857 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
+2020-12-18 20:09:46,873 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
+2020-12-18 20:09:46,887 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 3.557 seconds (JVM running for 4.11)
+2020-12-18 20:09:53,996 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-18 20:09:53,997 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-12-18 20:09:54,006 INFO [http-nio-8000-exec-1] Completed initialization in 9 ms
+2020-12-18 20:10:00,674 WARN [http-nio-8000-exec-3] alba.bussmann@adolfinum.de
+2020-12-18 20:10:00,697 ERROR [http-nio-8000-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: Entity must not be null!; nested exception is java.lang.IllegalArgumentException: Entity must not be null!] with root cause
+java.lang.IllegalArgumentException: Entity must not be null!
+	at org.springframework.util.Assert.notNull(Assert.java:201)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.delete(SimpleJpaRepository.java:188)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.data.repository.core.support.ImplementationInvocationMetadata.invoke(ImplementationInvocationMetadata.java:72)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:382)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:205)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:549)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:155)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:178)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy90.delete(Unknown Source)
+	at com.github.cato447.AbizeitungVotingSystem.table.TableAction.deleteToken(TableAction.java:71)
+	at com.github.cato447.AbizeitungVotingSystem.controller.VotingController.VerifyName(VotingController.java:147)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2020-12-18 20:10:55,640 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-18 20:10:55,643 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-18 20:10:55,646 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-12-18 20:10:55,662 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-12-18 20:10:58,549 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 13882 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
+2020-12-18 20:10:58,551 INFO [restartedMain] No active profile set, falling back to default profiles: default
+2020-12-18 20:10:58,604 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-18 20:10:58,604 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-18 20:10:59,004 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-18 20:10:59,057 INFO [restartedMain] Finished Spring Data repository scanning in 43ms. Found 6 JPA repository interfaces.
+2020-12-18 20:10:59,746 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
+2020-12-18 20:10:59,755 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
+2020-12-18 20:10:59,756 INFO [restartedMain] Starting service [Tomcat]
+2020-12-18 20:10:59,756 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-18 20:10:59,814 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-12-18 20:10:59,814 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1210 ms
+2020-12-18 20:10:59,960 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-18 20:10:59,991 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-12-18 20:11:00,076 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-18 20:11:00,139 INFO [restartedMain] HikariPool-1 - Starting...
+2020-12-18 20:11:00,461 INFO [restartedMain] HikariPool-1 - Start completed.
+2020-12-18 20:11:00,484 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-12-18 20:11:01,084 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-18 20:11:01,089 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-18 20:11:01,102 INFO [restartedMain] LiveReload server is running on port 35729
+2020-12-18 20:11:01,475 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
+2020-12-18 20:11:01,665 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-18 20:11:01,776 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-18 20:11:01,951 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
+2020-12-18 20:11:01,969 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
+2020-12-18 20:11:01,979 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 3.746 seconds (JVM running for 4.301)
+2020-12-18 20:11:05,944 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-18 20:11:05,945 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-12-18 20:11:05,951 INFO [http-nio-8000-exec-1] Completed initialization in 6 ms
+2020-12-18 20:11:11,869 WARN [http-nio-8000-exec-3] alba.bussmann@adolfinum.de
+2020-12-18 20:11:11,881 ERROR [http-nio-8000-exec-3] alba.bussmann@adolfinum.de is not allowed to vote

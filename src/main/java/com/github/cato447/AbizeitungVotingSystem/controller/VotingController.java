@@ -111,13 +111,11 @@ public class VotingController {
         if (name.strip().toLowerCase().matches("[a-z]+\\.[a-z]+@adolfinum+\\.de$")) {
             try {
                 LOGGER.warn(name);
-                try {
-                    Voter voter = voterRepository.findByEmail(name.toLowerCase().strip());
-                } catch (Exception e){
+                Voter voter = voterRepository.findByEmail(name.toLowerCase().strip());
+                if (voter == null){
                     LOGGER.error(name + " is not allowed to vote");
                     return "errors/notRegistered.html";
                 }
-                Voter voter = voterRepository.findByEmail(name.toLowerCase().strip());
                 if (voter.getVote_status() && votingPhase) {
                     LOGGER.warn(name + " has already voted");
                     return "errors/alreadyVoted.html";
