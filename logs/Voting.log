@@ -793,3 +793,7 @@ java.lang.IllegalArgumentException: Entity must not be null!
 2020-12-18 20:11:05,951 INFO [http-nio-8000-exec-1] Completed initialization in 6 ms
 2020-12-18 20:11:11,869 WARN [http-nio-8000-exec-3] alba.bussmann@adolfinum.de
 2020-12-18 20:11:11,881 ERROR [http-nio-8000-exec-3] alba.bussmann@adolfinum.de is not allowed to vote
+2020-12-18 21:02:32,820 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-18 21:02:32,824 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-18 21:02:32,829 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-12-18 21:02:32,842 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
