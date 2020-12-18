@@ -1,28 +1,21 @@
 Nesthocker
 Beste Ausreden
-Mathegötter (erklärend)
-Falscher Beruf
 Verfressenste
 Ehre wem Ehre gebührt - Die Engagiertesten
 Verhandlungskünstler
 Stufenclown
-Größte Sauklaue (Lehrer)
 Knacki
-Traumpaar (Schüler)
-Lehrerbuddies
-Lebt den Beruf
-Lexikon (Schüler)
+Traumpaar
+Lexikon
 Harzer
-Unvergesslich (Schüler)
-Unvergesslich (Lehrer)
-Schülerschreck
+Unvergesslich
 Größter Klugscheißer
 Future Celebrity
 Pornhub als Abendbeschäftigung
 Größte/r Schnorrer/in
 Hat gefühlt die meisten Fehlstunden
 Größte Diva
-Weltherrschaft 2040 (Schüler)
+Weltherrschaft 2040
 Größte Labertasche
 Sonnenschein
 Kleinster Aufwand, größter Erfolg
@@ -40,3 +33,10 @@ Lästermaul
 Notenwürfler
 Macht alles außer Unterricht
 Übermotiviert
+Schülerschreck
+Mathegötter (der/die beste Mathelehrer/in)
+Falscher Beruf
+Größte Sauklaue
+Lehrerbuddies
+Lebt den Beruf
+Unvergesslich
