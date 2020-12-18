@@ -28,7 +28,7 @@
                 $('#inputForm div.group:nth-child(' + q + ')').hide();
                 $('#inputForm div.group:nth-child(' + (q + 1) + ')').show();
                 if (q == (qMax - 1)) {
-                    $('#btnNext').html('Submit Answers');
+                    $('#btnNext').html('Eingabe bestätigen');
                 }
                 q++;
             } else {
@@ -52,7 +52,7 @@
                     <input th:field="*{possibleCandidates[__${itemStat.index}__].name}" />
                 </div>
             </div>
-            <button class="submitButton" id="btnNext" type="submit">Nächste Frage</button>
+            <button class="submitButton" id="btnNext" type="submit">Nächste Kategorie</button>
             <input id="voterName" type="hidden" name="name" th:value="${name}" />
         </form>
     </div>
