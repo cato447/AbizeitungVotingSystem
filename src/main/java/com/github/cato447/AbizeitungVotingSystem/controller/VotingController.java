@@ -173,7 +173,6 @@ public class VotingController {
                 List<Motto> mottos = mottoRepository.findAll();
                 model.addAttribute("mottos", mottos);
                 model.addAttribute("name", name);
-                model.addAttribute("code", code);
                 return "mottoVoting.html";
             } else if (addingPhase) {
                 PossibleCandidateWrapper possibleCandidates = new PossibleCandidateWrapper();
@@ -184,13 +183,11 @@ public class VotingController {
                 model.addAttribute("categories", categories);
                 model.addAttribute("form", possibleCandidates);
                 model.addAttribute("name", name);
-                model.addAttribute("code", code);
                 return "addingCandidates.html";
             } else if (votingPhase) {
                 List<Category> categories = categoryRepository.findAll();
                 model.addAttribute("categories", categories);
                 model.addAttribute("name", name);
-                model.addAttribute("code", code);
                 return "voting.html";
             }
         } else if (tokenStatus.equals("expired")) {
@@ -210,11 +207,10 @@ public class VotingController {
     }
 
     @RequestMapping("/saveCandidates")
-    public String candidateSaving(@ModelAttribute PossibleCandidateWrapper possibleCandidates, @RequestParam String name, @RequestParam String code) {
+    public String candidateSaving(@ModelAttribute PossibleCandidateWrapper possibleCandidates, @RequestParam String name) {
         if (voterRepository.findByEmail(name).getVote_status()) {
             return "errors/alreadyVoted.html";
         } else {
-            authCodesRepository.delete(authCodesRepository.findByName(code));
             LinkedList<PossibleCandidate> posCandidates = possibleCandidates.getPossibleCandidates();
             long index = 1;
             for (PossibleCandidate posCandidate : posCandidates) {
@@ -236,12 +232,11 @@ public class VotingController {
     }
 
     @RequestMapping("/saveMotto")
-    public String mottoSaving(@RequestParam String name, @RequestParam String voteValue, @RequestParam String code) {
+    public String mottoSaving(@RequestParam String name, @RequestParam String voteValue) {
         LOGGER.info(name);
         if (voterRepository.findByEmail(name).getMotto_status()) {
             return "errors/alreadySubmitted.html";
         } else {
-            authCodesRepository.delete(authCodesRepository.findByName(code));
             tableAction.voteForMotto(voteValue, mottoRepository);
             tableAction.updateMottoStatus(name, voterRepository);
             LOGGER.info(name + " has choose his motto");
@@ -250,11 +245,10 @@ public class VotingController {
     }
 
     @RequestMapping("/processVote")
-    public String ProcessVote(@RequestParam String name, @RequestParam String voteValues, @RequestParam String code) {
+    public String ProcessVote(@RequestParam String name, @RequestParam String voteValues) {
         if (voterRepository.findByEmail(name).getCandidatesubmit_status()) {
             return "errors/alreadySubmitted.html";
         } else {
-            authCodesRepository.delete(authCodesRepository.findByName(code));
             String[] partVoteValues = voteValues.split(",");
             for (String s : partVoteValues) {
                 tableAction.voteForCandidate(s, candidateRepository);

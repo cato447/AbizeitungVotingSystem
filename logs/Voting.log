@@ -81,3 +81,79 @@
 2020-12-18 18:56:14,142 WARN [http-nio-8000-exec-4] simon.bussmann@adolfinum.de
 2020-12-18 18:56:24,707 WARN [http-nio-8000-exec-6] 513389
 2020-12-18 18:56:24,707 WARN [http-nio-8000-exec-6] matched
+2020-12-18 18:59:40,836 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-18 18:59:40,840 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-18 18:59:40,844 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-12-18 18:59:40,857 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-12-18 18:59:43,049 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 8537 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
+2020-12-18 18:59:43,053 INFO [restartedMain] No active profile set, falling back to default profiles: default
+2020-12-18 18:59:43,098 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-18 18:59:43,099 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-18 18:59:43,445 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-18 18:59:43,489 INFO [restartedMain] Finished Spring Data repository scanning in 39ms. Found 6 JPA repository interfaces.
+2020-12-18 18:59:44,087 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
+2020-12-18 18:59:44,095 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
+2020-12-18 18:59:44,096 INFO [restartedMain] Starting service [Tomcat]
+2020-12-18 18:59:44,096 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-18 18:59:44,153 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-12-18 18:59:44,154 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1055 ms
+2020-12-18 18:59:44,318 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-18 18:59:44,360 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-12-18 18:59:44,449 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-18 18:59:44,516 INFO [restartedMain] HikariPool-1 - Starting...
+2020-12-18 18:59:44,869 INFO [restartedMain] HikariPool-1 - Start completed.
+2020-12-18 18:59:44,889 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-12-18 18:59:45,479 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-18 18:59:45,487 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-18 18:59:45,501 INFO [restartedMain] LiveReload server is running on port 35729
+2020-12-18 18:59:45,960 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
+2020-12-18 18:59:46,131 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-18 18:59:46,244 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-18 18:59:46,446 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
+2020-12-18 18:59:46,468 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
+2020-12-18 18:59:46,477 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 3.797 seconds (JVM running for 4.416)
+2020-12-18 18:59:52,929 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-18 18:59:52,930 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-12-18 18:59:52,937 INFO [http-nio-8000-exec-1] Completed initialization in 7 ms
+2020-12-18 18:59:55,289 WARN [http-nio-8000-exec-3] simon.bussmann@adolfinum.de
+2020-12-18 19:00:06,493 WARN [http-nio-8000-exec-5] 513389
+2020-12-18 19:00:06,494 WARN [http-nio-8000-exec-5] matched
+2020-12-18 19:03:11,735 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-18 19:03:11,738 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-18 19:03:11,741 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-12-18 19:03:11,751 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-12-18 19:03:14,975 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 8726 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
+2020-12-18 19:03:14,980 INFO [restartedMain] No active profile set, falling back to default profiles: default
+2020-12-18 19:03:15,044 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-18 19:03:15,045 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-18 19:03:15,409 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-18 19:03:15,455 INFO [restartedMain] Finished Spring Data repository scanning in 40ms. Found 6 JPA repository interfaces.
+2020-12-18 19:03:16,022 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
+2020-12-18 19:03:16,032 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
+2020-12-18 19:03:16,032 INFO [restartedMain] Starting service [Tomcat]
+2020-12-18 19:03:16,033 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-18 19:03:16,089 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-12-18 19:03:16,089 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1044 ms
+2020-12-18 19:03:16,256 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-18 19:03:16,294 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-12-18 19:03:16,398 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-18 19:03:16,478 INFO [restartedMain] HikariPool-1 - Starting...
+2020-12-18 19:03:16,810 INFO [restartedMain] HikariPool-1 - Start completed.
+2020-12-18 19:03:16,832 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-12-18 19:03:17,396 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-18 19:03:17,403 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-18 19:03:17,415 INFO [restartedMain] LiveReload server is running on port 35729
+2020-12-18 19:03:17,773 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
+2020-12-18 19:03:17,961 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-18 19:03:18,056 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-18 19:03:18,211 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
+2020-12-18 19:03:18,228 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
+2020-12-18 19:03:18,237 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 3.6 seconds (JVM running for 4.169)
+2020-12-18 19:03:24,174 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-18 19:03:24,174 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-12-18 19:03:24,179 INFO [http-nio-8000-exec-1] Completed initialization in 5 ms
+2020-12-18 19:03:26,721 WARN [http-nio-8000-exec-3] simon.bussmann@adolfinum.de
+2020-12-18 19:03:37,618 WARN [http-nio-8000-exec-5] 513389
+2020-12-18 19:03:37,619 WARN [http-nio-8000-exec-5] matched
+2020-12-18 19:03:41,410 WARN [http-nio-8000-exec-7] 513389
+2020-12-18 19:03:41,410 WARN [http-nio-8000-exec-7] wrong

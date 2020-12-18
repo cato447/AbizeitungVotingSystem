@@ -55,6 +55,7 @@ public class TableAction {
         try {
             AuthCode authCode = authCodesRepository.findByName(name);
             if (authCode.getCode().equals(code) && !authCode.isExpired()) {
+                authCodesRepository.delete(authCode);
                 return "matched";
             } else if (authCode.isExpired()) {
                 authCodesRepository.delete(authCode);
