@@ -19,6 +19,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 
@@ -85,7 +87,16 @@ public class VotingController {
 
     @RequestMapping("/")
     public String WelcomeSite() {
-        return "start.html";
+        LocalDate finishDate = LocalDate.of(2021, Month.JANUARY,8);
+        LocalDate now = LocalDate.now();
+
+        if(now.isAfter(finishDate)){
+            LOGGER.warn("passed");
+            return "errors/votingClosed.html";
+        } else {
+            LOGGER.warn("in Bounds");
+            return "start.html";
+        }
     }
 
     public void sendSimpleMessage(String to, String subject, String text) {

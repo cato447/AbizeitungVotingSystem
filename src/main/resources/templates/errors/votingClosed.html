@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/styles/allreadyVoted.css}" rel="stylesheet" />
+</head>
+
+<body class="center-screen">
+    <div class="centered">
+        <h1>Das Voting wurde beendet!</h1>
+        <h2>Informationen zu Votings sind der Adolfinumwebsite zu entnehmen</h2>
+        <button id="backButton" class="submitButton">Zur Adolfinum Seite</button>
+    </div>
+
+    <script>
+        document.getElementById("backButton").onclick = function() {
+            location.href = "https://adolfinum.de";
+        };
+    </script>
+</body>
+
+</html>
