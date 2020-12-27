@@ -25,16 +25,6 @@ import java.util.concurrent.ExecutionException;
 @Controller
 public class VotingController {
 
-
-    @Value("motto")
-    String motto;
-
-    @Value("adding")
-    String adding;
-
-    @Value("voting")
-    String voting;
-
     private boolean votingPhase = false;
     private boolean mottoPhase = false;
     private boolean addingPhase = false;
@@ -67,8 +57,8 @@ public class VotingController {
     @PostConstruct
     public void init() {
             mottoPhase = false;
-            votingPhase = false;
-            addingPhase = true;
+            votingPhase = true;
+            addingPhase = false;
 
             LOGGER.info("Program started with arguments: votingPhase="+ votingPhase + " mottoPhase=" + mottoPhase + " addingPhase=" + addingPhase);
 
@@ -127,7 +117,6 @@ public class VotingController {
                     return "errors/alreadyVoted.html";
                 } else {
                     if (authCodesRepository.findByName(name) == null) {
-                        LOGGER.warn("no code");
                         AuthCode authCode = tableAction.generateToken(name, RandomNumber.getRandomNumberString(), authCodesRepository);
                         sendSimpleMessage(name, "Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
                     } else if (authCodesRepository.findByName(name) != null && authCodesRepository.findByName(name).isExpired()) {
@@ -164,7 +153,6 @@ public class VotingController {
     @RequestMapping("/vote")
     public String voting_adding(@RequestParam String code, @RequestParam String name, Model model) {
         String tokenStatus = tableAction.checkToken(name, code, authCodesRepository);
-        LOGGER.warn(code);
         if (tokenStatus.equals("matched")) {
             LOGGER.warn("matched");
             if (mottoPhase) {
@@ -244,15 +232,17 @@ public class VotingController {
 
     @RequestMapping("/processVote")
     public String ProcessVote(@RequestParam String name, @RequestParam String voteValues) {
-        if (voterRepository.findByEmail(name).getCandidatesubmit_status()) {
-            return "errors/alreadySubmitted.html";
+        if (voterRepository.findByEmail(name).getVote_status()) {
+            return "errors/alreadyVoted.html";
         } else {
-            String[] partVoteValues = voteValues.split(",");
-            for (String s : partVoteValues) {
-                tableAction.voteForCandidate(s, candidateRepository);
+            if(!voteValues.equals("")) {
+                String[] partVoteValues = voteValues.split(",");
+                for (String s : partVoteValues) {
+                    tableAction.voteForCandidate(s, candidateRepository);
+                }
+                LOGGER.info(name + " has voted!");
             }
             tableAction.updateVotingStatus(name, voterRepository);
-            LOGGER.info(name + " has voted!");
             return "voteSuccessful.html";
         }
     }

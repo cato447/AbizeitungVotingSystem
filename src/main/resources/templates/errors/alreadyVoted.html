@@ -10,7 +10,6 @@
 <body class="center-screen">
     <div class="centered">
         <h1>Du hast schon abgestimmt!</h1>
-        <h2 id="time_remain">Nächste Abstimmung in: </h2>
         <button id="backButton" class="submitButton">Zurück zum Anfang</button>
     </div>
 
@@ -18,28 +17,6 @@
         document.getElementById("backButton").onclick = function() {
             location.href = "/";
         };
-
-        const zeroPad = (num, places) => String(num).padStart(places, '0')
-
-        // We can set endTime to whatever we want here (e.g. Midnight today )
-        // Use moment().endOf('day') to do this.
-        var dateFuture = new Date(2020, 11, 28, 0, 0);
-
-        // Show time remaining now.
-        showTimeRemaining();
-
-        // Set a timer to update the displayed clock every 1000 milliseconds.
-        setInterval(showTimeRemaining, 1000);
-
-        function showTimeRemaining() {
-            var dateNow = Date.now();
-            var days = zeroPad(Math.floor((dateFuture - dateNow) / (1000 * 60 * 60 * 24)), 2);
-            var hours = zeroPad(Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24) / (1000 * 60 * 60)), 2);
-            var mins = zeroPad(Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60) / (1000 * 60)), 2);
-            var secs = zeroPad(Math.floor(((dateFuture - dateNow) - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60 - mins * 1000 * 60) / 1000), 2);
-            document.getElementById("time_remain").innerHTML = "Nächste Abstimmung in: " + days + "D " + hours + ":" + mins + ":" + secs;
-            console.log("Nächste Abstimmung in: " + days + "D " + hours + ":" + mins + ":" + secs);
-        }
     </script>
 </body>
 
