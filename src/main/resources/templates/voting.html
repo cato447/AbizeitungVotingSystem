@@ -62,7 +62,7 @@
                 $('#votingButtons div.voteDiv:nth-child(' + q + ')').hide();
                 $('#votingButtons div.voteDiv:nth-child(' + (q + 1) + ')').show();
                 if (q == (qMax - 1)) {
-                    $('#btnNext').html('Submit Answers');
+                    $('#btnNext').html('Auswahl bestätigen');
                 }
                 q++;
             } else {
@@ -81,7 +81,7 @@
                 </div>
             </div>
         </div>
-        <button class="submitButton" id="btnNext" type="submit">Nächste Frage</button>
+        <button class="submitButton" id="btnNext" type="submit">Nächste Kategorie</button>
         <form action="#" th:action="@{/processVote}" method="post" id="myForm">
             <input id="voteValues" type="hidden" name="voteValues" value="" />
             <input id="voterName" type="hidden" name="name" th:value="${name}" />
