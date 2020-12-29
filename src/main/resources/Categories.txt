@@ -5,7 +5,7 @@ Ehre wem Ehre gebührt - Die Engagiertesten
 Verhandlungskünstler
 Stufenclown
 Knacki
-Traumpaar
+(x)Traumpaar
 Lexikon
 Harzer
 Unvergesslich
@@ -26,10 +26,10 @@ Lehrers Liebling
 Gleich geblieben
 Größter Bonze
 Verdient später am meisten
-Lehrerschreck
+(x)Lehrerschreck
 Augenschmaus (W)
 Augenschmaus (M)
-Lästermaul
+Lästermaul (Gossip Girl)
 Notenwürfler
 Macht alles außer Unterricht
 Übermotiviert
