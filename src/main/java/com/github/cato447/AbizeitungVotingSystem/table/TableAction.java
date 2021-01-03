@@ -71,12 +71,8 @@ public class TableAction {
         authCodesRepository.delete(authCodesRepository.findByName(name));
     }
 
-    private boolean fiveMinutesPassed(Long time){
-        return System.currentTimeMillis() >= (time + 300*1000);
-    }
-
     private int getLimit(List<PossibleCandidate> possibleCandidates){
-        return possibleCandidates.size() <= 5 ? possibleCandidates.size() : 5;
+        return possibleCandidates.size() <= 15 ? possibleCandidates.size() : 15;
     }
 
     public void voteForCandidate(String id, CandidateRepository candidateRepository){
@@ -123,8 +119,17 @@ public class TableAction {
                 Collections.sort(possibleCandidatesPerCategory, Comparator.comparing(PossibleCandidate::getVotes));
                 Collections.reverse(possibleCandidatesPerCategory);
                 for (int j = 0; j < getLimit(possibleCandidatesPerCategory); j++){
-                    Candidate candidate = new Candidate(possibleCandidatesPerCategory.get(j).getName(), possibleCandidatesPerCategory.get(j).getCategory());
-                    candidateRepository.save(candidate);
+                    if (j >= 10 && possibleCandidatesPerCategory.get(j).getVotes() == possibleCandidatesPerCategory.get(j-1).getVotes()){
+                        Candidate candidate = new Candidate(possibleCandidatesPerCategory.get(j).getName(), possibleCandidatesPerCategory.get(j).getCategory());
+                        candidateRepository.save(candidate);
+                    }
+                    if (j < 10){
+                        Candidate candidate = new Candidate(possibleCandidatesPerCategory.get(j).getName(), possibleCandidatesPerCategory.get(j).getCategory());
+                        candidateRepository.save(candidate);
+                    }
+                    if (j == 14){
+                        break;
+                    }
                 }
                 i += -1;
                 possibleCandidatesPerCategory.clear();

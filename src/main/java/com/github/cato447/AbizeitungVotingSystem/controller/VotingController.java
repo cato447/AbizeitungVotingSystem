@@ -22,7 +22,6 @@ import javax.annotation.PostConstruct;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
 
 @Controller
 public class VotingController {
