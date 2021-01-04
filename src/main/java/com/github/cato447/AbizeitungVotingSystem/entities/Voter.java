@@ -14,7 +14,6 @@ public class Voter {
         this.email = email;
         this.vote_status = false;
         this.candidatesubmit_status = false;
-        this.motto_status = false;
     }
 
     @Id
@@ -22,7 +21,6 @@ public class Voter {
     private Long id;
     private String email;
     private Boolean vote_status;
-    private Boolean motto_status;
     private Boolean candidatesubmit_status;
 
     public Long getId() {
@@ -41,10 +39,6 @@ public class Voter {
         return candidatesubmit_status;
     }
 
-    public Boolean getMotto_status() {
-        return motto_status;
-    }
-
     public void vote(){
         vote_status = true;
     }
@@ -52,6 +46,4 @@ public class Voter {
     public void submitCandidates()  {
         candidatesubmit_status = true;
     }
-
-    public void voteMotto() { motto_status = true;}
 }

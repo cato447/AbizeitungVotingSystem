@@ -42,10 +42,10 @@
         <form id="inputForm" action="#" th:action="@{/saveCandidates}" th:object="${form}" method="post">
             <div id="candidateAdding">
                 <div class="group" th:each="category, itemStat : ${categories}">
-                    <div th:if="${itemStat.index > 31}">
+                    <div th:if="${itemStat.index > 30}">
                         <h2 class="categoryCategory">Lehrer</h2>
                     </div>
-                    <div th:unless="${itemStat.index > 31}">
+                    <div th:unless="${itemStat.index > 30}">
                         <h2 class="categoryCategory">Schüler</h2>
                     </div>
                     <h2 class="categoryHeader" th:text="${category.name}"></h2>

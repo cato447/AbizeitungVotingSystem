@@ -1,16 +1,9 @@
 package com.github.cato447.AbizeitungVotingSystem.table;
 
-import com.github.cato447.AbizeitungVotingSystem.controller.VotingController;
 import com.github.cato447.AbizeitungVotingSystem.entities.*;
 import com.github.cato447.AbizeitungVotingSystem.repositories.*;
-import org.aspectj.weaver.loadtime.definition.LightXMLParser;
 
 import java.io.*;
-import java.lang.reflect.Array;
-import java.net.JarURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
-import java.nio.Buffer;
 import java.util.*;
 
 public class TableAction {
@@ -28,12 +21,6 @@ public class TableAction {
     public void updateCandidatesubmit_status(String email, VoterRepository voterRepository){
         Voter voter = voterRepository.findByEmail(email);
         voter.submitCandidates();
-        voterRepository.save(voter);
-    }
-
-    public void updateMottoStatus(String email, VoterRepository voterRepository){
-        Voter voter = voterRepository.findByEmail(email);
-        voter.voteMotto();
         voterRepository.save(voter);
     }
 
@@ -80,13 +67,6 @@ public class TableAction {
         Candidate candidate = candidateRepository.findById(candidateID).get();
         candidate.votedFor();
         candidateRepository.save(candidate);
-    }
-
-    public void voteForMotto(String id, MottoRepository mottoRepository){
-        long mottoID = Long.valueOf(id);
-        Motto motto = mottoRepository.findById(mottoID).get();
-        motto.voteFor();
-        mottoRepository.save(motto);
     }
 
     public void setUpVoters(VoterRepository voterRepository){
@@ -142,7 +122,7 @@ public class TableAction {
     }
 
     public void setUpCategories(CategoryRepository categoryRepository){
-        try (InputStream inputStream = getClass().getResourceAsStream("/Categories.txt");
+        try (InputStream inputStream = getClass().getResourceAsStream("/Categories2.txt");
              BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String line = "";
             ArrayList<Category> categories = new ArrayList<Category>();
@@ -152,22 +132,6 @@ public class TableAction {
                 categories.add(category);
             }
             categoryRepository.saveAll(categories);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void setUpMottos(MottoRepository mottoRepository){
-        try (InputStream inputStream = getClass().getResourceAsStream("/Mottos.txt");
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-            String line = "";
-            ArrayList<Motto> mottos = new ArrayList<>();
-            while ((line = reader.readLine())!= null){
-                String name = line;
-                Motto motto = new Motto(name);
-                mottos.add(motto);
-            }
-            mottoRepository.saveAll(mottos);
         } catch (IOException e) {
             e.printStackTrace();
         }
