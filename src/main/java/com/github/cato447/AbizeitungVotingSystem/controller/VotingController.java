@@ -76,7 +76,7 @@ public class VotingController {
 
     @RequestMapping("/")
     public String WelcomeSite() {
-        LocalDate finishDate = LocalDate.of(2021, Month.JANUARY,17);
+        LocalDate finishDate = LocalDate.of(2021, Month.JANUARY,8);
         LocalDate now = LocalDate.now();
 
         if(now.isAfter(finishDate)){
