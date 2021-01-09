@@ -190,31 +190,22 @@ public class VotingController {
             return "errors/alreadyVoted.html";
         } else {
             LinkedList<PossibleCandidate> posCandidates = possibleCandidates.getPossibleCandidates();
-            LinkedList<PossibleCandidate> voteForPosCandidates = new LinkedList<>();
-            LinkedList<PossibleCandidate> addToPosCandidates = new LinkedList<>();
             long index = 1;
             for (PossibleCandidate posCandidate : posCandidates) {
                 if (posCandidate.getName() != "") {
                     if (possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get()) != null) {
                         PossibleCandidate p = possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get());
-                        voteForPosCandidates.add(p);
+                        p.setVotes(p.getVotes() + 1);
+                        possibleCandidateRepository.save(p);
                     } else {
-                        if(index > 31 && posCandidate.getName().indexOf(" ") != -1){
-                            posCandidate.setName(posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1]);
+                        if (index > 31 && posCandidate.getName().indexOf(" ") != -1) {
+                            posCandidate.setName(posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length - 1]);
                         }
                         PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
-                        addToPosCandidates.add(possibleCandidate);
+                        possibleCandidateRepository.save(possibleCandidate);
                     }
                 }
                 index++;
-            }
-            for (PossibleCandidate p: voteForPosCandidates) {
-                p.setVotes(p.getVotes() + 1);
-                possibleCandidateRepository.save(p);
-            }
-
-            for (PossibleCandidate p: addToPosCandidates) {
-                possibleCandidateRepository.save(p);
             }
 
             tableAction.updateCandidatesubmit_status(name, voterRepository);
