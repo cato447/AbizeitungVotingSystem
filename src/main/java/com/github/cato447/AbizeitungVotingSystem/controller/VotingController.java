@@ -198,7 +198,7 @@ public class VotingController {
                         p.setVotes(p.getVotes() + 1);
                         possibleCandidateRepository.save(p);
                     } else if (possibleCandidateRepository.findByNameAndCategory(posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1], categoryRepository.findById(index).get()) != null){
-                        PossibleCandidate p = possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get());
+                        PossibleCandidate p = possibleCandidateRepository.findByNameAndCategory(posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1], categoryRepository.findById(index).get());
                         p.setVotes(p.getVotes() + 1);
                         possibleCandidateRepository.save(p);
                     } else {
