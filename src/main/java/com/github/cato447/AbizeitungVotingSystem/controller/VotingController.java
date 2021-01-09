@@ -200,7 +200,7 @@ public class VotingController {
                         voteForPosCandidates.add(p);
                     } else {
                         if(index > 31 && posCandidate.getName().indexOf(" ") != -1){
-                            posCandidate.setName(posCandidate.getName().split(" ")[1]);
+                            posCandidate.setName(posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1]);
                         }
                         PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
                         addToPosCandidates.add(possibleCandidate);
