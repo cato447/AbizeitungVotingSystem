@@ -193,23 +193,28 @@ public class VotingController {
             long index = 1;
             for (PossibleCandidate posCandidate : posCandidates) {
                 if (posCandidate.getName() != "") {
-                    if (possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get()) != null) {
+                    if (possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get()) != null ||
+                            possibleCandidateRepository.findByNameAndCategory(posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1], categoryRepository.findById(index).get()) != null) {
                         PossibleCandidate p = possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get());
                         p.setVotes(p.getVotes() + 1);
                         possibleCandidateRepository.save(p);
                     } else {
                         if (index > 31 && posCandidate.getName().indexOf(" ") != -1) {
-                            if (posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1] == "Neumann" ||
-                                    posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1] == "neumann" ||
-                                    posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1] == "Mecklenburg" ||
-                                    posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1] == "mecklenburg" ){
-                                posCandidate.setName(posCandidate.getName());
+                            if (posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1].equals("Neumann") ||
+                                    posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1].equals("neumann") ||
+                                    posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1].equals("Mecklenburg") ||
+                                    posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1].equals("mecklenburg")){
+                                PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
+                                possibleCandidateRepository.save(possibleCandidate);
                             } else {
                                 posCandidate.setName(posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length - 1]);
+                                PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
+                                possibleCandidateRepository.save(possibleCandidate);
                             }
+                        } else {
+                            PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
+                            possibleCandidateRepository.save(possibleCandidate);
                         }
-                        PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
-                        possibleCandidateRepository.save(possibleCandidate);
                     }
                 }
                 index++;
