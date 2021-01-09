@@ -199,7 +199,14 @@ public class VotingController {
                         possibleCandidateRepository.save(p);
                     } else {
                         if (index > 31 && posCandidate.getName().indexOf(" ") != -1) {
-                            posCandidate.setName(posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length - 1]);
+                            if (posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1] == "Neumann" ||
+                                    posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1] == "neumann" ||
+                                    posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1] == "Mecklenburg" ||
+                                    posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1] == "mecklenburg" ){
+                                posCandidate.setName(posCandidate.getName());
+                            } else {
+                                posCandidate.setName(posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length - 1]);
+                            }
                         }
                         PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
                         possibleCandidateRepository.save(possibleCandidate);
