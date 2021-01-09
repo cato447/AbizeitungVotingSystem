@@ -193,7 +193,7 @@ public class VotingController {
             long index = 1;
             for (PossibleCandidate posCandidate : posCandidates) {
                 if (posCandidate.getName() != "") {
-                    if (possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get()) != null ||) {
+                    if (possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get()) != null) {
                         PossibleCandidate p = possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get());
                         p.setVotes(p.getVotes() + 1);
                         possibleCandidateRepository.save(p);
