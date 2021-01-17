@@ -52,8 +52,8 @@ public class VotingController {
 
     @PostConstruct
     public void init() {
-            votingPhase = false;
-            addingPhase = true;
+            votingPhase = true;
+            addingPhase = false;
 
             LOGGER.info("Program started with arguments: votingPhase="+ votingPhase + " addingPhase=" + addingPhase);
 
