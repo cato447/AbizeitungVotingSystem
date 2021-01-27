@@ -8,7 +8,7 @@ Be aware that this webserver isn't really securly build. To avoid complications 
 Clone the repo <br>
 Run `cd AbizeitungVotingSystem` <br>
 Add your mysql database credentials and email credentials to the application.properties file <br>
-Run `mvn install -DskiptTests`<br>
+Run `mvn install -DskipTests`<br>
 
 The .jar is located in the target folder<br>
 Run the .jar as a deamon on your machine <br>
