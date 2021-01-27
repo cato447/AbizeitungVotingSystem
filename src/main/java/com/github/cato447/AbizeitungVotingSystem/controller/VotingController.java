@@ -6,7 +6,6 @@ import com.github.cato447.AbizeitungVotingSystem.helper.RandomNumber;
 import com.github.cato447.AbizeitungVotingSystem.repositories.*;
 import com.github.cato447.AbizeitungVotingSystem.table.TableAction;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
@@ -19,22 +18,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.*;
 
 @Controller
 public class VotingController {
 
-
-    @Value("motto")
-    String motto;
-    @Value("adding")
-    String adding;
-    @Value("voting")
-    String voting;
-
-    private boolean votingPhase = false;
-    private boolean mottoPhase = false;
-    private boolean addingPhase = false;
+    private boolean votingPhase;
+    private boolean addingPhase;
 
     private static final Logger LOGGER = LogManager.getLogger(VotingController.class);
     private TableAction tableAction = new TableAction();
@@ -49,9 +41,6 @@ public class VotingController {
     CategoryRepository categoryRepository;
 
     @Autowired
-    MottoRepository mottoRepository;
-
-    @Autowired
     PossibleCandidateRepository possibleCandidateRepository;
 
     @Autowired
@@ -63,21 +52,10 @@ public class VotingController {
 
     @PostConstruct
     public void init() {
-            if (motto != null){
-                mottoPhase = true;
-            } else if (adding != null){
-                addingPhase = true;
-            } else if (voting != null){
-                votingPhase = true;
-            }
+            votingPhase = true;
+            addingPhase = false;
 
-
-//        //TODO: TESTING REMOVE ON SHIPPING
-//        votingPhase = false;
-//        mottoPhase = true;
-//        addingPhase = false;
-
-            LOGGER.info("Program started with arguments: votingPhase="+ votingPhase + " mottoPhase=" + mottoPhase + " addingPhase=" + addingPhase);
+            LOGGER.info("Program started with arguments: votingPhase="+ votingPhase + " addingPhase=" + addingPhase);
 
             if (voterRepository.findAll().size() == 0) {
                 tableAction.setUpVoters(voterRepository);
@@ -86,12 +64,8 @@ public class VotingController {
 
             if (categoryRepository.findAll().size() == 0) {
                 tableAction.setUpCategories(categoryRepository);
+                possibleCandidateRepository.deleteAll();
                 LOGGER.info("Categories successfully set up");
-            }
-
-            if (mottoRepository.findAll().size() == 0){
-                tableAction.setUpMottos(mottoRepository);
-                LOGGER.info("Mottos successfully set up");
             }
 
             if (candidateRepository.findAll().size() == 0 && votingPhase == true && possibleCandidateRepository.findAll().size() != 0) {
@@ -102,7 +76,16 @@ public class VotingController {
 
     @RequestMapping("/")
     public String WelcomeSite() {
-        return "start.html";
+        LocalDate finishDate = LocalDate.of(2021, Month.JANUARY,24);
+        LocalDate now = LocalDate.now();
+
+        if(now.isAfter(finishDate)){
+            LOGGER.warn("passed");
+            return "errors/votingClosed.html";
+        } else {
+            LOGGER.warn("in Bounds");
+            return "start.html";
+        }
     }
 
     public void sendSimpleMessage(String to, String subject, String text) {
@@ -119,18 +102,18 @@ public class VotingController {
             try {
                 LOGGER.warn(name);
                 Voter voter = voterRepository.findByEmail(name.toLowerCase().strip());
+                if (voter == null){
+                    LOGGER.error(name + " is not allowed to vote");
+                    return "errors/notRegistered.html";
+                }
                 if (voter.getVote_status() && votingPhase) {
                     LOGGER.warn(name + " has already voted");
                     return "errors/alreadyVoted.html";
                 } else if (voter.getCandidatesubmit_status() && addingPhase) {
                     LOGGER.warn(name + " has already submitted its candidates");
-                    return "errors/alreadysubmittedcandidates.html";
-                } else if (voter.getMotto_status() && mottoPhase) {
-                    LOGGER.warn(name + " has already chose their motto");
-                    return "errors/alreadyVotedForMotto.html";
+                    return "errors/alreadyVoted.html";
                 } else {
                     if (authCodesRepository.findByName(name) == null) {
-                        LOGGER.warn("no code");
                         AuthCode authCode = tableAction.generateToken(name, RandomNumber.getRandomNumberString(), authCodesRepository);
                         sendSimpleMessage(name, "Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
                     } else if (authCodesRepository.findByName(name) != null && authCodesRepository.findByName(name).isExpired()) {
@@ -138,32 +121,38 @@ public class VotingController {
                         sendSimpleMessage(name, "Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
                     }
                     model.addAttribute("name", name);
+                    model.addAttribute("codeTime", authCodesRepository.findByName(name).getExpirationTime());
                     model.addAttribute("codeExpired", false);
                     model.addAttribute("codeFalse", false);
                     return "authenticate.html";
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                LOGGER.error(name + " is not allowed to vote");
-                return "errors/notRegistered.html";
+                tableAction.deleteToken(name, authCodesRepository);
+                return "error.html";
             }
         } else {
             return "errors/falseInput.html";
         }
     }
 
+    @RequestMapping("/newCode")
+    public String provideNewCode(@RequestParam String name, Model model){
+        AuthCode authCode = tableAction.generateToken(name, RandomNumber.getRandomNumberString(), authCodesRepository);
+        sendSimpleMessage(name, "Code zur Authentifizierung", "Dein Code lautet: " + authCode.getCode());
+        model.addAttribute("name", name);
+        model.addAttribute("codeTime", authCodesRepository.findByName(name).getExpirationTime());
+        model.addAttribute("codeExpired", false);
+        model.addAttribute("codeFalse", false);
+        return "authenticate.html";
+    }
+
     @RequestMapping("/vote")
     public String voting_adding(@RequestParam String code, @RequestParam String name, Model model) {
         String tokenStatus = tableAction.checkToken(name, code, authCodesRepository);
-
         if (tokenStatus.equals("matched")) {
             LOGGER.warn("matched");
-            if (mottoPhase) {
-                List<Motto> mottos = mottoRepository.findAll();
-                model.addAttribute("mottos", mottos);
-                model.addAttribute("name", name);
-                return "mottoVoting.html";
-            } else if (addingPhase) {
+            if (addingPhase) {
                 PossibleCandidateWrapper possibleCandidates = new PossibleCandidateWrapper();
                 List<Category> categories = categoryRepository.findAll();
                 for (int i = 0; i < categories.size(); i++) {
@@ -197,7 +186,7 @@ public class VotingController {
 
     @RequestMapping("/saveCandidates")
     public String candidateSaving(@ModelAttribute PossibleCandidateWrapper possibleCandidates, @RequestParam String name) {
-        if (voterRepository.findByEmail(name).getVote_status()) {
+        if (voterRepository.findByEmail(name).getCandidatesubmit_status()) {
             return "errors/alreadyVoted.html";
         } else {
             LinkedList<PossibleCandidate> posCandidates = possibleCandidates.getPossibleCandidates();
@@ -208,42 +197,55 @@ public class VotingController {
                         PossibleCandidate p = possibleCandidateRepository.findByNameAndCategory(posCandidate.getName(), categoryRepository.findById(index).get());
                         p.setVotes(p.getVotes() + 1);
                         possibleCandidateRepository.save(p);
+                    } else if (possibleCandidateRepository.findByNameAndCategory(posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1], categoryRepository.findById(index).get()) != null){
+                        PossibleCandidate p = possibleCandidateRepository.findByNameAndCategory(posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1], categoryRepository.findById(index).get());
+                        p.setVotes(p.getVotes() + 1);
+                        possibleCandidateRepository.save(p);
                     } else {
-                        PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
-                        possibleCandidateRepository.save(possibleCandidate);
+                        if (index > 31 && posCandidate.getName().indexOf(" ") != -1) {
+                            if (posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1].equals("Neumann") ||
+                                    posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1].equals("neumann") ||
+                                    posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1].equals("Mecklenburg") ||
+                                    posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length-1].equals("mecklenburg")){
+                                PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
+                                possibleCandidateRepository.save(possibleCandidate);
+                            } else {
+                                posCandidate.setName(posCandidate.getName().split(" ")[posCandidate.getName().split(" ").length - 1]);
+                                PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
+                                possibleCandidateRepository.save(possibleCandidate);
+                            }
+                        } else {
+                            PossibleCandidate possibleCandidate = new PossibleCandidate(posCandidate.getName(), categoryRepository.findById(index).get());
+                            possibleCandidateRepository.save(possibleCandidate);
+                        }
                     }
                 }
                 index++;
             }
-            tableAction.updateCandidatesubmit_status(name, voterRepository);
-            return "candidateAddingSuccessful.html";
-        }
-    }
 
-    @RequestMapping("/saveMotto")
-    public String mottoSaving(@RequestParam String name, @RequestParam String voteValue) {
-        LOGGER.info(name);
-        if (voterRepository.findByEmail(name).getMotto_status()) {
-            return "errors/alreadySubmitted.html";
-        } else {
-            tableAction.voteForMotto(voteValue, mottoRepository);
-            tableAction.updateMottoStatus(name, voterRepository);
-            LOGGER.info(name + " has choose his motto");
+            tableAction.updateCandidatesubmit_status(name, voterRepository);
+            return "voteSuccessful.html";
         }
-        return "voteSuccessful.html";
     }
 
     @RequestMapping("/processVote")
     public String ProcessVote(@RequestParam String name, @RequestParam String voteValues) {
-        if (voterRepository.findByEmail(name).getCandidatesubmit_status()) {
-            return "errors/alreadySubmitted.html";
+        if (voterRepository.findByEmail(name).getVote_status()) {
+            return "errors/alreadyVoted.html";
         } else {
-            String[] partVoteValues = voteValues.split(",");
-            for (String s : partVoteValues) {
+            LinkedList<String> voteFor = new LinkedList<>();
+            if(!voteValues.equals("")) {
+                String[] partVoteValues = voteValues.split(",");
+                for (String s : partVoteValues) {
+                    voteFor.add(s);
+                }
+                LOGGER.info(name + " has voted!");
+            }
+            for (String s: voteFor) {
                 tableAction.voteForCandidate(s, candidateRepository);
             }
+
             tableAction.updateVotingStatus(name, voterRepository);
-            LOGGER.info(name + " has voted!");
             return "voteSuccessful.html";
         }
     }

@@ -1,16 +1,9 @@
 package com.github.cato447.AbizeitungVotingSystem.table;
 
-import com.github.cato447.AbizeitungVotingSystem.controller.VotingController;
 import com.github.cato447.AbizeitungVotingSystem.entities.*;
 import com.github.cato447.AbizeitungVotingSystem.repositories.*;
-import org.aspectj.weaver.loadtime.definition.LightXMLParser;
 
 import java.io.*;
-import java.lang.reflect.Array;
-import java.net.JarURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
-import java.nio.Buffer;
 import java.util.*;
 
 public class TableAction {
@@ -28,12 +21,6 @@ public class TableAction {
     public void updateCandidatesubmit_status(String email, VoterRepository voterRepository){
         Voter voter = voterRepository.findByEmail(email);
         voter.submitCandidates();
-        voterRepository.save(voter);
-    }
-
-    public void updateMottoStatus(String email, VoterRepository voterRepository){
-        Voter voter = voterRepository.findByEmail(email);
-        voter.voteMotto();
         voterRepository.save(voter);
     }
 
@@ -67,12 +54,12 @@ public class TableAction {
         return "wrong";
     }
 
-    private boolean fiveMinutesPassed(Long time){
-        return System.currentTimeMillis() >= (time + 300*1000);
+    public void deleteToken(String name, AuthCodesRepository authCodesRepository){
+        authCodesRepository.delete(authCodesRepository.findByName(name));
     }
 
     private int getLimit(List<PossibleCandidate> possibleCandidates){
-        return possibleCandidates.size() <= 5 ? possibleCandidates.size() : 5;
+        return possibleCandidates.size() <= 15 ? possibleCandidates.size() : 15;
     }
 
     public void voteForCandidate(String id, CandidateRepository candidateRepository){
@@ -82,15 +69,8 @@ public class TableAction {
         candidateRepository.save(candidate);
     }
 
-    public void voteForMotto(String id, MottoRepository mottoRepository){
-        long mottoID = Long.valueOf(id);
-        Motto motto = mottoRepository.findById(mottoID).get();
-        motto.voteFor();
-        mottoRepository.save(motto);
-    }
-
     public void setUpVoters(VoterRepository voterRepository){
-        try (InputStream inputStream = getClass().getResourceAsStream("/Q2_emails.txt");
+        try (InputStream inputStream = getClass().getResourceAsStream("/Email_Whitelist.txt");
              BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String line = "";
             ArrayList<Voter> voters = new ArrayList<Voter>();
@@ -119,8 +99,17 @@ public class TableAction {
                 Collections.sort(possibleCandidatesPerCategory, Comparator.comparing(PossibleCandidate::getVotes));
                 Collections.reverse(possibleCandidatesPerCategory);
                 for (int j = 0; j < getLimit(possibleCandidatesPerCategory); j++){
-                    Candidate candidate = new Candidate(possibleCandidatesPerCategory.get(j).getName(), possibleCandidatesPerCategory.get(j).getCategory());
-                    candidateRepository.save(candidate);
+                    if (j >= 10 && possibleCandidatesPerCategory.get(j).getVotes() == possibleCandidatesPerCategory.get(9).getVotes()){
+                        Candidate candidate = new Candidate(possibleCandidatesPerCategory.get(j).getName(), possibleCandidatesPerCategory.get(j).getCategory());
+                        candidateRepository.save(candidate);
+                    }
+                    if (j < 10){
+                        Candidate candidate = new Candidate(possibleCandidatesPerCategory.get(j).getName(), possibleCandidatesPerCategory.get(j).getCategory());
+                        candidateRepository.save(candidate);
+                    }
+                    if (j == 14){
+                        break;
+                    }
                 }
                 i += -1;
                 possibleCandidatesPerCategory.clear();
@@ -143,22 +132,6 @@ public class TableAction {
                 categories.add(category);
             }
             categoryRepository.saveAll(categories);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void setUpMottos(MottoRepository mottoRepository){
-        try (InputStream inputStream = getClass().getResourceAsStream("/Mottos.txt");
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-            String line = "";
-            ArrayList<Motto> mottos = new ArrayList<>();
-            while ((line = reader.readLine())!= null){
-                String name = line;
-                Motto motto = new Motto(name);
-                mottos.add(motto);
-            }
-            mottoRepository.saveAll(mottos);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -17,34 +17,22 @@ body {
     padding: 20px;
     width: 100%;
     overflow: auto;
-    transform: scale();
 }
 
 h1 {
     color: #FFF;
 }
 
-h1.end {
-    color: #6d6d78;
-    margin-bottom: 2%;
-}
-
 h2 {
     color: #FFF;
 }
 
-input {
-    background-color: transparent;
-    border: transparent;
-    border-bottom: 2px solid red;
-    color: #FFF;
-    font-size: xx-large;
-    width: 1ch;
+h2.time_remain {
+    color: #6d6d78;
 }
 
 .submitButton {
-    margin-top: 5%;
-    margin-bottom: 1%;
+    padding: .25em 0;
     border: 0;
     outline: 0;
     background: #bb1515;
@@ -55,24 +43,6 @@ input {
     border-radius: 12px;
     box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.25);
     text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.newCode {
-    border: 0;
-    outline: 0;
-    background: #bb1515;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 1rem;
-    width: 250px;
-    letter-spacing: .0625rem;
-    border-radius: 12px;
-    box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.25);
-    text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.errorCode {
-    margin-top: 10%;
-    color: #bb1515;
 }
 
 html,

@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="de" xmlns:th="https://www.thymeleaf.org/">
 
-<body>
-    <h1>Something went wrong! </h1>
-    <h2>Our Engineers are on it</h2>
-    <a href="/">Go Home</a>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/styles/allreadyVoted.css}" rel="stylesheet" />
+</head>
+
+<body class="center-screen">
+    <div class="centered">
+        <h1>Oops irgendwas ist kaputt gegangen</h1>
+        <h2 id="time_remain">Keine Sorge! <br> Probiers nochmal :D</h2>
+        <button id="backButton" class="submitButton">Zurück zum Anfang</button>
+    </div>
+
+    <script>
+        document.getElementById("backButton").onclick = function() {
+            location.href = "/";
+        };
+    </script>
 </body>
 
 </html>
