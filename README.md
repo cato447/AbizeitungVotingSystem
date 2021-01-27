@@ -14,3 +14,9 @@ The .jar is located in the target folder<br>
 Run the .jar as a deamon on your machine <br>
 
 Webserver is reachable at host_ip:8000
+
+# Usage
+To alternate between adding and voting mode with the two coresponding booleans in the VotingController.java file
+
+# Contribution
+Feel free to fork the repo and submit a pull-request. I will review and add it happily :)
