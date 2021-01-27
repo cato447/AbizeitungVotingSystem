@@ -70,7 +70,7 @@ public class TableAction {
     }
 
     public void setUpVoters(VoterRepository voterRepository){
-        try (InputStream inputStream = getClass().getResourceAsStream("/Q2_emails.txt");
+        try (InputStream inputStream = getClass().getResourceAsStream("/Email_Whitelist.txt");
              BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String line = "";
             ArrayList<Voter> voters = new ArrayList<Voter>();
@@ -122,7 +122,7 @@ public class TableAction {
     }
 
     public void setUpCategories(CategoryRepository categoryRepository){
-        try (InputStream inputStream = getClass().getResourceAsStream("/Categories2.txt");
+        try (InputStream inputStream = getClass().getResourceAsStream("/Categories.txt");
              BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String line = "";
             ArrayList<Category> categories = new ArrayList<Category>();
