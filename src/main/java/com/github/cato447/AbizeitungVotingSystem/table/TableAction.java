@@ -99,7 +99,7 @@ public class TableAction {
                 Collections.sort(possibleCandidatesPerCategory, Comparator.comparing(PossibleCandidate::getVotes));
                 Collections.reverse(possibleCandidatesPerCategory);
                 for (int j = 0; j < getLimit(possibleCandidatesPerCategory); j++){
-                    if (j >= 10 && possibleCandidatesPerCategory.get(j).getVotes() == possibleCandidatesPerCategory.get(j-1).getVotes()){
+                    if (j >= 10 && possibleCandidatesPerCategory.get(j).getVotes() == possibleCandidatesPerCategory.get(9).getVotes()){
                         Candidate candidate = new Candidate(possibleCandidatesPerCategory.get(j).getName(), possibleCandidatesPerCategory.get(j).getCategory());
                         candidateRepository.save(candidate);
                     }

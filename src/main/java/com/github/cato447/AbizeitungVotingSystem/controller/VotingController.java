@@ -52,8 +52,8 @@ public class VotingController {
 
     @PostConstruct
     public void init() {
-            votingPhase = false;
-            addingPhase = true;
+            votingPhase = true;
+            addingPhase = false;
 
             LOGGER.info("Program started with arguments: votingPhase="+ votingPhase + " addingPhase=" + addingPhase);
 
@@ -76,7 +76,7 @@ public class VotingController {
 
     @RequestMapping("/")
     public String WelcomeSite() {
-        LocalDate finishDate = LocalDate.of(2021, Month.JANUARY,17);
+        LocalDate finishDate = LocalDate.of(2021, Month.JANUARY,24);
         LocalDate now = LocalDate.now();
 
         if(now.isAfter(finishDate)){

@@ -1,531 +1,218 @@
-2021-01-04 00:00:49,389 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-04 00:00:49,393 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 00:00:49,398 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2021-01-04 00:00:49,412 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2021-01-04 00:00:51,638 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 35819 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
-2021-01-04 00:00:51,641 INFO [restartedMain] No active profile set, falling back to default profiles: default
-2021-01-04 00:00:51,691 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-04 00:00:51,692 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-04 00:00:52,103 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-04 00:00:52,153 INFO [restartedMain] Finished Spring Data repository scanning in 44ms. Found 6 JPA repository interfaces.
-2021-01-04 00:00:52,821 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
-2021-01-04 00:00:52,832 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
-2021-01-04 00:00:52,832 INFO [restartedMain] Starting service [Tomcat]
-2021-01-04 00:00:52,833 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-04 00:00:52,893 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-01-04 00:00:52,894 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1202 ms
-2021-01-04 00:00:53,064 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-04 00:00:53,098 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
-2021-01-04 00:00:53,194 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-01-04 00:00:53,266 INFO [restartedMain] HikariPool-1 - Starting...
-2021-01-04 00:00:53,643 INFO [restartedMain] HikariPool-1 - Start completed.
-2021-01-04 00:00:53,670 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-01-04 00:00:54,308 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-04 00:00:54,317 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 00:00:54,329 INFO [restartedMain] LiveReload server is running on port 35729
-2021-01-04 00:00:54,735 INFO [restartedMain] Program started with arguments: votingPhase=true mottoPhase=false addingPhase=false
-2021-01-04 00:00:55,057 WARN [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'votingController': Invocation of init method failed; nested exception is org.hibernate.LazyInitializationException: could not initialize proxy [com.github.cato447.AbizeitungVotingSystem.entities.Category#1] - no Session
-2021-01-04 00:00:55,059 INFO [restartedMain] Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 00:00:55,064 INFO [restartedMain] HikariPool-1 - Shutdown initiated...
-2021-01-04 00:00:55,073 INFO [restartedMain] HikariPool-1 - Shutdown completed.
-2021-01-04 00:00:55,077 INFO [restartedMain] Stopping service [Tomcat]
-2021-01-04 00:00:55,089 INFO [restartedMain] 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-01-04 00:00:55,092 ERROR [restartedMain] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'votingController': Invocation of init method failed; nested exception is org.hibernate.LazyInitializationException: could not initialize proxy [com.github.cato447.AbizeitungVotingSystem.entities.Category#1] - no Session
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:415)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at com.github.cato447.AbizeitungVotingSystem.AbizeitungVotingSystemApplication.main(AbizeitungVotingSystemApplication.java:14)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: org.hibernate.LazyInitializationException: could not initialize proxy [com.github.cato447.AbizeitungVotingSystem.entities.Category#1] - no Session
-	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:170)
-	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:310)
-	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:45)
-	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:95)
-	at com.github.cato447.AbizeitungVotingSystem.entities.Category$HibernateProxy$DGuctNKV.getName(Unknown Source)
-	at com.github.cato447.AbizeitungVotingSystem.table.TableAction.setUpCandidates(TableAction.java:125)
-	at com.github.cato447.AbizeitungVotingSystem.controller.VotingController.init(VotingController.java:90)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157)
-	... 24 common frames omitted
-2021-01-04 00:01:52,580 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 36071 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
-2021-01-04 00:01:52,586 INFO [restartedMain] No active profile set, falling back to default profiles: default
-2021-01-04 00:01:52,648 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-04 00:01:52,648 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-04 00:01:53,068 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-04 00:01:53,121 INFO [restartedMain] Finished Spring Data repository scanning in 47ms. Found 6 JPA repository interfaces.
-2021-01-04 00:01:53,779 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
-2021-01-04 00:01:53,788 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
-2021-01-04 00:01:53,789 INFO [restartedMain] Starting service [Tomcat]
-2021-01-04 00:01:53,789 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-04 00:01:53,856 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-01-04 00:01:53,856 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1207 ms
-2021-01-04 00:01:54,032 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-04 00:01:54,065 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
-2021-01-04 00:01:54,169 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-01-04 00:01:54,255 INFO [restartedMain] HikariPool-1 - Starting...
-2021-01-04 00:01:54,608 INFO [restartedMain] HikariPool-1 - Start completed.
-2021-01-04 00:01:54,633 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-01-04 00:01:55,280 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-04 00:01:55,288 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 00:01:55,302 INFO [restartedMain] LiveReload server is running on port 35729
-2021-01-04 00:01:55,714 INFO [restartedMain] Program started with arguments: votingPhase=true mottoPhase=false addingPhase=false
-2021-01-04 00:01:58,665 INFO [restartedMain] Candidates successfully set up
-2021-01-04 00:01:58,698 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-04 00:01:58,803 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-04 00:01:58,966 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
-2021-01-04 00:01:58,986 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
-2021-01-04 00:01:58,999 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 6.763 seconds (JVM running for 7.385)
-2021-01-04 00:02:54,786 INFO [http-nio-8000-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-04 00:02:54,786 INFO [http-nio-8000-exec-2] Initializing Servlet 'dispatcherServlet'
-2021-01-04 00:02:54,791 INFO [http-nio-8000-exec-2] Completed initialization in 5 ms
-2021-01-04 00:02:58,585 WARN [http-nio-8000-exec-4] simon.bussmann@adolfinum.de
-2021-01-04 00:02:58,605 WARN [http-nio-8000-exec-4] no code
-2021-01-04 00:03:14,557 WARN [http-nio-8000-exec-7] 980176
-2021-01-04 00:03:14,557 WARN [http-nio-8000-exec-7] matched
-2021-01-04 00:09:40,113 WARN [http-nio-8000-exec-3] Simon.bussmann@adolfinum.de
-2021-01-04 00:09:40,115 WARN [http-nio-8000-exec-3] no code
-2021-01-04 00:09:57,679 WARN [http-nio-8000-exec-5] 366680
-2021-01-04 00:09:57,680 WARN [http-nio-8000-exec-5] matched
-2021-01-04 00:10:45,401 WARN [http-nio-8000-exec-2] simon.bussmann@adolfinum.de
-2021-01-04 00:10:45,404 WARN [http-nio-8000-exec-2] no code
-2021-01-04 00:11:08,813 WARN [http-nio-8000-exec-3] 045081
-2021-01-04 00:11:08,814 WARN [http-nio-8000-exec-3] matched
-2021-01-04 00:52:46,403 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 40643 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
-2021-01-04 00:52:46,407 INFO [restartedMain] No active profile set, falling back to default profiles: default
-2021-01-04 00:52:46,499 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-04 00:52:46,500 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-04 00:52:46,913 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-04 00:52:46,971 INFO [restartedMain] Finished Spring Data repository scanning in 51ms. Found 6 JPA repository interfaces.
-2021-01-04 00:52:47,721 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
-2021-01-04 00:52:47,733 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
-2021-01-04 00:52:47,734 INFO [restartedMain] Starting service [Tomcat]
-2021-01-04 00:52:47,734 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-04 00:52:47,792 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-01-04 00:52:47,792 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1292 ms
-2021-01-04 00:52:47,989 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-04 00:52:48,040 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
-2021-01-04 00:52:48,127 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-01-04 00:52:48,190 INFO [restartedMain] HikariPool-1 - Starting...
-2021-01-04 00:52:48,549 INFO [restartedMain] HikariPool-1 - Start completed.
-2021-01-04 00:52:48,581 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-01-04 00:52:49,215 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-04 00:52:49,224 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 00:52:49,241 INFO [restartedMain] LiveReload server is running on port 35729
-2021-01-04 00:52:49,654 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
-2021-01-04 00:52:49,884 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-04 00:52:49,986 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-04 00:52:50,184 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
-2021-01-04 00:52:50,202 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
-2021-01-04 00:52:50,213 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 4.194 seconds (JVM running for 4.896)
-2021-01-04 00:53:17,803 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-04 00:53:17,803 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
-2021-01-04 00:53:17,815 INFO [http-nio-8000-exec-1] Completed initialization in 12 ms
-2021-01-04 00:53:17,851 WARN [http-nio-8000-exec-1] in Bounds
-2021-01-04 00:53:20,237 WARN [http-nio-8000-exec-4] simon.bussmann@adolfinum.de
-2021-01-04 00:53:20,252 WARN [http-nio-8000-exec-4] simon.bussmann@adolfinum.de has already submitted its candidates
-2021-01-04 00:54:00,564 WARN [http-nio-8000-exec-7] in Bounds
-2021-01-04 00:54:02,641 WARN [http-nio-8000-exec-10] simon.bussmann@adolfinum.de
-2021-01-04 00:54:18,658 WARN [http-nio-8000-exec-2] matched
-2021-01-04 00:54:50,636 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-04 00:54:50,639 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 00:54:50,642 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2021-01-04 00:54:50,657 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2021-01-04 00:54:52,942 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 41069 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
-2021-01-04 00:54:52,946 INFO [restartedMain] No active profile set, falling back to default profiles: default
-2021-01-04 00:54:53,010 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-04 00:54:53,011 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-04 00:54:53,415 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-04 00:54:53,478 INFO [restartedMain] Finished Spring Data repository scanning in 56ms. Found 6 JPA repository interfaces.
-2021-01-04 00:54:54,188 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
-2021-01-04 00:54:54,198 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
-2021-01-04 00:54:54,199 INFO [restartedMain] Starting service [Tomcat]
-2021-01-04 00:54:54,199 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-04 00:54:54,258 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-01-04 00:54:54,259 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1248 ms
-2021-01-04 00:54:54,462 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-04 00:54:54,518 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
-2021-01-04 00:54:54,612 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-01-04 00:54:54,684 INFO [restartedMain] HikariPool-1 - Starting...
-2021-01-04 00:54:55,051 INFO [restartedMain] HikariPool-1 - Start completed.
-2021-01-04 00:54:55,082 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-01-04 00:54:55,801 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-04 00:54:55,811 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 00:54:55,829 INFO [restartedMain] LiveReload server is running on port 35729
-2021-01-04 00:54:56,282 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
-2021-01-04 00:54:56,535 INFO [restartedMain] Categories successfully set up
-2021-01-04 00:54:56,624 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-04 00:54:56,753 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-04 00:54:56,967 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
-2021-01-04 00:54:56,984 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
-2021-01-04 00:54:56,995 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 4.438 seconds (JVM running for 5.061)
-2021-01-04 00:55:47,131 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-04 00:55:47,134 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 00:55:47,137 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2021-01-04 00:55:47,147 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2021-01-04 00:55:49,350 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 41256 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
-2021-01-04 00:55:49,354 INFO [restartedMain] No active profile set, falling back to default profiles: default
-2021-01-04 00:55:49,431 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-04 00:55:49,432 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-04 00:55:49,867 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-04 00:55:49,925 INFO [restartedMain] Finished Spring Data repository scanning in 52ms. Found 6 JPA repository interfaces.
-2021-01-04 00:55:50,632 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
-2021-01-04 00:55:50,642 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
-2021-01-04 00:55:50,643 INFO [restartedMain] Starting service [Tomcat]
-2021-01-04 00:55:50,643 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-04 00:55:50,702 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-01-04 00:55:50,703 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1271 ms
-2021-01-04 00:55:50,870 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-04 00:55:50,909 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
-2021-01-04 00:55:51,000 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-01-04 00:55:51,071 INFO [restartedMain] HikariPool-1 - Starting...
-2021-01-04 00:55:51,433 INFO [restartedMain] HikariPool-1 - Start completed.
-2021-01-04 00:55:51,454 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-01-04 00:55:52,136 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-04 00:55:52,144 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 00:55:52,162 INFO [restartedMain] LiveReload server is running on port 35729
-2021-01-04 00:55:52,583 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
-2021-01-04 00:55:52,819 INFO [restartedMain] Categories successfully set up
-2021-01-04 00:55:52,924 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-04 00:55:53,037 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-04 00:55:53,244 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
-2021-01-04 00:55:53,262 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
-2021-01-04 00:55:53,274 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 4.304 seconds (JVM running for 4.939)
-2021-01-04 00:56:06,936 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-04 00:56:06,937 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
-2021-01-04 00:56:06,943 INFO [http-nio-8000-exec-1] Completed initialization in 6 ms
-2021-01-04 00:56:06,987 WARN [http-nio-8000-exec-1] wrong
-2021-01-04 00:56:27,658 WARN [http-nio-8000-exec-7] matched
-2021-01-04 00:57:16,096 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-04 00:57:16,098 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 00:57:16,102 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2021-01-04 00:57:16,118 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2021-01-04 00:57:18,376 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 41573 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
-2021-01-04 00:57:18,381 INFO [restartedMain] No active profile set, falling back to default profiles: default
-2021-01-04 00:57:18,457 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-04 00:57:18,457 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-04 00:57:18,888 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-04 00:57:18,953 INFO [restartedMain] Finished Spring Data repository scanning in 58ms. Found 6 JPA repository interfaces.
-2021-01-04 00:57:19,618 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
-2021-01-04 00:57:19,627 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
-2021-01-04 00:57:19,628 INFO [restartedMain] Starting service [Tomcat]
-2021-01-04 00:57:19,628 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-04 00:57:19,694 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-01-04 00:57:19,694 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1236 ms
-2021-01-04 00:57:19,873 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-04 00:57:19,907 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
-2021-01-04 00:57:20,002 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-01-04 00:57:20,083 INFO [restartedMain] HikariPool-1 - Starting...
-2021-01-04 00:57:20,501 INFO [restartedMain] HikariPool-1 - Start completed.
-2021-01-04 00:57:20,522 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-01-04 00:57:21,158 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-04 00:57:21,167 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 00:57:21,182 INFO [restartedMain] LiveReload server is running on port 35729
-2021-01-04 00:57:21,614 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
-2021-01-04 00:57:21,839 INFO [restartedMain] Categories successfully set up
-2021-01-04 00:57:21,938 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-04 00:57:22,050 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-04 00:57:22,271 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
-2021-01-04 00:57:22,289 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
-2021-01-04 00:57:22,303 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 4.331 seconds (JVM running for 4.978)
-2021-01-04 01:10:30,792 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-04 01:10:30,793 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
-2021-01-04 01:10:30,801 INFO [http-nio-8000-exec-1] Completed initialization in 7 ms
-2021-01-04 01:10:30,827 WARN [http-nio-8000-exec-1] in Bounds
-2021-01-04 01:10:35,161 WARN [http-nio-8000-exec-4] simon.bussmann@adolfinum.de
-2021-01-04 01:10:55,660 WARN [http-nio-8000-exec-6] matched
-2021-01-04 01:11:31,032 WARN [http-nio-8000-exec-10] in Bounds
-2021-01-04 01:11:44,561 WARN [http-nio-8000-exec-2] in Bounds
-2021-01-04 01:12:00,937 WARN [http-nio-8000-exec-4] simon.bussmann@adolfinum.de
-2021-01-04 01:45:45,703 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-04 01:45:45,707 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 01:45:45,710 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2021-01-04 01:45:45,723 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2021-01-04 01:45:48,882 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 69675 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
-2021-01-04 01:45:48,885 INFO [restartedMain] No active profile set, falling back to default profiles: default
-2021-01-04 01:45:48,946 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-04 01:45:48,947 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-04 01:45:49,494 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-04 01:45:49,558 INFO [restartedMain] Finished Spring Data repository scanning in 57ms. Found 6 JPA repository interfaces.
-2021-01-04 01:45:50,235 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
-2021-01-04 01:45:50,243 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
-2021-01-04 01:45:50,244 INFO [restartedMain] Starting service [Tomcat]
-2021-01-04 01:45:50,244 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-04 01:45:50,299 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-01-04 01:45:50,299 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1352 ms
-2021-01-04 01:45:50,467 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-04 01:45:50,502 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
-2021-01-04 01:45:50,593 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-01-04 01:45:50,661 INFO [restartedMain] HikariPool-1 - Starting...
-2021-01-04 01:45:51,019 INFO [restartedMain] HikariPool-1 - Start completed.
-2021-01-04 01:45:51,040 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-01-04 01:45:51,637 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-04 01:45:51,642 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 01:45:51,653 INFO [restartedMain] LiveReload server is running on port 35729
-2021-01-04 01:45:52,079 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
-2021-01-04 01:45:52,808 INFO [restartedMain] Categories successfully set up
-2021-01-04 01:45:52,872 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-04 01:45:52,968 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-04 01:45:53,130 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
-2021-01-04 01:45:53,147 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
-2021-01-04 01:45:53,157 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 4.628 seconds (JVM running for 5.231)
-2021-01-04 01:46:12,002 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-04 01:46:12,002 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
-2021-01-04 01:46:12,007 INFO [http-nio-8000-exec-1] Completed initialization in 5 ms
-2021-01-04 01:46:12,038 WARN [http-nio-8000-exec-1] in Bounds
-2021-01-04 01:46:14,776 WARN [http-nio-8000-exec-4] simon.bussmann@adolfinum.de
-2021-01-04 01:46:28,201 WARN [http-nio-8000-exec-6] matched
-2021-01-04 01:48:25,518 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-04 01:48:25,522 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 01:48:25,525 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2021-01-04 01:48:25,536 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2021-01-04 01:48:28,739 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 69907 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
-2021-01-04 01:48:28,741 INFO [restartedMain] No active profile set, falling back to default profiles: default
-2021-01-04 01:48:28,801 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-04 01:48:28,802 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-04 01:48:29,187 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-04 01:48:29,239 INFO [restartedMain] Finished Spring Data repository scanning in 46ms. Found 6 JPA repository interfaces.
-2021-01-04 01:48:29,874 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
-2021-01-04 01:48:29,886 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
-2021-01-04 01:48:29,887 INFO [restartedMain] Starting service [Tomcat]
-2021-01-04 01:48:29,888 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-04 01:48:29,950 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-01-04 01:48:29,951 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1149 ms
-2021-01-04 01:48:30,107 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-04 01:48:30,143 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
-2021-01-04 01:48:30,242 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-01-04 01:48:30,306 INFO [restartedMain] HikariPool-1 - Starting...
-2021-01-04 01:48:30,636 INFO [restartedMain] HikariPool-1 - Start completed.
-2021-01-04 01:48:30,655 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-01-04 01:48:31,249 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-04 01:48:31,254 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 01:48:31,268 INFO [restartedMain] LiveReload server is running on port 35729
-2021-01-04 01:48:31,636 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
-2021-01-04 01:48:31,861 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-04 01:48:31,957 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-04 01:48:32,131 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
-2021-01-04 01:48:32,152 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
-2021-01-04 01:48:32,162 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 3.777 seconds (JVM running for 4.348)
-2021-01-04 01:48:40,988 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-04 01:48:40,989 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
-2021-01-04 01:48:40,994 INFO [http-nio-8000-exec-1] Completed initialization in 5 ms
-2021-01-04 01:48:41,019 WARN [http-nio-8000-exec-1] in Bounds
-2021-01-04 01:48:43,036 WARN [http-nio-8000-exec-3] simon.bussmann@adolfinum.de
-2021-01-04 01:48:56,138 WARN [http-nio-8000-exec-5] matched
-2021-01-04 01:50:00,090 ERROR [http-nio-8000-exec-8] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1] with root cause
-java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
-	at com.github.cato447.AbizeitungVotingSystem.controller.VotingController.candidateSaving(VotingController.java:221)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:829)
-2021-01-04 01:51:39,048 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-04 01:51:39,051 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 01:51:39,055 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2021-01-04 01:51:39,070 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2021-01-04 01:51:42,185 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 70219 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
-2021-01-04 01:51:42,188 INFO [restartedMain] No active profile set, falling back to default profiles: default
-2021-01-04 01:51:42,247 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-04 01:51:42,247 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-04 01:51:42,648 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-04 01:51:42,695 INFO [restartedMain] Finished Spring Data repository scanning in 41ms. Found 6 JPA repository interfaces.
-2021-01-04 01:51:43,313 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
-2021-01-04 01:51:43,322 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
-2021-01-04 01:51:43,322 INFO [restartedMain] Starting service [Tomcat]
-2021-01-04 01:51:43,323 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-04 01:51:43,388 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-01-04 01:51:43,389 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1141 ms
-2021-01-04 01:51:43,554 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-04 01:51:43,588 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
-2021-01-04 01:51:43,675 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-01-04 01:51:43,742 INFO [restartedMain] HikariPool-1 - Starting...
-2021-01-04 01:51:44,116 INFO [restartedMain] HikariPool-1 - Start completed.
-2021-01-04 01:51:44,136 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-01-04 01:51:44,743 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-04 01:51:44,750 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 01:51:44,761 INFO [restartedMain] LiveReload server is running on port 35729
-2021-01-04 01:51:45,215 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
-2021-01-04 01:51:45,448 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-04 01:51:45,546 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-04 01:51:45,725 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
-2021-01-04 01:51:45,742 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
-2021-01-04 01:51:45,752 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 3.915 seconds (JVM running for 4.496)
-2021-01-04 01:59:41,880 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-04 01:59:41,885 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 01:59:41,890 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2021-01-04 01:59:41,905 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2021-01-04 01:59:45,027 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 70580 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
-2021-01-04 01:59:45,030 INFO [restartedMain] No active profile set, falling back to default profiles: default
-2021-01-04 01:59:45,087 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-04 01:59:45,088 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-04 01:59:45,506 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-04 01:59:45,553 INFO [restartedMain] Finished Spring Data repository scanning in 41ms. Found 6 JPA repository interfaces.
-2021-01-04 01:59:46,181 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
-2021-01-04 01:59:46,192 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
-2021-01-04 01:59:46,193 INFO [restartedMain] Starting service [Tomcat]
-2021-01-04 01:59:46,193 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-04 01:59:46,250 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-01-04 01:59:46,251 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1163 ms
-2021-01-04 01:59:46,413 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-04 01:59:46,450 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
-2021-01-04 01:59:46,539 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-01-04 01:59:46,609 INFO [restartedMain] HikariPool-1 - Starting...
-2021-01-04 01:59:46,960 INFO [restartedMain] HikariPool-1 - Start completed.
-2021-01-04 01:59:46,987 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-01-04 01:59:47,589 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-04 01:59:47,597 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 01:59:47,609 INFO [restartedMain] LiveReload server is running on port 35729
-2021-01-04 01:59:48,005 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
-2021-01-04 01:59:48,237 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-04 01:59:48,333 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-04 01:59:48,494 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
-2021-01-04 01:59:48,514 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
-2021-01-04 01:59:48,523 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 3.849 seconds (JVM running for 4.447)
-2021-01-04 01:59:58,093 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-04 01:59:58,094 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
-2021-01-04 01:59:58,100 INFO [http-nio-8000-exec-1] Completed initialization in 6 ms
-2021-01-04 01:59:58,120 WARN [http-nio-8000-exec-1] in Bounds
-2021-01-04 02:00:05,646 WARN [http-nio-8000-exec-3] simon.bussmann@adolfinum.de
-2021-01-04 02:00:20,714 WARN [http-nio-8000-exec-5] matched
-2021-01-04 02:03:40,152 WARN [http-nio-8000-exec-1] in Bounds
-2021-01-04 02:05:15,532 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-04 02:05:15,534 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 02:05:15,539 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2021-01-04 02:05:15,551 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2021-01-04 02:05:18,784 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 70908 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
-2021-01-04 02:05:18,787 INFO [restartedMain] No active profile set, falling back to default profiles: default
-2021-01-04 02:05:18,857 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-04 02:05:18,858 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-04 02:05:19,291 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-04 02:05:19,352 INFO [restartedMain] Finished Spring Data repository scanning in 52ms. Found 6 JPA repository interfaces.
-2021-01-04 02:05:20,006 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
-2021-01-04 02:05:20,016 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
-2021-01-04 02:05:20,016 INFO [restartedMain] Starting service [Tomcat]
-2021-01-04 02:05:20,016 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-04 02:05:20,079 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-01-04 02:05:20,079 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1220 ms
-2021-01-04 02:05:20,259 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-04 02:05:20,291 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
-2021-01-04 02:05:20,376 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-01-04 02:05:20,440 INFO [restartedMain] HikariPool-1 - Starting...
-2021-01-04 02:05:20,766 INFO [restartedMain] HikariPool-1 - Start completed.
-2021-01-04 02:05:20,787 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-01-04 02:05:21,402 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-04 02:05:21,410 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 02:05:21,426 INFO [restartedMain] LiveReload server is running on port 35729
-2021-01-04 02:05:21,838 INFO [restartedMain] Program started with arguments: votingPhase=false mottoPhase=false addingPhase=true
-2021-01-04 02:05:22,065 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-04 02:05:22,161 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-04 02:05:22,329 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
-2021-01-04 02:05:22,348 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
-2021-01-04 02:05:22,358 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 3.937 seconds (JVM running for 4.514)
-2021-01-04 02:11:07,453 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-04 02:11:07,457 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 02:11:07,461 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2021-01-04 02:11:07,473 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2021-01-04 02:11:10,707 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 71248 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
-2021-01-04 02:11:10,710 INFO [restartedMain] No active profile set, falling back to default profiles: default
-2021-01-04 02:11:10,772 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-01-04 02:11:10,773 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-01-04 02:11:11,169 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-04 02:11:11,214 INFO [restartedMain] Finished Spring Data repository scanning in 40ms. Found 5 JPA repository interfaces.
-2021-01-04 02:11:11,836 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
-2021-01-04 02:11:11,845 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
-2021-01-04 02:11:11,845 INFO [restartedMain] Starting service [Tomcat]
-2021-01-04 02:11:11,845 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-01-04 02:11:11,905 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
-2021-01-04 02:11:11,906 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1132 ms
-2021-01-04 02:11:12,078 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-04 02:11:12,111 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
-2021-01-04 02:11:12,202 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-01-04 02:11:12,274 INFO [restartedMain] HikariPool-1 - Starting...
-2021-01-04 02:11:12,614 INFO [restartedMain] HikariPool-1 - Start completed.
-2021-01-04 02:11:12,639 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-01-04 02:11:13,257 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-04 02:11:13,266 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 02:11:13,279 INFO [restartedMain] LiveReload server is running on port 35729
-2021-01-04 02:11:13,646 INFO [restartedMain] Program started with arguments: votingPhase=false addingPhase=true
-2021-01-04 02:11:13,902 INFO [restartedMain] Voters successfully set up
-2021-01-04 02:11:13,955 INFO [restartedMain] Categories successfully set up
-2021-01-04 02:11:13,995 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-04 02:11:14,092 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-04 02:11:14,268 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
-2021-01-04 02:11:14,282 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
-2021-01-04 02:11:14,292 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 3.946 seconds (JVM running for 4.512)
-2021-01-04 02:13:20,085 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-04 02:13:20,088 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-04 02:13:20,092 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2021-01-04 02:13:20,107 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2021-01-17 14:53:49,688 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 7976 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
+2021-01-17 14:53:49,692 INFO [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-17 14:53:49,744 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-17 14:53:49,744 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-17 14:53:50,168 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-17 14:53:50,231 INFO [restartedMain] Finished Spring Data repository scanning in 51ms. Found 5 JPA repository interfaces.
+2021-01-17 14:53:50,893 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
+2021-01-17 14:53:50,906 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
+2021-01-17 14:53:50,907 INFO [restartedMain] Starting service [Tomcat]
+2021-01-17 14:53:50,907 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-01-17 14:53:50,970 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-01-17 14:53:50,970 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1226 ms
+2021-01-17 14:53:51,174 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-17 14:53:51,223 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-01-17 14:53:51,341 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-01-17 14:53:51,411 INFO [restartedMain] HikariPool-1 - Starting...
+2021-01-17 14:53:51,821 INFO [restartedMain] HikariPool-1 - Start completed.
+2021-01-17 14:53:51,844 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-01-17 14:53:52,466 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-17 14:53:52,473 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-17 14:53:52,484 INFO [restartedMain] LiveReload server is running on port 35729
+2021-01-17 14:53:52,839 INFO [restartedMain] Program started with arguments: votingPhase=true addingPhase=false
+2021-01-17 14:53:56,086 INFO [restartedMain] Candidates successfully set up
+2021-01-17 14:53:56,127 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-17 14:53:56,238 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-17 14:53:56,439 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
+2021-01-17 14:53:56,454 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
+2021-01-17 14:53:56,463 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 7.114 seconds (JVM running for 7.878)
+2021-01-17 14:58:34,081 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-17 14:58:34,084 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-17 14:58:34,088 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2021-01-17 14:58:34,100 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2021-01-17 14:58:37,867 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 8368 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
+2021-01-17 14:58:37,871 INFO [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-17 14:58:37,936 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-17 14:58:37,937 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-17 14:58:38,350 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-17 14:58:38,397 INFO [restartedMain] Finished Spring Data repository scanning in 40ms. Found 5 JPA repository interfaces.
+2021-01-17 14:58:38,988 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
+2021-01-17 14:58:38,996 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
+2021-01-17 14:58:38,997 INFO [restartedMain] Starting service [Tomcat]
+2021-01-17 14:58:38,997 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-01-17 14:58:39,049 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-01-17 14:58:39,049 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1112 ms
+2021-01-17 14:58:39,198 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-17 14:58:39,228 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-01-17 14:58:39,304 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-01-17 14:58:39,363 INFO [restartedMain] HikariPool-1 - Starting...
+2021-01-17 14:58:39,678 INFO [restartedMain] HikariPool-1 - Start completed.
+2021-01-17 14:58:39,699 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-01-17 14:58:40,252 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-17 14:58:40,261 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-17 14:58:40,272 INFO [restartedMain] LiveReload server is running on port 35729
+2021-01-17 14:58:40,603 INFO [restartedMain] Program started with arguments: votingPhase=true addingPhase=false
+2021-01-17 14:58:43,540 INFO [restartedMain] Candidates successfully set up
+2021-01-17 14:58:43,572 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-17 14:58:43,663 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-17 14:58:43,819 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
+2021-01-17 14:58:43,832 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
+2021-01-17 14:58:43,841 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 6.33 seconds (JVM running for 6.868)
+2021-01-17 15:00:38,920 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-17 15:00:38,921 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-01-17 15:00:38,927 INFO [http-nio-8000-exec-1] Completed initialization in 6 ms
+2021-01-17 15:00:38,951 WARN [http-nio-8000-exec-1] in Bounds
+2021-01-17 15:00:46,009 WARN [http-nio-8000-exec-4] simon.bussmann@adolfinum.de
+2021-01-17 15:01:01,586 WARN [http-nio-8000-exec-6] matched
+2021-01-17 15:16:30,676 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-17 15:16:30,679 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-17 15:16:30,683 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2021-01-17 15:16:30,693 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2021-01-17 15:16:32,386 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 9493 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
+2021-01-17 15:16:32,390 INFO [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-17 15:16:32,444 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-17 15:16:32,444 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-17 15:16:32,883 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-17 15:16:32,939 INFO [restartedMain] Finished Spring Data repository scanning in 48ms. Found 5 JPA repository interfaces.
+2021-01-17 15:16:33,628 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
+2021-01-17 15:16:33,640 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
+2021-01-17 15:16:33,641 INFO [restartedMain] Starting service [Tomcat]
+2021-01-17 15:16:33,641 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-01-17 15:16:33,708 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-01-17 15:16:33,709 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1265 ms
+2021-01-17 15:16:33,883 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-17 15:16:33,918 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-01-17 15:16:34,014 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-01-17 15:16:34,084 INFO [restartedMain] HikariPool-1 - Starting...
+2021-01-17 15:16:34,444 INFO [restartedMain] HikariPool-1 - Start completed.
+2021-01-17 15:16:34,469 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-01-17 15:16:35,144 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-17 15:16:35,151 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-17 15:16:35,167 INFO [restartedMain] LiveReload server is running on port 35729
+2021-01-17 15:16:35,541 INFO [restartedMain] Program started with arguments: votingPhase=true addingPhase=false
+2021-01-17 15:16:35,766 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-17 15:16:35,868 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-17 15:16:36,044 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
+2021-01-17 15:16:36,058 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
+2021-01-17 15:16:36,067 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 4.094 seconds (JVM running for 4.813)
+2021-01-17 15:17:23,695 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-17 15:17:23,696 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-01-17 15:17:23,708 INFO [http-nio-8000-exec-1] Completed initialization in 11 ms
+2021-01-17 15:17:23,733 WARN [http-nio-8000-exec-1] in Bounds
+2021-01-17 15:17:30,136 WARN [http-nio-8000-exec-4] simon.bussmann@adolfinum.de
+2021-01-17 15:17:42,309 WARN [http-nio-8000-exec-6] matched
+2021-01-17 15:18:29,420 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-17 15:18:29,421 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-17 15:18:29,424 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2021-01-17 15:18:29,437 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2021-01-17 15:18:31,847 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 9761 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
+2021-01-17 15:18:31,850 INFO [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-17 15:18:31,907 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-17 15:18:31,908 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-17 15:18:32,319 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-17 15:18:32,372 INFO [restartedMain] Finished Spring Data repository scanning in 47ms. Found 5 JPA repository interfaces.
+2021-01-17 15:18:33,086 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
+2021-01-17 15:18:33,096 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
+2021-01-17 15:18:33,097 INFO [restartedMain] Starting service [Tomcat]
+2021-01-17 15:18:33,097 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-01-17 15:18:33,157 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-01-17 15:18:33,157 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1249 ms
+2021-01-17 15:18:33,334 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-17 15:18:33,371 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-01-17 15:18:33,477 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-01-17 15:18:33,577 INFO [restartedMain] HikariPool-1 - Starting...
+2021-01-17 15:18:33,998 INFO [restartedMain] HikariPool-1 - Start completed.
+2021-01-17 15:18:34,029 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-01-17 15:18:34,724 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-17 15:18:34,730 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-17 15:18:34,744 INFO [restartedMain] LiveReload server is running on port 35729
+2021-01-17 15:18:35,270 INFO [restartedMain] Program started with arguments: votingPhase=true addingPhase=false
+2021-01-17 15:18:35,589 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-17 15:18:35,735 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-17 15:18:35,936 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
+2021-01-17 15:18:35,950 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
+2021-01-17 15:18:35,961 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 4.494 seconds (JVM running for 5.13)
+2021-01-17 15:18:40,203 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-17 15:18:40,204 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-01-17 15:18:40,216 INFO [http-nio-8000-exec-1] Completed initialization in 12 ms
+2021-01-17 15:18:40,244 WARN [http-nio-8000-exec-1] in Bounds
+2021-01-17 15:18:46,736 WARN [http-nio-8000-exec-3] simon.bussmann@adolfinum.de
+2021-01-17 15:18:56,942 WARN [http-nio-8000-exec-5] matched
+2021-01-17 15:19:49,251 WARN [http-nio-8000-exec-7] in Bounds
+2021-01-17 15:19:55,903 WARN [http-nio-8000-exec-9] simon.bussmann@adolfinum.de
+2021-01-17 15:20:18,347 WARN [http-nio-8000-exec-3] matched
+2021-01-17 15:23:22,895 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-17 15:23:22,897 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-17 15:23:22,902 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2021-01-17 15:23:22,910 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2021-01-17 15:23:25,390 INFO [restartedMain] Starting AbizeitungVotingSystemApplication on bitecoding-System-Product-Name with PID 10453 (/home/bitecoding/Code/GitHub/AbizeitungVotingSystem/target/classes started by bitecoding in /home/bitecoding/Code/GitHub/AbizeitungVotingSystem)
+2021-01-17 15:23:25,393 INFO [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-17 15:23:25,466 INFO [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-17 15:23:25,467 INFO [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-17 15:23:25,907 INFO [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-17 15:23:25,965 INFO [restartedMain] Finished Spring Data repository scanning in 51ms. Found 5 JPA repository interfaces.
+2021-01-17 15:23:26,765 INFO [restartedMain] Tomcat initialized with port(s): 8000 (http)
+2021-01-17 15:23:26,775 INFO [restartedMain] Initializing ProtocolHandler ["http-nio-8000"]
+2021-01-17 15:23:26,776 INFO [restartedMain] Starting service [Tomcat]
+2021-01-17 15:23:26,777 INFO [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-01-17 15:23:26,848 INFO [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-01-17 15:23:26,848 INFO [restartedMain] Root WebApplicationContext: initialization completed in 1381 ms
+2021-01-17 15:23:27,067 INFO [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-17 15:23:27,099 INFO [restartedMain] HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-01-17 15:23:27,192 INFO [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-01-17 15:23:27,264 INFO [restartedMain] HikariPool-1 - Starting...
+2021-01-17 15:23:27,633 INFO [restartedMain] HikariPool-1 - Start completed.
+2021-01-17 15:23:27,655 INFO [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-01-17 15:23:28,377 INFO [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-17 15:23:28,382 INFO [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-17 15:23:28,396 INFO [restartedMain] LiveReload server is running on port 35729
+2021-01-17 15:23:28,943 INFO [restartedMain] Program started with arguments: votingPhase=true addingPhase=false
+2021-01-17 15:23:29,269 WARN [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-17 15:23:29,418 INFO [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-17 15:23:29,642 INFO [restartedMain] Starting ProtocolHandler ["http-nio-8000"]
+2021-01-17 15:23:29,659 INFO [restartedMain] Tomcat started on port(s): 8000 (http) with context path ''
+2021-01-17 15:23:29,672 INFO [restartedMain] Started AbizeitungVotingSystemApplication in 4.683 seconds (JVM running for 5.367)
+2021-01-17 15:23:38,361 INFO [http-nio-8000-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-17 15:23:38,362 INFO [http-nio-8000-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-01-17 15:23:38,372 INFO [http-nio-8000-exec-1] Completed initialization in 10 ms
+2021-01-17 15:23:38,423 WARN [http-nio-8000-exec-1] wrong
+2021-01-17 15:24:04,259 WARN [http-nio-8000-exec-6] matched
+2021-01-17 15:24:18,325 WARN [http-nio-8000-exec-8] in Bounds
+2021-01-17 15:24:23,870 WARN [http-nio-8000-exec-10] simon.bussmann@adolfinum.de
+2021-01-17 15:24:42,834 WARN [http-nio-8000-exec-2] matched
+2021-01-17 15:26:25,702 INFO [http-nio-8000-exec-8] simon.bussmann@adolfinum.de has voted!
+2021-01-17 15:26:27,992 WARN [http-nio-8000-exec-10] in Bounds
+2021-01-17 15:43:46,110 WARN [http-nio-8000-exec-2] in Bounds
+2021-01-17 15:43:46,288 WARN [http-nio-8000-exec-5] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:43:46,294 WARN [http-nio-8000-exec-6] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:44:14,357 WARN [http-nio-8000-exec-7] Simon.bussmann@adolfinum.de
+2021-01-17 15:44:14,360 WARN [http-nio-8000-exec-7] Simon.bussmann@adolfinum.de has already voted
+2021-01-17 15:44:14,366 WARN [http-nio-8000-exec-8] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:44:14,375 WARN [http-nio-8000-exec-9] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:44:14,396 WARN [http-nio-8000-exec-1] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:44:14,403 WARN [http-nio-8000-exec-3] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:45:32,976 WARN [http-nio-8000-exec-5] Simon.bussmann@adolfinum.de
+2021-01-17 15:45:32,978 WARN [http-nio-8000-exec-5] Simon.bussmann@adolfinum.de has already voted
+2021-01-17 15:45:33,023 WARN [http-nio-8000-exec-7] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:45:33,030 WARN [http-nio-8000-exec-8] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:51:42,988 WARN [http-nio-8000-exec-1] in Bounds
+2021-01-17 15:51:42,993 WARN [http-nio-8000-exec-3] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:51:43,016 WARN [http-nio-8000-exec-4] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:51:43,044 WARN [http-nio-8000-exec-5] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:51:43,052 WARN [http-nio-8000-exec-6] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:51:54,850 WARN [http-nio-8000-exec-7] in Bounds
+2021-01-17 15:52:39,237 WARN [http-nio-8000-exec-3] simon.bussmann@adolfinum.de
+2021-01-17 15:53:04,490 WARN [http-nio-8000-exec-4] Simon.bussmann@adolfinum.de
+2021-01-17 15:53:04,498 WARN [http-nio-8000-exec-5] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:53:04,506 WARN [http-nio-8000-exec-6] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:53:04,537 WARN [http-nio-8000-exec-8] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:53:04,546 WARN [http-nio-8000-exec-10] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:53:29,699 WARN [http-nio-8000-exec-1] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:53:29,706 WARN [http-nio-8000-exec-3] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:53:29,707 WARN [http-nio-8000-exec-9] matched
+2021-01-17 15:53:29,881 WARN [http-nio-8000-exec-5] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:53:29,889 WARN [http-nio-8000-exec-4] Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]
+2021-01-17 15:54:09,560 INFO [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-17 15:54:09,562 INFO [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-17 15:54:09,564 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2021-01-17 15:54:09,570 INFO [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
