@@ -18,7 +18,7 @@
         function test() {
             let input_field = document.getElementById("email_input");
             let input = input_field.value;
-            if (!input.trim().match("[a-z]+\\.[a-z]+@adolfinum+\\.de$")) {
+            if (!input.trim().match("[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+")) {
                 input_field.value = "";
                 alert("Die Email-Adresse \"" + input + "\" entspricht nicht den Vorgaben");
             }

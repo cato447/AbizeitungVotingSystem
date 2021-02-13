@@ -76,16 +76,7 @@ public class VotingController {
 
     @RequestMapping("/")
     public String WelcomeSite() {
-        LocalDate finishDate = LocalDate.of(2021, Month.JANUARY,24);
-        LocalDate now = LocalDate.now();
-
-        if(now.isAfter(finishDate)){
-            LOGGER.warn("passed");
-            return "errors/votingClosed.html";
-        } else {
-            LOGGER.warn("in Bounds");
             return "start.html";
-        }
     }
 
     public void sendSimpleMessage(String to, String subject, String text) {
@@ -98,7 +89,8 @@ public class VotingController {
 
     @RequestMapping("/checkStatus")
     public String VerifyName(@RequestParam String name, Model model) {
-        if (name.strip().toLowerCase().matches("[a-z]+\\.[a-z]+@adolfinum+\\.de$")) {
+    	//Basic email regex
+        if (name.strip().toLowerCase().matches("[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+")) {
             try {
                 LOGGER.warn(name);
                 Voter voter = voterRepository.findByEmail(name.toLowerCase().strip());
