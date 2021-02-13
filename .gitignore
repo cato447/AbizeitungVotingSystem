@@ -37,3 +37,7 @@ build/
 
 ### Logging ###
 *.log
+
+### DataPrivacy ###
+Databases
+logs
